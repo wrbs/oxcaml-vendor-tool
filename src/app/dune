@@ -1,0 +1,6 @@
+(library
+ (name oxcaml_vendor_tool)
+ (libraries core async core_unix.command_unix)
+ (inline_tests)
+ (preprocess
+  (pps ppx_jane)))
