@@ -1,0 +1,6 @@
+(library
+ (name oxcaml_vendor_tool_lib)
+ (libraries core async sexp_pretty)
+ (inline_tests)
+ (preprocess
+  (pps ppx_jane)))

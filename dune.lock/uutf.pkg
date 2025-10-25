@@ -10,7 +10,7 @@
   --with-cmdliner
   %{pkg:cmdliner:installed}))
 
-(depends ocaml ocamlfind ocamlbuild topkg)
+(depends ocaml ocamlfind ocamlbuild topkg cmdliner)
 
 (source
  (fetch

@@ -10,5 +10,13 @@
    (>= 5.3.0))
   core
   core_unix
+  async_ssl
   async
-  ppx_jane))
+  ppx_jane
+  cohttp-async
+  jsonaf
+  of_json
+  opam-core
+  opam-0install
+  opam-repository
+  sexp_pretty))

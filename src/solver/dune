@@ -1,0 +1,19 @@
+(library
+ (name oxcaml_vendor_tool_solver)
+ (libraries
+  core
+  oxcaml_vendor_tool_lib
+  async
+  core_unix.command_unix
+  uri
+  sexp_pretty
+  of_json
+  opam-0install
+  opam-core
+  opam-format
+  opam-repository
+  cohttp-async
+  jsonaf)
+ (inline_tests)
+ (preprocess
+  (pps ppx_jane)))

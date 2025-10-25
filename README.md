@@ -36,6 +36,7 @@ This is the instructions for running this tooling
 
     opam switch create dune-pm 5.3.0
     opam install dune ocamlformat ocaml-lsp-server
+    opam switch link dune-pm  # ensure you use in this dir
 
 Install packages
 

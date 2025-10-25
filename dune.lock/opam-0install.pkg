@@ -1,0 +1,25 @@
+(version 0.5.1)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs} @install)))
+
+(depends
+ dune
+ fmt
+ cmdliner
+ opam-state
+ opam-format
+ ocaml
+ 0install-solver
+ opam-file-format)
+
+(source
+ (fetch
+  (url
+   https://github.com/ocaml-opam/opam-0install-solver/releases/download/v0.5.1/opam-0install-0.5.1.tbz)
+  (checksum
+   sha256=1cf307f263623cb7884fba22fd6d250a3fd96477a65e3d56e6bfaa015a4cd2e0)))

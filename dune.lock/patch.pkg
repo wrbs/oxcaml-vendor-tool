@@ -1,0 +1,16 @@
+(version 3.0.0)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs})))
+
+(depends ocaml dune)
+
+(source
+ (fetch
+  (url
+   https://github.com/hannesm/patch/releases/download/v3.0.0/patch-3.0.0.tar.gz)
+  (checksum md5=75aca1ed79a9807e4d4fc6c85aa31b0f)))
