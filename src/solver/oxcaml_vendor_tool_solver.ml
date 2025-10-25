@@ -22,5 +22,6 @@ let phases_command =
     ; "repo-sync-only", Repo_fetch.sync_only_command
     ; "resolve-desired-packages", Desired_package_resolution.command
     ; "run-solver", Solver.command
+    ; "vendor-planner", Vendor_planner.command
     ]
 ;;

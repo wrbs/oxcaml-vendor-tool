@@ -46,7 +46,7 @@ let solve_and_sync ~(config : Config.Solver_config.t) ~repos ~desired_packages ~
   let%bind package_dirs, repo_summary =
     solve_packages ~env:config.env ~repos ~desired_packages ~project
   in
-  let packages_dir = Project.path project (Config.main_dir ^/ "packages") in
+  let packages_dir = Project.path project Config.package_dir in
   let%bind () =
     Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; packages_dir ] ()
   in

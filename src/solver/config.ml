@@ -1,6 +1,8 @@
 open! Core
+open Oxcaml_vendor_tool_lib
 
 let main_dir = "_solver"
+let package_dir = main_dir ^/ "packages"
 
 module Package_and_constraint = struct
   type t = Opam.Package.Name.t * Opam.Version_formula.t option
@@ -51,10 +53,15 @@ module Solver_config = struct
     [@@deriving sexp]
   end
 
+  module Vendoring = struct
+    type t = { exclude : Opam.Package.Name.Set.t } [@@deriving sexp]
+  end
+
   type t =
     { repos : (Repo.t * Repo_source.t) list
     ; package_selection : Package_selection.t list
     ; env : Env.t
+    ; vendoring : Vendoring.t
     }
   [@@deriving sexp]
 end

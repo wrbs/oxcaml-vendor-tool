@@ -1,6 +1,7 @@
 (repos (
-  (ox   (github oxcaml/opam-repository main))
-  (opam (github ocaml/opam-repository  master))))
+  (ox (github oxcaml/opam-repository main))
+  (dune-overlays (github dune-universe/opam-overlays master))
+  (opam (github ocaml/opam-repository master))))
 
 (env (
   (arch            x86_64)
@@ -22,3 +23,5 @@
   ))
   ;; todo: exclude if we need it
 ))
+
+(vendoring ((exclude (dune ocamlbuild))))

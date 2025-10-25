@@ -1,6 +1,6 @@
 (library
  (name oxcaml_vendor_tool_lib)
- (libraries core async sexp_pretty)
+ (libraries core async sexp_pretty opam-core opam-format opam-repository)
  (inline_tests)
  (preprocess
   (pps ppx_jane)))
