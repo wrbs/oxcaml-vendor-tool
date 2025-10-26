@@ -1,4 +1,4 @@
 open! Core
 open! Async
 
-let fetch_command = Fetch_upstream.command
+let fetch_command = Fetch_upstreams.command

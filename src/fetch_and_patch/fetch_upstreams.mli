@@ -2,6 +2,8 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+val upstream_sources_dir : string
+
 val execute
   :  jobs:int
   -> dirs:Lock_file.t

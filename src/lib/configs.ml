@@ -11,8 +11,8 @@ let format_sexps sexps =
   let config = Sexp_pretty.Config.create ~color:false () ~new_line_separator:true in
   let buffer = Buffer.create 1024 in
   let formatter = Format.formatter_of_buffer buffer in
-  List.iter sexps ~f:(fun sexp -> Sexp_pretty.pp_formatter config formatter sexp);
-  Format.pp_print_flush formatter ();
+  let queue = Queue.of_list sexps in
+  Sexp_pretty.pp_formatter' config formatter ~next:(fun () -> Queue.dequeue queue);
   Buffer.contents buffer
 ;;
 

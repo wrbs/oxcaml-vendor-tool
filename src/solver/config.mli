@@ -2,7 +2,7 @@ open! Core
 open Oxcaml_vendor_tool_lib
 
 val main_dir : string
-val package_dir : string
+val opams_dir : string
 
 module Package_and_constraint : sig
   type t = Opam.Package.Name.t * Opam.Version_constraint.t option [@@deriving sexp]

@@ -55,11 +55,11 @@ let solve_and_sync ~(config : Config.Solver_config.t) ~repos ~desired_packages ~
   let%bind repo_summary =
     solve_packages ~env:config.env ~repos ~desired_packages ~project
   in
-  let packages_dir = Project.path project Config.package_dir in
+  let opams_dir = Project.path project Config.opams_dir in
   let%bind () =
-    Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; packages_dir ] ()
+    Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; opams_dir ] ()
   in
-  let%bind () = Unix.mkdir ~p:() packages_dir in
+  let%bind () = Unix.mkdir ~p:() opams_dir in
   let to_copy =
     List.concat_map repo_summary ~f:(fun (repo, { packages; _ }) ->
       let repo_dir = Repo.dir repo ~project in
@@ -74,7 +74,7 @@ let solve_and_sync ~(config : Config.Solver_config.t) ~repos ~desired_packages ~
           ^/ version_dir
           ^/ "opam"
         in
-        let dest = packages_dir ^/ [%string "%{version_dir}.opam"] in
+        let dest = opams_dir ^/ [%string "%{version_dir}.opam"] in
         opam_file, dest))
   in
   Deferred.all_unit

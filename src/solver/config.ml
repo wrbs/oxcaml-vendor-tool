@@ -1,8 +1,8 @@
 open! Core
 open Oxcaml_vendor_tool_lib
 
-let main_dir = "_solver"
-let package_dir = main_dir ^/ "packages"
+let main_dir = "_monorepo-solver.lock"
+let opams_dir = main_dir ^/ "opams"
 
 module Package_and_constraint = struct
   type t = Opam.Package.Name.t * Opam.Version_constraint.t option
@@ -34,7 +34,7 @@ module Repo_source = struct
 end
 
 module Solver_config = struct
-  let path = "solver-config.sexp"
+  let path = "monorepo.solver.sexp"
 
   module Package_selection = struct
     type t =
@@ -95,21 +95,31 @@ module Desired_packages = struct
 
   type t = Opam.Version_constraint.t option Opam.Package.Name.Map.t
 
-  let sexp_of_t t =
-    Sexp.List (Map.to_alist t |> List.map ~f:[%sexp_of: Package_and_constraint.t])
-  ;;
+  module Repr = struct
+    type t = { packages : Package_and_constraint.t list } [@@deriving sexp]
+  end
 
-  let t_of_sexp (sexp : Sexp.t) =
-    match sexp with
-    | Atom _ -> of_sexp_error "expected list" sexp
-    | List sexps ->
-      (match
-         List.map sexps ~f:[%of_sexp: Package_and_constraint.t]
-         |> Opam.Package.Name.Map.of_alist_or_error
-       with
-       | Ok x -> x
-       | Error error -> raise (Of_sexp_error (Error.to_exn error, sexp)))
-  ;;
+  include
+    Sexpable.Of_sexpable
+      (Repr)
+      (struct
+        type nonrec t = t
+
+        let to_sexpable t : Repr.t =
+          let packages =
+            Map.to_alist t
+            |> List.stable_sort
+                 ~compare:
+                   (Comparable.lift [%compare: int] ~f:(function
+                      (* sort no-constraints first *)
+                      | _, None -> 0
+                      | _, Some _ -> 1))
+          in
+          { packages }
+        ;;
+
+        let of_sexpable { Repr.packages } = Opam.Package.Name.Map.of_alist_exn packages
+      end)
 end
 
 module Fetched_packages = struct

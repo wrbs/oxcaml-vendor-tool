@@ -1,6 +1,8 @@
 open! Core
 open! Async
 
+let cache_dir = "_cache/monorepo"
+
 type t = { root_dir : string }
 
 let root_dir t = t.root_dir
@@ -9,6 +11,8 @@ let path t = function
   | "" -> t.root_dir
   | subpath -> t.root_dir ^/ subpath
 ;;
+
+let opam_download_cache t = path t (cache_dir ^/ "opam-dl") |> OpamFilename.Dir.of_string
 
 let git_toplevel () =
   let%map output =

@@ -30,9 +30,9 @@ Then on top of that we have patches for if we need to
 - make things build with dune
 - fix anything not yet fixed in the oxcaml public release
 
-## Getting started
+## Developing tooling
 
-This is the instructions for running this tooling
+This is the instructions for developing this tooling
 
     opam switch create dune-pm 5.3.0
     opam install dune ocamlformat ocaml-lsp-server

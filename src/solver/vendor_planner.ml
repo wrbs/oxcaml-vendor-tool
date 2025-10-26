@@ -11,12 +11,11 @@ module Disk_package = struct
   type t =
     { package : Opam.Package.t
     ; repo_url : string
-    ; opam_file : (OpamFile.OPAM.t[@sexp.opaque])
+    ; opam_file : OpamFile.OPAM.t
     }
-  [@@deriving sexp_of]
 
   let load_all ~project =
-    let package_dir = Project.path project Config.package_dir in
+    let opams_dir = Project.path project Config.opams_dir in
     let%bind repos = Configs.load (module Config.Fetched_packages) project in
     List.concat_map repos ~f:(fun (_repo, repo_info) ->
       List.map repo_info.packages ~f:(fun package_and_dir ->
@@ -30,7 +29,7 @@ module Disk_package = struct
           ^/ OpamPackage.name_to_string package
           ^/ version_dir
         in
-        let opam_path = package_dir ^/ [%string "%{version_dir}.opam"] in
+        let opam_path = opams_dir ^/ [%string "%{version_dir}.opam"] in
         let%map contents = Reader.file_contents opam_path in
         let opam_file = OpamFile.OPAM.read_from_string contents in
         { package; repo_url; opam_file }))

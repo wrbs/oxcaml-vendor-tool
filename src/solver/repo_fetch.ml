@@ -55,27 +55,26 @@ let lock (config : Config.Solver_config.t) ~project =
 ;;
 
 let fetch (repos : Config.Repos.t) ~project =
-  let repos_dir = Project.path project "_cache/repos" in
-  let%map () = Unix.mkdir ~p:() repos_dir in
+  let cache_dir = Project.opam_download_cache project in
   Opam.Par.run_exn
     ~jobs:8
     (List.map repos ~f:(fun (repo, paths) ->
        Opam.Par.job
          ~desc:(Repo.to_string repo)
-         (OpamRepository.update
-            { repo_name = Repo.to_opam repo
-            ; repo_url = paths.full_repo
-            ; repo_trust = None
-            }
+         (OpamRepository.pull_tree
+            ~cache_dir
+            ~full_fetch:false
+            (Repo.to_string repo)
             (Repo.opam_dir repo ~project)
-          |> Opam.Job.ignore_m))
+            []
+            [ paths.full_repo ]))
      |> Opam.Par.all_unit)
 ;;
 
 let sync_all config ~project =
   let%bind repos = lock config ~project in
-  let%map () = fetch repos ~project in
-  repos
+  fetch repos ~project;
+  return repos
 ;;
 
 let lock_and_sync_command =
@@ -94,5 +93,6 @@ let sync_only_command =
   let%map_open.Command project = Project.param in
   fun () ->
     let%bind repos = Configs.load (module Config.Repos) project in
-    fetch repos ~project
+    fetch repos ~project;
+    return ()
 ;;

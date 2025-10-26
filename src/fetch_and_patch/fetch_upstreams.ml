@@ -2,6 +2,8 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+let upstream_sources_dir = Project.cache_dir ^/ "upstream-sources"
+
 let handle_download_result job =
   match%map.Opam.Job job with
   | OpamTypes.Up_to_date _ | Result _ -> ()
@@ -26,6 +28,7 @@ let fetch_sources
           (Lock_file.Main_source.opam_hashes dir_config.source)
           (Lock_file.Main_source.opam_urls dir_config.source)
           ~cache_dir
+          ~full_fetch:false
         |> handle_download_result
       in
       `Main_source dest_dir)
@@ -100,8 +103,8 @@ let fetch_and_patch_dir ~dest_dir ~vendor_dir ~dir_config ~cache_dir ~no_patch =
 ;;
 
 let execute' ~jobs ~dirs ~project ~no_patch =
-  let cache_dir = Project.path project "_cache/opam" |> OpamFilename.Dir.of_string in
-  let sources_dir = Project.path project "_cache/upstream-sources" in
+  let cache_dir = Project.opam_download_cache project in
+  let sources_dir = Project.path project upstream_sources_dir in
   let%bind () =
     Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; sources_dir ] ()
   in
