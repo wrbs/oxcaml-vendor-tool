@@ -8,25 +8,25 @@
   (extra (
     (zarith-abs.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/zarith/zarith.1.12+ox/files/zarith-abs.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/zarith/zarith.1.12+ox/files/zarith-abs.patch)
       (hash (
         SHA256
         0e8ac23bfd2846424eb2a5c9116cdf8c62d3b4e56f318347886ca7431d8c195e))))
     (zarith-gc.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/zarith/zarith.1.12+ox/files/zarith-gc.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/zarith/zarith.1.12+ox/files/zarith-gc.patch)
       (hash (
         SHA256
         7b6129d76df91ef2d6d9ed427b621d7f6c20c79436d6c97bad55e0b452a62851))))
     (zarith-local.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/zarith/zarith.1.12+ox/files/zarith-local.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/zarith/zarith.1.12+ox/files/zarith-local.patch)
       (hash (
         SHA256
         bd168f393265f734efda1cb5b61588bf8edb07e10f1d49d9fc1df81aafcfecc2))))
     (zarith-portability.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/zarith/zarith.1.12+ox/files/zarith-portability.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/zarith/zarith.1.12+ox/files/zarith-portability.patch)
       (hash (
         SHA256
         92c4036a9fc4eb5e996b0e704a032d748bf09197ee567909513bc991d6b4dddd))))))
@@ -782,37 +782,37 @@
   (extra (
     (dune.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/dune.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/dune.patch)
       (hash (
         SHA256
         486d4235a5baa84b63b867ceaa9000b8c7fa6c9429999ab247e4ba3401da214e))))
     (gen-js-api+js_of_ocaml-globalThis.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch)
       (hash (
         SHA256
         7828fe1796e89139bbfe38e9fdf6b0d959d15bf4e9762f24bfe3749de409398d))))
     (gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch)
       (hash (
         SHA256
         4bcca59531d1c30227f153728b653a03cfca4048fe0dd6e14c0702fde8739e12))))
     (gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch)
       (hash (
         SHA256
         813d51aee7836858c33494e3bc458516a39aac6f3f515ae70631cf66e026e329))))
     (gen-js-api+unsafe_multidomain_alert.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch)
       (hash (
         SHA256
         41fd51a6dd20b44bc07451e4635623554c4aa80e5e5f9472faf4161c7a7b0a7a))))
     (gen-js-api-ast.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api-ast.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api-ast.patch)
       (hash (
         SHA256
         969f7ae0ac3a269f5fecffc659a875d7ba458364aa85da2e9bfa8cd3a214ae2f))))))
@@ -1151,277 +1151,277 @@
   (extra (
     (dune.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/dune.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/dune.patch)
       (hash (
         SHA256
         f76da998ab76de56309bd0da3e4db1fb496d6d235d7a0ac2f78e3bafe098714e))))
     (js_of_ocaml-5.2.0-compiler-changes.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch)
       (hash (
         SHA256
         12626322e63a8eaf68d4c8a1a1d3f428832869fae7020588e0fe40bbd8fd8cf8))))
     (js_of_ocaml-5.3-tests-runtime.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-add-unboxed-and-float-block.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch)
       (hash (
         SHA256
         db409edb2be9be828015b6722fb51d7bccdd1e4a7edf982b5c8d89808713af7b))))
     (js_of_ocaml-atomic-cmpxchg.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch)
       (hash (
         SHA256
         89612eb8c1e64898205c0b59c6b73987d2ff993a8c366fb61dac6db90e2806bc))))
     (js_of_ocaml-atomics.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomics.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomics.patch)
       (hash (
         SHA256
         cfe956bb047c252faa2397ff2badca80972d74e1dca0cb633202313dfb8f5da4))))
     (js_of_ocaml-caml_array_append.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch)
       (hash (
         SHA256
         430f2a026ce0738ae65b8b67ba614bae89bc57fffdf58293bae249e2fa8cedbd))))
     (js_of_ocaml-caml_bigstring_strncmp.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch)
       (hash (
         SHA256
         6fb900f0ff96d99e2a146a24e799f0bfcf234aa06e8447169ede86452e36fe3f))))
     (js_of_ocaml-caml_hash_exn.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch)
       (hash (
         SHA256
         eaf87543603ab7f9c5c8e410413f913e572c1815c93a30ac89b245effd435e39))))
     (js_of_ocaml-caml_provides_sub_local.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch)
       (hash (
         SHA256
         11b749d7c1b84b1145cbcf63801c2924ab89846ceff3a6fa8a2305bb3bc90f77))))
     (js_of_ocaml-compilation_unit-name.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch)
       (hash (
         SHA256
         1e00a73f66cbaa87eefb45702eaaf431978f8eb9ed95684c781b0ebb035d1a7f))))
     (js_of_ocaml-fix-build_fs.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch)
       (hash (
         SHA256
         abaa404bf23a77cf1badfe30ab9fcc13c6fb0446a81fa10b0962ed1ba9005d6a))))
     (js_of_ocaml-flipped-conditions-in-test.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-float32.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-float32.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-float32.patch)
       (hash (
         SHA256
         8d6ebad1481711f57c5ed6dd36187b96ce8fcc51cdf3b0e9d5c277687601c625))))
     (js_of_ocaml-floatarray_create_local.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch)
       (hash (
         SHA256
         f17e392acc941dde475cb7be0654037df9b8d550aeae0d96b65394e4c4a1d4ca))))
     (js_of_ocaml-gh2034.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-gh2034.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-gh2034.patch)
       (hash (
         SHA256
         ec01ea15a9d21c22790ad3c93e9d68154e364462de6a2ce1dbbb62e8af25fc2d))))
     (js_of_ocaml-global_deadcode-fix.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch)
       (hash (
         SHA256
         5b49d6ee62ae87c77d88ea8022b022830f906367dc9b9ea2e582f037a739292f))))
     (js_of_ocaml-iarray-primitives.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch)
       (hash (
         SHA256
-        037ad55684c9ac3801ff284839d8bb1290d2e750cd4bcb03b75e5f4ab69559c9))))
+        8c320fb413daad0393347bf6a22ca31fe6f1d3dd34f58e313aa44cd060fc56f8))))
     (js_of_ocaml-ident-is_global.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch)
       (hash (
         SHA256
         9cc507a14142220868af1c6f1e35b06648718f21924b0fb192d6bcf4d28395f6))))
     (js_of_ocaml-important-config-changes.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch)
       (hash (
         SHA256
         eeb46aea8e0f0d2232b47f32a8a1d60237626637304431847e60316424daadd3))))
     (js_of_ocaml-int_u-array-primitives.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch)
       (hash (
         SHA256
         99eba4301613d03e0305017a687c768bd24a22cef0db25ab62cbc3d304f647ba))))
     (js_of_ocaml-internal-obj-changes.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-internal-ocaml-5-compatibility.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch)
       (hash (
         SHA256
         6b7e17df7f0142158eca19a953422eb6eaf97a3f7f3f2443648bfd069fbcb90f))))
     (js_of_ocaml-jane-street-5.2-compatibility.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch)
       (hash (
         SHA256
         45391a7a7da6c5bfbe97ec1272cb369d533c2d95cf7a7a56d754db94871eb043))))
     (js_of_ocaml-jane-street-const_null-support.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch)
       (hash (
         SHA256
         e708cdc01c0cef3fce1cb9f31b33324977dcca1c166601905fcac1ef10262c3a))))
     (js_of_ocaml-local-bytes.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-local-bytes.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-local-bytes.patch)
       (hash (
         SHA256
         1c6170fec57089f515ec71bd9873d48bd5ae9c4a85f14b80f33039cce9f232ae))))
     (js_of_ocaml-magic_number.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch)
       (hash (
         SHA256
         05e204eac0338a76ca02db89ebb9505d80a7e268b93b746408356be913e219e6))))
     (js_of_ocaml-migrate-labeled-tuples-shims.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch)
       (hash (
         SHA256
         981df4f7397fd84e3e06b54644f5e37f464764045703bc117b9f4b49a630f88a))))
     (js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch)
       (hash (
         SHA256
         046c0cde7de52fe9b31ba4aeb1185aefbb3c9d3b3abb50b111e699d2b69c89a0))))
     (js_of_ocaml-mixed-block-bytecode-op.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch)
       (hash (
         SHA256
         ed6cfee285491515d497e8871c8534236e9a77939c3838dfd5b3fdb20626e347))))
     (js_of_ocaml-n-ary-functions.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch)
       (hash (
         SHA256
         b9b078c1f227624cc5fc9dd574c19785354267c19299dcf2f9b9642d0114eddf))))
     (js_of_ocaml-no-compression-module-5.2.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-obj_stubs.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch)
       (hash (
         SHA256
         9e9064f255c065a3152f665bd5b464040f3cfbbd2580aa4bb6e17be9c2b7fcc8))))
-    (js_of_ocaml-ocaml_version-ppx.patch (
-      (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-ocaml_version-ppx.patch)
-      (hash (
-        SHA256
-        df6bcb6da8aa3dfd6bd0a178679987d41c400ec1803f4a66659cfc822d1b280f))))
     (js_of_ocaml-optcomp_lite_fixes.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch)
       (hash (
         SHA256
         b98305f8885c0377714677b2ca6d0d561c18bee6a8fc0d2f9d0abf52694968e0))))
     (js_of_ocaml-remove-float-externals.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch)
       (hash (
         SHA256
         899ec90b4c1f5f1251d2c77fdb842f11b5a07d01430da4e5c75610d4bf541faa))))
     (js_of_ocaml-small-int-literals.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch)
       (hash (
         SHA256
         4c3fd2d3a50d220af2bdd377016e3f3354b98b770457ff200494be70bc9bb5b2))))
     (js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch)
       (hash (
         SHA256
         483e848b0dfe54b75c31cd990191730c0070ad8a21912b1beca97111e01a718e))))
     (js_of_ocaml-symtable-5.2-api.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch)
       (hash (
         SHA256
         9a999950e8984cc582e3830f447111e1082dc720609334de66a011347d26da9b))))
     (js_of_ocaml-test-diffs-caused-by-build-differences.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch)
       (hash (
         SHA256
         e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
+    (js_of_ocaml-toplevel.patch (
+      (url
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-toplevel.patch)
+      (hash (
+        SHA256
+        fc9e1c363cd14d77edb3d6017ec2a8d2211dc755ff902e2a075a372b1e665f9e))))
     (js_of_ocaml-unboxed-indexing.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch)
       (hash (
         SHA256
         2c8b76947795fa34683e7c2bf1022a95058bde146c7832e1bd6e8a33b8d6cfc7))))
     (js_of_ocaml-wasm-temp-differences.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch)
       (hash (
         SHA256
         d644765237b939ab611c10f71672504ced91bf4ba0e8fe87a6cebc521bf2f34a))))
     (js_of_ocaml-with_async_exns.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch)
       (hash (
         SHA256
         0df2643d0b528b121e939506b6240cc35225bc5bffbcc80e6322e9cc8a269419))))
     (wasm_of_ocaml-bring-back-eval.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch)
       (hash (
         SHA256
         c413d9617e1122a9fdad8f1f63859bdf9f17a8440f78bdfbaecc432bae580fac))))
     (wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch)
       (hash (
         SHA256
         005bce63009b9539b65036b22a7b7cc531755c7caa3cf1ed8d8697698090e136))))))
@@ -1433,7 +1433,6 @@
     js_of_ocaml-add-unboxed-and-float-block.patch
     js_of_ocaml-ident-is_global.patch
     js_of_ocaml-remove-float-externals.patch
-    js_of_ocaml-ocaml_version-ppx.patch
     js_of_ocaml-test-diffs-caused-by-build-differences.patch
     js_of_ocaml-fix-build_fs.patch
     js_of_ocaml-iarray-primitives.patch
@@ -1471,7 +1470,8 @@
     js_of_ocaml-flipped-conditions-in-test.patch
     js_of_ocaml-atomic-cmpxchg.patch
     js_of_ocaml-small-int-literals.patch
-    dune.patch))))
+    dune.patch
+    js_of_ocaml-toplevel.patch))))
 (js_of_ocaml_patches ((
   source (
     Http (
@@ -1559,7 +1559,7 @@
   (extra ((
     oxcaml-lwt.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/lwt/lwt.5.9.2+ox/files/oxcaml-lwt.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/lwt/lwt.5.9.2+ox/files/oxcaml-lwt.patch)
       (hash (
         SHA256
         97dbcee73e200403694c9b9fd95f9ec7a1d08428343d4d163c945e7f0c431551))))))
@@ -1701,7 +1701,7 @@
   (extra ((
     read_cma.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ocaml-compiler-libs/ocaml-compiler-libs.v0.17.0+ox/files/read_cma.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ocaml-compiler-libs/ocaml-compiler-libs.v0.17.0+ox/files/read_cma.patch)
       (hash (
         SHA256
         65c1f6a92d5c52781a0b6241d97ad0ce14dcd7834c14cef9a1e810ce85b27be4))))))
@@ -1733,7 +1733,7 @@
   (extra ((
     bigarray.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ctypes-foreign/ctypes-foreign.0.23.0+ox/files/bigarray.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ctypes-foreign/ctypes-foreign.0.23.0+ox/files/bigarray.patch)
       (hash (
         SHA256
         c5d59b4624382cd61ff8da5c9ec3153ada0880efc43fbb2a20491984bd509a3e))))))
@@ -1803,247 +1803,247 @@
   (extra (
     (re+lib+ast.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+ast.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+ast.ml.patch)
       (hash (
         SHA256
         2bedd552999d255df78697aedba52d385d7cbd91da4643a576edea7f30773b1d))))
     (re+lib+ast.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+ast.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+ast.mli.patch)
       (hash (
         SHA256
         760e82e5d280c1299bb9d35a5d5150f7e8494e7a688d716b99dcfa296119c5ce))))
     (re+lib+automata.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+automata.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+automata.ml.patch)
       (hash (
         SHA256
         349a37a67abf5ab3ce7b7dcedd224ef95d5d829a894722df9e4354d3dfeaa174))))
     (re+lib+automata.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+automata.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+automata.mli.patch)
       (hash (
         SHA256
         c8b3dd69dad3716e951cfafd6fe3d184413be053c8efcb26f9de089f43465d68))))
     (re+lib+bit_vector.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+bit_vector.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+bit_vector.mli.patch)
       (hash (
         SHA256
         1d51ba85dba2d2b1255ae4535e9f13a5f8c879689e24cafc5d600f644cc1c35d))))
     (re+lib+category.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+category.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+category.mli.patch)
       (hash (
         SHA256
         1153a33076ee54c4f92f54a51868cd50ff5344d8e7a0cd409717e82c92e72b4b))))
     (re+lib+color_map.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+color_map.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+color_map.mli.patch)
       (hash (
         SHA256
         6b9d229b472b8fb8f44ba93f5c7d310613a8650efb3113990333803999c978c1))))
     (re+lib+compile.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+compile.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+compile.ml.patch)
       (hash (
         SHA256
         b125e28894c2d33010f904f8d31ec42624564d2d89f9b18e63fc65554f13ac83))))
     (re+lib+compile.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+compile.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+compile.mli.patch)
       (hash (
         SHA256
         1dcc4f24f7237200b8e156241f162aac567c33d2463fa59cb5caef6aea5e74ac))))
     (re+lib+core.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+core.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+core.mli.patch)
       (hash (
         SHA256
         ca06a185e0bc6b11d61fdf91b1862262728e3e46c2a18ec14e9c6bfa39921a85))))
     (re+lib+cset.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+cset.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+cset.ml.patch)
       (hash (
         SHA256
         798764c70219a81f179ed05c4a08c6c3a0b6d91f662a4e1a6e3702929bccfcea))))
     (re+lib+cset.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+cset.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+cset.mli.patch)
       (hash (
         SHA256
         eae907501236762e0bfcb81cedaec5dacb32ce7c854998e3963cdc10a73cd4b7))))
     (re+lib+dense_map.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+dense_map.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+dense_map.ml.patch)
       (hash (
         SHA256
         f656572ce04660eeee35a99fe825aa762f1df9a6abe2ea36bb6cc8e69bdf0543))))
     (re+lib+dense_map.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+dense_map.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+dense_map.mli.patch)
       (hash (
         SHA256
         f2f59d1efa3475cc830e27e271e5604fa21ee4bbefcdd3a7004a431c8d2f82a4))))
     (re+lib+emacs.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+emacs.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+emacs.mli.patch)
       (hash (
         SHA256
         43740791b3f06137bf062c2225167af8c952c5a8ed4a8cb6067569cb63f06f80))))
     (re+lib+fmt.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+fmt.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+fmt.mli.patch)
       (hash (
         SHA256
         b8fa15ca9f38fb391a0fdb945c6cecb92afe18c70271017afb1e084dfa064b80))))
     (re+lib+glob.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+glob.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+glob.mli.patch)
       (hash (
         SHA256
         10a4f6bbf4089eca476e3dfeac1d89938d666977453dbf2ca235b2e00bd6a01b))))
     (re+lib+group.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+group.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+group.mli.patch)
       (hash (
         SHA256
         139f86a032e94bce0a9e02f4cfc12e77599c47201714db250c419dd971820258))))
     (re+lib+hash_set.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+hash_set.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+hash_set.ml.patch)
       (hash (
         SHA256
         f5242e561f7a30a1860ea8aa3794707279677a348d208688788be5c404c424ec))))
     (re+lib+hash_set.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+hash_set.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+hash_set.mli.patch)
       (hash (
         SHA256
         d251fdfa57a2cebfd9c5cff286b5f6ae39cdd1643eb8bfd13dadbae13e5f9d2d))))
     (re+lib+iarray.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+iarray.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+iarray.ml.patch)
       (hash (
         SHA256
         f027af9153e3389d83f713be5707819f149d016d2d94910665afb7bcbeb4775c))))
     (re+lib+import.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+import.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+import.ml.patch)
       (hash (
         SHA256
         01a4d815caed8b59fb8e6e2476f8bce1f77e183c1c1a1880184b02961dd65244))))
     (re+lib+mark_infos.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+mark_infos.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+mark_infos.ml.patch)
       (hash (
         SHA256
         56c21e6fbbffa4d075dca85e3806d9ad4e1184bf1560a02f2c711af6f382942e))))
     (re+lib+mark_infos.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+mark_infos.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+mark_infos.mli.patch)
       (hash (
         SHA256
         fc82c6d1ae57186f5c0ce21bfbeef69495b98f2a095b6599e5ad3ef79594ad98))))
     (re+lib+parse_buffer.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+parse_buffer.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+parse_buffer.mli.patch)
       (hash (
         SHA256
         8e4028bf7205590732513b8c16557a9c5913f7f4c8b73ada96491f1958417e71))))
     (re+lib+pcre.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+pcre.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+pcre.ml.patch)
       (hash (
         SHA256
         87d24cbf8ed09ec166f16675c5ae29f1e22a02f6886a0a539595370df2cd87e5))))
     (re+lib+pcre.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+pcre.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+pcre.mli.patch)
       (hash (
         SHA256
         45f9cf0f4a423d6577d0b2e04cceb11cf672c9c8985995444dd22a28888e4a01))))
     (re+lib+perl.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+perl.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+perl.mli.patch)
       (hash (
         SHA256
         88ad29c736dd3ec386811ed3f9ecc72ac01eddf582a9b7569aea2964725a0dd5))))
     (re+lib+pmark.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+pmark.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+pmark.ml.patch)
       (hash (
         SHA256
         90e469a5d891d81511afe91271b0e62cc331c6f14e833c7cd14450416c257e92))))
     (re+lib+pmark.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+pmark.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+pmark.mli.patch)
       (hash (
         SHA256
         b4ab8b02b29bf22b6c41dc237c402be24f776931d44536976081a43486eb9cc6))))
     (re+lib+posix.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+posix.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+posix.mli.patch)
       (hash (
         SHA256
         7919b3e3cfb63d5baac5b36740e287dee2dfeb2a382238d17cf76851ba0db25a))))
     (re+lib+posix_class.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+posix_class.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+posix_class.mli.patch)
       (hash (
         SHA256
         ce2bd4adcd8cf8ec3f841bf291c3ba9c5155ae485a6670956509ab59cf1f270f))))
     (re+lib+replace.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+replace.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+replace.mli.patch)
       (hash (
         SHA256
         bb40364035045de319f9ebf186e77aa856f6128e14eaa0ad760dcbcd71a72bcc))))
     (re+lib+slice.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+slice.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+slice.mli.patch)
       (hash (
         SHA256
         e81ee39fc1eb5ca98d33a782cc5d5d15decc8c40b1cdb2a57d44e88e6b2ed91c))))
     (re+lib+view.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib+view.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib+view.mli.patch)
       (hash (
         SHA256
         2bca105404934893c997ade04298f2821fd9d586f179dd07d12065d07e0f0286))))
     (re+lib_test+expect+re_tests.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+expect+re_tests.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+expect+re_tests.ml.patch)
       (hash (
         SHA256
         21e7178d639651ec8d73b0d5f5402f9a5bf7f780511ce87bc77b82270d8c62a0))))
     (re+lib_test+expect+test_partial.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_partial.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_partial.ml.patch)
       (hash (
         SHA256
         341dd6dfc5da158304cfc35fe48831e29122c1be969041a27cf5321a66249564))))
     (re+lib_test+expect+test_pcre.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_pcre.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_pcre.ml.patch)
       (hash (
         SHA256
         39b11b76365006294c1e61baaa6e70b7b80147a1701723f0a86c42c593d7a17a))))
     (re+lib_test+expect+test_pcre_split.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_pcre_split.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_pcre_split.ml.patch)
       (hash (
         SHA256
         b23b20764f678fc1eecf2c9291f0b49eb4381762ef82daa042f9f7b95e14247d))))
     (re+lib_test+expect+test_re.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_re.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+expect+test_re.ml.patch)
       (hash (
         SHA256
         92720e296aa80fc76f30a05392e7ef63e8395ab5ac8a10cd6021ca5a75043629))))
     (re+lib_test+re_private.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/re/re.1.14.0+ox/files/re+lib_test+re_private.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/re/re.1.14.0+ox/files/re+lib_test+re_private.ml.patch)
       (hash (
         SHA256
         73fa41e21e784b71b7b73bd07a24055a18cfa05aa05797c64bf7926b00039866))))))
@@ -2176,37 +2176,37 @@
   (extra (
     (dune.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/dune.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/dune.patch)
       (hash (
         SHA256
         486d4235a5baa84b63b867ceaa9000b8c7fa6c9429999ab247e4ba3401da214e))))
     (gen-js-api+js_of_ocaml-globalThis.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch)
       (hash (
         SHA256
         7828fe1796e89139bbfe38e9fdf6b0d959d15bf4e9762f24bfe3749de409398d))))
     (gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch)
       (hash (
         SHA256
         4bcca59531d1c30227f153728b653a03cfca4048fe0dd6e14c0702fde8739e12))))
     (gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch)
       (hash (
         SHA256
         813d51aee7836858c33494e3bc458516a39aac6f3f515ae70631cf66e026e329))))
     (gen-js-api+unsafe_multidomain_alert.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch)
       (hash (
         SHA256
         41fd51a6dd20b44bc07451e4635623554c4aa80e5e5f9472faf4161c7a7b0a7a))))
     (gen-js-api-ast.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ojs/ojs.1.1.2+ox/files/gen-js-api-ast.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api-ast.patch)
       (hash (
         SHA256
         969f7ae0ac3a269f5fecffc659a875d7ba458364aa85da2e9bfa8cd3a214ae2f))))))
@@ -2944,211 +2944,211 @@
   (extra (
     (dune.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/dune.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/dune.patch)
       (hash (
         SHA256
         349dc9cbe7e373ca4cd187263e2d995a064b98599e97060a01718bb6d252db17))))
     (location_check.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/location_check.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/location_check.ml.patch)
       (hash (
         SHA256
         29aa6beee5428730b9ca84f4d8d45d81d26bbbd7ff6225e2b00e6aa5224ba385))))
     (ppxlib+doc+writing-ppxs.mld.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+doc+writing-ppxs.mld.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+doc+writing-ppxs.mld.patch)
       (hash (
         SHA256
         ce1d3c2e9ede3a6dc24b4a1bf23a5758af651bf62f7f4ee856a9b6c36047c0ab))))
     (ppxlib+metaquot+ppxlib_metaquot.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+metaquot+ppxlib_metaquot.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+metaquot+ppxlib_metaquot.ml.patch)
       (hash (
         SHA256
         dff0af8c3eeeeebedb154eed019815cb803bf3860778a9744c67af540043ef2e))))
     (ppxlib+runner_as_ppx+ppxlib_runner_as_ppx.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+runner_as_ppx+ppxlib_runner_as_ppx.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+runner_as_ppx+ppxlib_runner_as_ppx.ml.patch)
       (hash (
         SHA256
         2d3c5106d177079785e1a81fddc4a7d2aee0a00c576976aab6e45ff82d619931))))
     (ppxlib+src+ast_builder.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder.ml.patch)
       (hash (
         SHA256
         49e607a19da6cc7f95a38157be4a31473b96426eefddb5c7aa048bafd893ef95))))
     (ppxlib+src+ast_builder.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder.mli.patch)
       (hash (
         SHA256
         93c1d7a8d7fa5824a7ac61da6e2a35f0e661b7ea532a901b013a0dc4b03ef7f1))))
     (ppxlib+src+ast_builder_intf.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder_intf.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_builder_intf.ml.patch)
       (hash (
         SHA256
         938aabfd0d4f7eb48c4524a7f03154fcc76ec0c8bbf6ea28684c52c52aa318c4))))
     (ppxlib+src+ast_pattern.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_pattern.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_pattern.ml.patch)
       (hash (
         SHA256
         061b75e7217469fd5a6d8ed6d8d74ded558eaa867aa7a3075b710675fad5ac4a))))
     (ppxlib+src+ast_pattern.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_pattern.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_pattern.mli.patch)
       (hash (
         SHA256
         2d52385f3a734c3221ab8a7bd4cd36b4c81dd4c5b44b378bf966922fd18ce1ad))))
     (ppxlib+src+ast_traverse.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_traverse.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ast_traverse.ml.patch)
       (hash (
         SHA256
         1cf7ff1940cac40a0386b65650ecf745c251a0f1cd14d88af41ca298ac6f1ae1))))
     (ppxlib+src+attribute.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+attribute.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+attribute.ml.patch)
       (hash (
         SHA256
         74ecaaf97f58fa45ddf1c8600c9865ef23dfbba32d359f6d97181f0cdc57c835))))
     (ppxlib+src+attribute.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+attribute.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+attribute.mli.patch)
       (hash (
         SHA256
         96ba1295d087f5f44d7af09ac34afb92df59508ea888f03a7c2acba084c4cb7e))))
     (ppxlib+src+cinaps+ppxlib_cinaps_helpers.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+cinaps+ppxlib_cinaps_helpers.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+cinaps+ppxlib_cinaps_helpers.ml.patch)
       (hash (
         SHA256
         3d8434915c02f4e84e566cc08a3db42e1e6a861993bbed05c14a49bb98edf856))))
     (ppxlib+src+code_matcher.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+code_matcher.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+code_matcher.ml.patch)
       (hash (
         SHA256
         252b7155b35908b002fefa54fd97cb4cbff7f0c30db89f2ba26dead895e3f0ad))))
     (ppxlib+src+code_matcher.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+code_matcher.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+code_matcher.mli.patch)
       (hash (
         SHA256
         0014b9354e5a24c24d382db6afcae70c70a852768c82f10f6ca4cb5ca05a1249))))
     (ppxlib+src+common.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+common.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+common.ml.patch)
       (hash (
         SHA256
         1053b7edfffb3279e345dbfdd5222a90fcbe7e87a99e9a0f6b61dfdaaa3f0e7e))))
     (ppxlib+src+common.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+common.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+common.mli.patch)
       (hash (
         SHA256
         69769c220fc43d0b00d7033c6d1eb390df47538dac604aba15f6f51a1a504064))))
     (ppxlib+src+context_free.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+context_free.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+context_free.ml.patch)
       (hash (
         SHA256
         5c8d14144863659cb8cbb32360511e32921fa1ae761ec60ec9ab8382bd5f58e5))))
     (ppxlib+src+context_free.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+context_free.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+context_free.mli.patch)
       (hash (
         SHA256
         c41b9d84f8540a02d0e3743a1ec8cf686e4de09e052e2cfd6aae4b5c03e457ca))))
     (ppxlib+src+deriving.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+deriving.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+deriving.ml.patch)
       (hash (
         SHA256
         e3c0ea8fc1ab4cc253bafe20db654473ced79e8e3069acb2f4ad01847be55032))))
     (ppxlib+src+deriving.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+deriving.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+deriving.mli.patch)
       (hash (
         SHA256
         9092776cae8d31e1670061b18751383167477004d8e5f43ca9d09e4976ef52b3))))
     (ppxlib+src+driver.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+driver.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+driver.ml.patch)
       (hash (
         SHA256
         d5b7355f1351e59d0d2f9ee0b25c1d110bde50de92ef7350ffd7d8b20c6963f3))))
     (ppxlib+src+driver.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+driver.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+driver.mli.patch)
       (hash (
         SHA256
         123484f1a855962d3e35389dc763442a3a49e717c0abedea76e74abbd22bc750))))
     (ppxlib+src+gen+gen_ast_builder.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+gen_ast_builder.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+gen_ast_builder.ml.patch)
       (hash (
         SHA256
         ac68b651aa66061c202c076e4e009b14fd580748ceebced4b1096b1e9fa3ebb4))))
     (ppxlib+src+gen+gen_ast_pattern.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+gen_ast_pattern.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+gen_ast_pattern.ml.patch)
       (hash (
         SHA256
         b9b763a2f04c239231748c895b84e5f6ae6af4fae6727b041a5282bbcdd38317))))
     (ppxlib+src+gen+import.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+import.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+gen+import.ml.patch)
       (hash (
         SHA256
         217b43ca4ec72e0f590e44b4b280fdbce917f1b3835d9258471079e6978a39d2))))
     (ppxlib+src+ignore_unused_warning.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ignore_unused_warning.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ignore_unused_warning.ml.patch)
       (hash (
         SHA256
         292bc60e7e628d839e5dcaaee1dbcfe60b65e51de6b7f588005d8ab4c65c1af6))))
     (ppxlib+src+location.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+location.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+location.ml.patch)
       (hash (
         SHA256
         2773f5b33af2bb7537ad45567fd85df72a5b1090d6fc678bc9cd974de2fbb168))))
     (ppxlib+src+location.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+location.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+location.mli.patch)
       (hash (
         SHA256
         c437419eb0cd3b2227c84b5860034fc8fb3fa2a5c82ef4f4a524af02ed079aee))))
     (ppxlib+src+name.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+name.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+name.ml.patch)
       (hash (
         SHA256
         4d6b8864701a0444f0a4e3b264e2ad0d3c05b8b9cf3aee8c0c3f62cecea98989))))
     (ppxlib+src+ppxlib.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ppxlib.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+ppxlib.ml.patch)
       (hash (
         SHA256
         d598e4d2359ec08da08644ae866fff9ab67119b7bfc400232609107231b89a5d))))
     (ppxlib+src+utils.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+utils.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+src+utils.mli.patch)
       (hash (
         SHA256
         f1aefb00cc5b06d6564920d80c3dfcda5c7211823f21c7d8bf8feb7efc3dd97d))))
     (ppxlib+traverse+ppxlib_traverse.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+traverse+ppxlib_traverse.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/ppxlib+traverse+ppxlib_traverse.ml.patch)
       (hash (
         SHA256
         51b412cfb18e773d24110c191b234683d2573d34dcb4e6de9e31fea41f9925ff))))
     (utils.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib/ppxlib.0.33.0+ox/files/utils.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib/ppxlib.0.33.0+ox/files/utils.ml.patch)
       (hash (
         SHA256
         098c41f07f318c838dacafc753dbba6697c6e365305e8344d77a46f6a7df7853))))))
@@ -3200,145 +3200,145 @@
   (extra (
     (cleanup.sh (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/cleanup.sh)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/cleanup.sh)
       (hash (
         SHA256
         32d1c0b93c6031afa8e27bb309fb00fc5eab10f2f88b16ee424a1c1c420275f2))))
     (dune.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/dune.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/dune.patch)
       (hash (
         SHA256
         e1ccb1e74d85bc4630d3950558b81c6bf00ec0224523e5a9a0ca6493f98337b2))))
     (ppxlib+ast+ast.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast.ml.patch)
       (hash (
         SHA256
         1370418b4381e03d814ee4f379e517778ecce877272b0c6bcf39a036fc494a7a))))
     (ppxlib+ast+ast_helper_lite.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast_helper_lite.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast_helper_lite.ml.patch)
       (hash (
         SHA256
         fcb837e075692245ec576e6a336f20de55020b128bfe5df5d3c543407b823e20))))
     (ppxlib+ast+ast_helper_lite.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast_helper_lite.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+ast_helper_lite.mli.patch)
       (hash (
         SHA256
         ee1f7dbff5ab1bb5c2ce3635ff948b75de376d9b632d7c5f763eca09e3010cd1))))
     (ppxlib+ast+location_error.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+location_error.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+location_error.ml.patch)
       (hash (
         SHA256
         c6392beb60da208e53264e8ef2b6aff87333dd616b4cdd7b7d639c58d781fa18))))
     (ppxlib+ast+location_error.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+location_error.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+location_error.mli.patch)
       (hash (
         SHA256
         1f8146d575a3c0e95170b309b90c78c05f56cd8b4547ce536ed3ed91d9ddd8c5))))
     (ppxlib+ast+supported_version+supported_version.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+supported_version+supported_version.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+supported_version+supported_version.ml.patch)
       (hash (
         SHA256
         a7762cf03e1aeb12d3916da21e08874737a0324e7e3ebd4d13431e04641dec7d))))
     (ppxlib+ast+versions.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+versions.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+versions.ml.patch)
       (hash (
         SHA256
         b0860295416b010107a99dbd14f094376c6b44109747f3436935ad861aeda19d))))
     (ppxlib+ast+versions.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+versions.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+ast+versions.mli.patch)
       (hash (
         SHA256
         3ea1dd81309fa433ef498a9e756f6a6f815cc3a919bfbe177ceb1e085ffdb055))))
     (ppxlib+astlib+ast_414.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_414.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_414.ml.patch)
       (hash (
         SHA256
         b5feecd4103b31e66342cb6ae70cfd72b0bccf26c9ecea414bc0b6a136eaf19e))))
     (ppxlib+astlib+ast_500.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_500.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_500.ml.patch)
       (hash (
         SHA256
         cfb9281d210a4b7744b938afb39c06cb360b86b7fbdef86f0a496e9ce87e006d))))
     (ppxlib+astlib+ast_999.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_999.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_999.ml.patch)
       (hash (
         SHA256
         c7ccba33220660b099d80a528d391655284bc4867c5a3aaed093dbd271afb656))))
     (ppxlib+astlib+ast_metadata.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_metadata.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+ast_metadata.mli.patch)
       (hash (
         SHA256
         f57b43dba6f1abba33cf8c302e12448f4c7262d9831bcfe5545f83f201d90549))))
     (ppxlib+astlib+astlib.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+astlib.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+astlib.ml.patch)
       (hash (
         SHA256
         fc728f66702ffcd43060a8d034c053a2e24939eba89a18f1a3b4d86dee71c41b))))
     (ppxlib+astlib+cinaps+astlib_cinaps_helpers.ml.patch
      ((url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+cinaps+astlib_cinaps_helpers.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+cinaps+astlib_cinaps_helpers.ml.patch)
       (hash (
         SHA256
         8a45c26531773e7bbc0ca0a195ac0ad7fc7b559fe97110f3adde66181e6f7781))))
     (ppxlib+astlib+config+gen.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+config+gen.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+config+gen.ml.patch)
       (hash (
         SHA256
         63e1849d90ca2a6c391a401b0e87ce853dbfc44488ba3b8d449af7a81b5ddbad))))
     (ppxlib+astlib+migrate_500_999.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+migrate_500_999.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+migrate_500_999.ml.patch)
       (hash (
         SHA256
         36947ec4fb25f6fb39ea0787cb89b5ea032ae90134540c851493ef612cb28acd))))
     (ppxlib+astlib+migrate_999_500.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+migrate_999_500.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+migrate_999_500.ml.patch)
       (hash (
         SHA256
         49ebeb191f409e642d1ff366e83518594560161d26129494cb2c63d561dc72a4))))
     (ppxlib+astlib+parse.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+parse.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+parse.mli.patch)
       (hash (
         SHA256
         48120552f6d9ac715f5c953d1182fb0d4f5aa294467b23e4f50ca4eeede9993a))))
     (ppxlib+astlib+pprintast.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+pprintast.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+pprintast.ml.patch)
       (hash (
         SHA256
         3c70c302711a0e05843a720df746d3d3aa8c06b63b89079e07834a8ee716d56f))))
     (ppxlib+astlib+pprintast.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+pprintast.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+pprintast.mli.patch)
       (hash (
         SHA256
         fa622981e0270f8233b4edaf7e6dde917d74664e53bf4d4b9aeff4c07a09e609))))
     (ppxlib+astlib+stdlib0.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+stdlib0.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+astlib+stdlib0.ml.patch)
       (hash (
         SHA256
         b96db1df2b603c7c715529261993fdaa82e99972b014f63d8274b8bc1ff6ed80))))
     (ppxlib+stdppx+stdppx.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+stdppx+stdppx.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ppxlib_ast/ppxlib_ast.0.33.0+ox/files/ppxlib+stdppx+stdppx.ml.patch)
       (hash (
         SHA256
         dec070c22971345938d20d5b77208497bb500c61ff176f9cc39df7279285ca95))))))
@@ -3466,7 +3466,7 @@
   (extra ((
     sedlex+syntax+ppx_sedlex.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/sedlex/sedlex.3.3+ox/files/sedlex+syntax+ppx_sedlex.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/sedlex/sedlex.3.3+ox/files/sedlex+syntax+ppx_sedlex.ml.patch)
       (hash (
         SHA256
         67fd4616d46d1c98cc6658620de963bb1ceabb6a0168faaa465626d87381bc74))))))
@@ -3601,19 +3601,19 @@
   (extra (
     (spawn+src+spawn.ml.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn.ml.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn.ml.patch)
       (hash (
         SHA256
         babfc849dc15cdfbd7622f3b2d7d5edf0e519a163b682fa3fe2bc63bbac5933f))))
     (spawn+src+spawn.mli.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn.mli.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn.mli.patch)
       (hash (
         SHA256
         58b66053584bd01bb433437a92aaecde83899d8f1be4343273fa80593581a485))))
     (spawn+src+spawn_stubs.c.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn_stubs.c.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/spawn/spawn.v0.15.1+ox/files/spawn+src+spawn_stubs.c.patch)
       (hash (
         SHA256
         3429fd13b77648ffaa92ef808d72bbabbd82a119222deda7ddef85e4aa6d3567))))))
@@ -3751,7 +3751,7 @@
   (extra ((
     topkg_string.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/topkg/topkg.1.0.8+ox/files/topkg_string.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/topkg/topkg.1.0.8+ox/files/topkg_string.patch)
       (hash (
         SHA256
         a3c3a44d4ec429039a1463ef2c0ce3153a5c8c98af8e7c2c09905150e17d0e5a))))))
@@ -3893,13 +3893,13 @@
   (extra (
     (uutf-locals.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/uutf/uutf.1.0.3+ox/files/uutf-locals.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/uutf/uutf.1.0.3+ox/files/uutf-locals.patch)
       (hash (
         SHA256
         cf3a0969653b405ad165312dfa6ef9038fe087ac9dd070f4b27bf4790e84e0ce))))
     (uutf-portable.patch (
       (url
-       https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/packages/uutf/uutf.1.0.3+ox/files/uutf-portable.patch)
+       https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/uutf/uutf.1.0.3+ox/files/uutf-portable.patch)
       (hash (
         SHA256
         06130fcb93a61add6f7f0ca80d6a220c5e9f24568da5bd6f60f975f67417e5c9))))))

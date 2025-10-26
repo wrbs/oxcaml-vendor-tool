@@ -19,6 +19,24 @@ module Hash = struct
   end
 
   type t = Kind.t * string [@@deriving sexp, compare]
+
+  let to_opam ((kind, data) : t) =
+    match kind with
+    | MD5 -> OpamHash.md5 data
+    | SHA256 -> OpamHash.sha256 data
+    | SHA512 -> OpamHash.sha512 data
+  ;;
+
+  let of_opam hash =
+    let kind : Kind.t =
+      match OpamHash.kind hash with
+      | `MD5 -> MD5
+      | `SHA256 -> SHA256
+      | `SHA512 -> SHA512
+    in
+    let value = OpamHash.contents hash in
+    kind, value
+  ;;
 end
 
 module Http_source = struct

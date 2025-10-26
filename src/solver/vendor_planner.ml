@@ -38,17 +38,6 @@ module Disk_package = struct
   ;;
 end
 
-let hash_of_opam hash : Lock_file.Hash.t =
-  let kind : Lock_file.Hash.Kind.t =
-    match OpamHash.kind hash with
-    | `MD5 -> MD5
-    | `SHA256 -> SHA256
-    | `SHA512 -> SHA512
-  in
-  let value = OpamHash.contents hash in
-  kind, value
-;;
-
 let http_source_of_opam opam_url =
   let url = OpamFile.URL.url opam_url in
   let url =
@@ -70,7 +59,7 @@ let http_source_of_opam opam_url =
     OpamFile.URL.checksum opam_url
     |> OpamHash.sort
     |> List.hd
-    |> Option.map ~f:hash_of_opam
+    |> Option.map ~f:Lock_file.Hash.of_opam
     |> Option.value_or_thunk ~default:(fun () ->
       raise_s [%message "Hash expected" (url : string)])
   in
@@ -193,7 +182,7 @@ module Includable_package = struct
       |> Option.value ~default:[]
       |> List.map ~f:(fun (name, hash) ->
         let url = package.repo_url ^/ "files" ^/ OpamFilename.Base.to_string name in
-        let hash = hash_of_opam hash in
+        let hash = Lock_file.Hash.of_opam hash in
         OpamFilename.Base.to_string name, { Lock_file.Http_source.url; hash })
     in
     let extra_sources =

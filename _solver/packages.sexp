@@ -1,6 +1,6 @@
 (ox (
   (url_prefix
-   https://raw.githubusercontent.com/oxcaml/opam-repository/eeedfd918e54a8741d26af1a4ff2991b21c1045f/)
+   https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/)
   (packages (
     (abstract_algebra           v0.18~preview.130.55+197)
     (accessor                   v0.18~preview.130.55+197)

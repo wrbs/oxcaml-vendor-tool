@@ -36,6 +36,14 @@ module Job : sig
   include Monad.S with type 'a t := 'a t
 
   val run : 'a t -> 'a
+
+  module Or_error : sig
+    type nonrec 'a t = 'a Or_error.t t
+
+    include Monad.S with type 'a t := 'a t
+
+    val command : OpamProcess.command -> unit t
+  end
 end
 
 module Opam_file : sig
@@ -76,6 +84,7 @@ module Par : sig
 
     val run : 'a t -> jobs:int -> 'a
     val output_dot : _ t -> Out_channel.t -> unit
+    val json : _ t -> string
   end
 
   val compile : 'a t -> 'a Compiled.t
@@ -85,6 +94,16 @@ module Par : sig
       val map : 'a t -> f:('a -> 'b) -> 'b t
       val bind : 'a t -> f:('a -> 'b Job.t) -> 'b t
       val both : 'a t -> 'b t -> ('a * 'b) t
+    end
+  end
+
+  module Desc : sig
+    module Let_syntax : sig
+      module Let_syntax : sig
+        val map : string * 'a t -> f:('a -> 'b) -> 'b t
+        val bind : string * 'a t -> f:('a -> 'b Job.t) -> 'b t
+        val both : 'a t -> string * 'b t -> string * ('a * 'b) t
+      end
     end
   end
 end

@@ -1,0 +1,6 @@
+(library
+ (name oxcaml_vendor_tool_fetch_and_patch)
+ (libraries core async opam-core oxcaml_vendor_tool_lib)
+ (inline_tests)
+ (preprocess
+  (pps ppx_jane)))

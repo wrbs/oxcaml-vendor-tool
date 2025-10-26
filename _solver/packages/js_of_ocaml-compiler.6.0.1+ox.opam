@@ -52,7 +52,6 @@ patches: [
   "js_of_ocaml-add-unboxed-and-float-block.patch"
   "js_of_ocaml-ident-is_global.patch"
   "js_of_ocaml-remove-float-externals.patch"
-  "js_of_ocaml-ocaml_version-ppx.patch"
   "js_of_ocaml-test-diffs-caused-by-build-differences.patch"
   "js_of_ocaml-fix-build_fs.patch"
   "js_of_ocaml-iarray-primitives.patch"
@@ -91,6 +90,7 @@ patches: [
   "js_of_ocaml-atomic-cmpxchg.patch"
   "js_of_ocaml-small-int-literals.patch"
   "dune.patch"
+ "js_of_ocaml-toplevel.patch"
 ]
 extra-files: [
   [
@@ -122,10 +122,6 @@ extra-files: [
     "sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   ]
   [
-    "js_of_ocaml-ocaml_version-ppx.patch"
-    "sha256=df6bcb6da8aa3dfd6bd0a178679987d41c400ec1803f4a66659cfc822d1b280f"
-  ]
-  [
     "js_of_ocaml-test-diffs-caused-by-build-differences.patch"
     "sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   ]
@@ -135,7 +131,7 @@ extra-files: [
   ]
   [
     "js_of_ocaml-iarray-primitives.patch"
-    "sha256=037ad55684c9ac3801ff284839d8bb1290d2e750cd4bcb03b75e5f4ab69559c9"
+    "sha256=8c320fb413daad0393347bf6a22ca31fe6f1d3dd34f58e313aa44cd060fc56f8"
   ]
   [
     "js_of_ocaml-important-config-changes.patch"
@@ -268,6 +264,10 @@ extra-files: [
   [
     "js_of_ocaml-atomic-cmpxchg.patch"
     "sha256=89612eb8c1e64898205c0b59c6b73987d2ff993a8c366fb61dac6db90e2806bc"
+  ]
+  [
+    "js_of_ocaml-toplevel.patch"
+    "sha256=fc9e1c363cd14d77edb3d6017ec2a8d2211dc755ff902e2a075a372b1e665f9e"
   ]
   [
     "js_of_ocaml-small-int-literals.patch"

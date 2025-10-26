@@ -5,7 +5,8 @@
   async
   oxcaml_vendor_tool_lib
   core_unix.command_unix
-  oxcaml_vendor_tool_solver)
+  oxcaml_vendor_tool_solver
+  oxcaml_vendor_tool_fetch_and_patch)
  (inline_tests)
  (preprocess
   (pps ppx_jane)))

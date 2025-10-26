@@ -1,5 +1,6 @@
 (repos (
-  (ox (github oxcaml/opam-repository main))
+  ;; (ox (github oxcaml/opam-repository main))
+  (ox (github patricoferris/oxcaml-opam-repository jsoo))
   (dune-overlays (github dune-universe/opam-overlays master))
   (opam (github ocaml/opam-repository master))))
 
@@ -11,22 +12,20 @@
   (os_version      system)))
 
 (package_selection (
-  ;; this is highly specialized for getting all JS packages in ox, probably no
-  ;; other use case
   (include_all_matching_version
+    ;; this is highly specialized for getting latest version of all JS packages
+    ;; in ox, probably no other use case
     (in_repo ox)
     (of_     core))
-  ;; extra packages
-  (include (
-    grace
-    ;; (grace "=1.2.3")
-  ))
-  ;; todo: exclude if we need it
+  (include (grace))
+  ;; (include (package (package (= version)) (package (< version)))) ...
+  ;; (exclude (package1 package2 ...))
 ))
 
 (vendoring (
   (exclude (dune ocamlbuild))
-  ;; avoid naming conflicts if JS splits things into 2 packages
+  ;; avoid naming conflicts where oxcaml repo splits same source into different
+  ;; packages with different patches
   (rename_dirs (
     (ojs        ojs)
     (ppxlib_ast ppxlib_ast)))

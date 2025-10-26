@@ -6,6 +6,7 @@ let command =
     ~summary:"tools for working with vendored oxcaml packages"
     [ "lock", Oxcaml_vendor_tool_solver.lock_command
     ; "lock-phases", Oxcaml_vendor_tool_solver.phases_command
+    ; "fetch", Oxcaml_vendor_tool_fetch_and_patch.fetch_command
     ]
 ;;
 

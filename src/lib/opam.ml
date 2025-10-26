@@ -329,17 +329,48 @@ module Filtered = struct
 end
 
 module Job = struct
-  type 'a t = 'a OpamProcess.job
+  module T = struct
+    type 'a t = 'a OpamProcess.job
 
-  include Monad.Make (struct
-      type nonrec 'a t = 'a t
+    include Monad.Make (struct
+        type nonrec 'a t = 'a t
 
-      let return x : _ t = Done x
-      let bind = fun t ~f -> OpamProcess.Job.Op.(t @@+ f)
-      let map = `Custom (fun t ~f -> OpamProcess.Job.Op.(t @@| f))
-    end)
+        let return x : _ t = Done x
+        let bind = fun t ~f -> OpamProcess.Job.Op.(t @@+ f)
+        let map = `Custom (fun t ~f -> OpamProcess.Job.Op.(t @@| f))
+      end)
 
-  let run : 'a t -> 'a = OpamProcess.Job.run
+    let run : 'a t -> 'a = OpamProcess.Job.run
+  end
+
+  module Or_error = struct
+    type 'a t = 'a Or_error.t T.t
+
+    let command cmd =
+      OpamProcess.Job.Op.(
+        cmd
+        @@> fun result ->
+        match result.r_code with
+        | 0 -> T.return (Ok ())
+        | code -> T.return (Or_error.error_s [%message "Command failed" (code : int)]))
+    ;;
+
+    include Monad.Make (struct
+        type nonrec 'a t = 'a t
+
+        let return x : _ t = T.return (Ok x)
+
+        let bind x ~f =
+          T.bind x ~f:(function
+            | Error error -> T.return (Error error)
+            | Ok x -> f x)
+        ;;
+
+        let map = `Custom (fun t ~f -> T.map t ~f:(Or_error.map ~f))
+      end)
+  end
+
+  include T
 end
 
 module Par = struct
@@ -485,6 +516,7 @@ module Par = struct
       }
 
     let output_dot t channel = G.Dot.output_graph channel t.graph
+    let json t = G.to_json t.graph |> OpamJson.to_string
 
     let run t ~jobs =
       let results = Vertex_id.Table.create () in
@@ -495,16 +527,22 @@ module Par = struct
               Univ.match_exn univ key.univ_key)
         }
       in
-      G.Parallel.iter t.graph ~jobs ~command:(fun ~pred:_ vertex ->
-        let (T node) = Hashtbl.find_exn t.nodes vertex in
-        let job = node.f getter in
-        let%map.Job result = job in
-        Hashtbl.add_exn
-          results
-          ~key:node.key.id
-          ~data:(Univ.create node.key.univ_key result);
-        ());
-      t.get_root getter
+      try
+        G.Parallel.iter t.graph ~jobs ~command:(fun ~pred:_ vertex ->
+          try
+            let (T node) = Hashtbl.find_exn t.nodes vertex in
+            let job = node.f getter in
+            let%map.Job result = job in
+            Hashtbl.add_exn
+              results
+              ~key:node.key.id
+              ~data:(Univ.create node.key.univ_key result)
+          with
+          | exn -> Error.raise (Error.of_exn ~backtrace:`Get exn));
+        t.get_root getter
+      with
+      | G.Parallel.Errors (_, exns, _) ->
+        raise_s [%message "Parallel errors" (exns : (Vertex.t * exn) list)]
     ;;
   end
 
@@ -526,7 +564,7 @@ module Par = struct
         Hashtbl.add_exn nodes ~key:vertex ~data:packed;
         List.iter node.deps ~f:(fun dep ->
           let parent = aux dep in
-          G.add_edge graph vertex parent);
+          G.add_edge graph parent vertex);
         vertex
     in
     let deps, get_root = get t in
@@ -541,6 +579,16 @@ module Par = struct
       let map x ~f = map x ~f
       let bind x ~f = spawn x ~f
       let both = both
+    end
+  end
+
+  module Desc = struct
+    module Let_syntax = struct
+      module Let_syntax = struct
+        let map (desc, x) ~f = map x ~f ~desc
+        let bind (desc, x) ~f = spawn x ~f ~desc
+        let both a (desc, b) = desc, both a b
+      end
     end
   end
 end
