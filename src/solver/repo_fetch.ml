@@ -28,11 +28,17 @@ let resolve_source : Config.Repo_source.t -> _ = function
   | Github (user_repo, ref) ->
     let user, repo = String.lsplit2_exn user_repo ~on:'/' in
     let%map sha = resolve_github_ref ~user ~repo ~ref in
-    { OpamUrl.transport = "https"
-    ; path = [%string "github.com/%{user}/%{repo}.git"]
-    ; hash = Some sha
-    ; backend = `git
-    }
+    let full_repo =
+      { OpamUrl.transport = "https"
+      ; path = [%string "github.com/%{user}/%{repo}.git"]
+      ; hash = Some sha
+      ; backend = `git
+      }
+    in
+    let single_file_http =
+      [%string "https://raw.githubusercontent.com/%{user}/%{repo}/%{sha}/"]
+    in
+    { Config.Repo_paths.full_repo; single_file_http }
 ;;
 
 let lock (config : Config.Solver_config.t) ~project =
@@ -53,11 +59,14 @@ let fetch (repos : Config.Repos.t) ~project =
   let%map () = Unix.mkdir ~p:() repos_dir in
   Opam.Par.Compiled.run
     ~jobs:8
-    (List.map repos ~f:(fun (repo, repo_url) ->
+    (List.map repos ~f:(fun (repo, paths) ->
        Opam.Par.job
          ~desc:(Repo.to_string repo)
          (OpamRepository.update
-            { repo_name = Repo.to_opam repo; repo_url; repo_trust = None }
+            { repo_name = Repo.to_opam repo
+            ; repo_url = paths.full_repo
+            ; repo_trust = None
+            }
             (Repo.opam_dir repo ~project)
           |> Opam.Job.ignore_m))
      |> Opam.Par.all_unit

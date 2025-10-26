@@ -54,7 +54,12 @@ module Solver_config = struct
   end
 
   module Vendoring = struct
-    type t = { exclude : Opam.Package.Name.Set.t } [@@deriving sexp]
+    type t =
+      { exclude : Opam.Package.Name.Set.t
+      ; rename_dirs : string Opam.Package.Name.Map.t
+      ; prepare_commands : string list list Lock_file.Vendor_dir.Map.t
+      }
+    [@@deriving sexp]
   end
 
   type t =
@@ -66,10 +71,18 @@ module Solver_config = struct
   [@@deriving sexp]
 end
 
+module Repo_paths = struct
+  type t =
+    { full_repo : Opam.Url.t
+    ; single_file_http : string
+    }
+  [@@deriving sexp]
+end
+
 module Repos = struct
   let path = main_dir ^/ "repos.sexp"
 
-  type t = (Repo.t * Opam.Url.t) list [@@deriving sexp]
+  type t = (Repo.t * Repo_paths.t) list [@@deriving sexp]
 end
 
 module Desired_packages = struct
@@ -92,4 +105,61 @@ module Desired_packages = struct
        | Ok x -> x
        | Error error -> raise (Of_sexp_error (Error.to_exn error, sexp)))
   ;;
+end
+
+module Fetched_packages = struct
+  let path = main_dir ^/ "packages.sexp"
+
+  module Package_and_dir = struct
+    type t =
+      { package : Opam.Package.t
+      ; version_dir : string option
+      }
+
+    let sexp_of_t t =
+      match t.version_dir with
+      | None -> [%sexp (t.package : Opam.Package.t)]
+      | Some dir ->
+        let name = OpamPackage.name t.package in
+        let version = OpamPackage.version t.package in
+        [%sexp
+          [ (name : Opam.Package.Name.t)
+          ; (version : Opam.Package.Version.t)
+          ; (dir : string)
+          ]]
+    ;;
+
+    let t_of_sexp (sexp : Sexp.t) =
+      match sexp with
+      | List [ name; version; dir ] ->
+        { package = [%of_sexp: Opam.Package.t] (List [ name; version ])
+        ; version_dir = Some ([%of_sexp: string] dir)
+        }
+      | _ -> { package = [%of_sexp: Opam.Package.t] sexp; version_dir = None }
+    ;;
+
+    let create ~package ~version_dir =
+      let version_dir =
+        if [%equal: string] version_dir (Opam.Package.to_string package)
+        then None
+        else Some version_dir
+      in
+      { package; version_dir }
+    ;;
+
+    let version_dir t =
+      Option.value_or_thunk t.version_dir ~default:(fun () ->
+        OpamPackage.to_string t.package)
+    ;;
+  end
+
+  module Repo_info = struct
+    type t =
+      { url_prefix : string
+      ; packages : Package_and_dir.t list
+      }
+    [@@deriving sexp]
+  end
+
+  type t = (Repo.t * Repo_info.t) list [@@deriving sexp]
 end

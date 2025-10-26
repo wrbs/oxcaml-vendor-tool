@@ -232,6 +232,8 @@ end
 module Filter = struct
   type t = OpamTypes.filter
 
+  let compare = Comparable.lift [%compare: string] ~f:OpamFilter.to_string
+
   let var_to_string packages var =
     let var = OpamVariable.to_string var in
     match packages with
@@ -311,7 +313,7 @@ module Filter = struct
 end
 
 module Filtered = struct
-  type 'a t = 'a * Filter.t option
+  type 'a t = 'a * Filter.t option [@@deriving compare]
 
   let sexp_of_t sexp_of_a (a, filter) =
     match filter with

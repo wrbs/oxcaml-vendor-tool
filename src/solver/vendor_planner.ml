@@ -10,70 +10,83 @@ open Oxcaml_vendor_tool_lib
 module Disk_package = struct
   type t =
     { package : Opam.Package.t
+    ; repo_url : string
     ; opam_file : Opam.Opam_file.t
     }
   [@@deriving sexp_of]
 
   let load_all ~project =
     let package_dir = Project.path project Config.package_dir in
-    Sys.ls_dir package_dir
-    >>= Deferred.List.filter_map ~how:`Parallel ~f:(fun dirname ->
-      let opam_path = package_dir ^/ dirname ^/ "opam" in
-      match%bind Sys.file_exists_exn opam_path with
-      | false -> return None
-      | true ->
-        let package = OpamPackage.of_string dirname in
+    let%bind repos = Configs.load (module Config.Fetched_packages) project in
+    List.concat_map repos ~f:(fun (_repo, repo_info) ->
+      List.map repo_info.packages ~f:(fun package_and_dir ->
+        let package = package_and_dir.package in
+        let version_dir =
+          Config.Fetched_packages.Package_and_dir.version_dir package_and_dir
+        in
+        let repo_url =
+          repo_info.url_prefix
+          ^/ "packages"
+          ^/ OpamPackage.name_to_string package
+          ^/ version_dir
+        in
+        let opam_path = package_dir ^/ [%string "%{version_dir}.opam"] in
         let%map contents = Reader.file_contents opam_path in
         let opam_file = OpamFile.OPAM.read_from_string contents in
-        Some { package; opam_file })
+        { package; repo_url; opam_file }))
+    |> Deferred.all
   ;;
 end
 
-module Hash = struct
-  module Kind = struct
-    type t =
-      | SHA512
-      | SHA256
-      | MD5
-    [@@deriving sexp, compare]
-  end
+let hash_of_opam hash : Lock_file.Hash.t =
+  let kind : Lock_file.Hash.Kind.t =
+    match OpamHash.kind hash with
+    | `MD5 -> MD5
+    | `SHA256 -> SHA256
+    | `SHA512 -> SHA512
+  in
+  let value = OpamHash.contents hash in
+  kind, value
+;;
 
-  type t = Kind.t * string [@@deriving sexp, compare]
+let http_source_of_opam opam_url =
+  let url = OpamFile.URL.url opam_url in
+  let url =
+    match url.backend with
+    | `http -> OpamUrl.base_url url
+    | _ -> raise_s [%message "Invalid opam url, expected http" (url : Opam.Url.t)]
+  in
+  let () =
+    match OpamFile.URL.subpath opam_url with
+    | None -> ()
+    | Some subpath ->
+      raise_s
+        [%message
+          "Subpath unexpected"
+            (url : string)
+            ~subpath:(OpamFilename.SubPath.to_string subpath)]
+  in
+  let hash =
+    OpamFile.URL.checksum opam_url
+    |> OpamHash.sort
+    |> List.hd
+    |> Option.map ~f:hash_of_opam
+    |> Option.value_or_thunk ~default:(fun () ->
+      raise_s [%message "Hash expected" (url : string)])
+  in
+  { Lock_file.Http_source.url; hash }
+;;
 
-  let of_opam hash : t =
-    let kind : Kind.t =
-      match OpamHash.kind hash with
-      | `MD5 -> MD5
-      | `SHA256 -> SHA256
-      | `SHA512 -> SHA512
-    in
-    let value = OpamHash.contents hash in
-    kind, value
-  ;;
-end
-
-module Source = struct
-  type t =
-    { url : Opam.Url.t
-    ; hash : Hash.t option
-    ; subpath : string option [@sexp.option]
-    }
-  [@@deriving sexp]
-
-  let of_opam opam_url =
-    let url = OpamFile.URL.url opam_url in
-    let subpath =
-      OpamFile.URL.subpath opam_url |> Option.map ~f:OpamFilename.SubPath.to_string
-    in
-    let hash =
-      OpamFile.URL.checksum opam_url
-      |> OpamHash.sort
-      |> List.hd
-      |> Option.map ~f:Hash.of_opam
-    in
-    { url; hash; subpath }
-  ;;
-end
+let main_source_of_opam opam_url =
+  let url = OpamFile.URL.url opam_url in
+  match url.backend with
+  | `http -> Lock_file.Main_source.Http (http_source_of_opam opam_url)
+  | `git ->
+    let repo_url = [%string "%{url.transport}://%{url.path}"] in
+    let hash = Option.value_exn url.hash in
+    Lock_file.Main_source.Git { url = repo_url; rev = hash }
+  | _ -> raise_s [%message "Invalid opam url, expected http or git" (url : Opam.Url.t)]
+;;
 
 module Cmd = struct
   module Arg = struct
@@ -91,9 +104,11 @@ module Cmd = struct
       | List [ Atom s ] -> CIdent s
       | _ -> of_sexp_error "invalid arg" sexp
     ;;
+
+    let compare = Comparable.lift [%compare: Sexp.t] ~f:[%sexp_of: t]
   end
 
-  type t = Arg.t Opam.Filtered.t list [@@deriving sexp]
+  type t = Arg.t Opam.Filtered.t list [@@deriving sexp, compare]
 
   let is_dune_build (t : t) =
     match t with
@@ -114,7 +129,7 @@ module Build_steps = struct
   type t =
     | Normal_dune
     | Custom of Cmd.t Opam.Filtered.t list
-  [@@deriving sexp]
+  [@@deriving sexp, compare]
 
   let of_build (commands : Cmd.t Opam.Filtered.t list) =
     match commands with
@@ -128,10 +143,9 @@ end
 module Includable_package = struct
   type t =
     { package : Opam.Package.t
-    ; source : Source.t
+    ; source : Lock_file.Main_source.t
     ; repo_basename : string option
-    ; extra_files : (string * Hash.t) list [@sexp.list]
-    ; extra_sources : (string * Source.t) list [@sexp.list]
+    ; extra : Lock_file.Http_source.t String.Map.t [@sexp.map]
     ; patches : string Opam.Filtered.t list [@sexp.list]
     ; build_steps : Build_steps.t
     }
@@ -167,7 +181,9 @@ module Includable_package = struct
 
   let of_disk_package_opt (package : Disk_package.t) ~config =
     let open Option.Let_syntax in
-    let%bind.Option source = OpamFile.OPAM.url package.opam_file >>| Source.of_opam in
+    let%bind.Option source =
+      OpamFile.OPAM.url package.opam_file >>| main_source_of_opam
+    in
     let%map.Option () = Option.some_if (not (should_exclude package ~config)) () in
     let repo_basename =
       OpamFile.OPAM.dev_repo package.opam_file |> Option.bind ~f:extract_repo_basename
@@ -176,12 +192,14 @@ module Includable_package = struct
       OpamFile.OPAM.extra_files package.opam_file
       |> Option.value ~default:[]
       |> List.map ~f:(fun (name, hash) ->
-        OpamFilename.Base.to_string name, Hash.of_opam hash)
+        let url = package.repo_url ^/ "files" ^/ OpamFilename.Base.to_string name in
+        let hash = hash_of_opam hash in
+        OpamFilename.Base.to_string name, { Lock_file.Http_source.url; hash })
     in
     let extra_sources =
       OpamFile.OPAM.extra_sources package.opam_file
       |> List.map ~f:(fun (name, url) ->
-        OpamFilename.Base.to_string name, Source.of_opam url)
+        OpamFilename.Base.to_string name, http_source_of_opam url)
     in
     let patches =
       OpamFile.OPAM.patches package.opam_file
@@ -191,25 +209,113 @@ module Includable_package = struct
     { package = package.package
     ; source
     ; repo_basename
-    ; extra_files
-    ; extra_sources
+    ; extra = extra_sources @ extra_files |> String.Map.of_alist_exn
     ; patches
     ; build_steps
     }
   ;;
 end
 
+let write_nonstandard_build_packages
+      ~(includable_packages : Includable_package.t list)
+      ~project
+  =
+  let sexps =
+    List.filter_map includable_packages ~f:(fun pkg ->
+      match pkg.build_steps with
+      | Normal_dune -> None
+      | Custom steps ->
+        Some
+          [%sexp [ (pkg.package : Opam.Package.t); (steps : Cmd.t Opam.Filtered.t list) ]])
+  in
+  let contents = Configs.format_sexps sexps in
+  let path =
+    Project.path project (Config.main_dir ^/ "nonstandard-build-packages.sexp")
+  in
+  Writer.save path ~contents
+;;
+
+module Build_info = struct
+  type t =
+    { source : Lock_file.Main_source.t
+    ; extra : Lock_file.Http_source.t String.Map.t [@sexp.map]
+    ; patches : string list [@sexp.list]
+    ; build_steps : Build_steps.t
+    }
+  [@@deriving sexp, compare]
+end
+
+let construct_lock_file
+      ~(includable_packages : Includable_package.t list)
+      ~(config : Config.Solver_config.t)
+  =
+  let build_info_by_name =
+    List.map includable_packages ~f:(fun pkg ->
+      let dirname =
+        match Map.find config.vendoring.rename_dirs (OpamPackage.name pkg.package) with
+        | Some dir -> dir
+        | None ->
+          (match pkg.repo_basename with
+           | None ->
+             raise_s
+               [%message
+                 "Unsure what vendored dir name to use" (pkg.package : Opam.Package.t)]
+           | Some s -> s)
+      in
+      let dir = Lock_file.Vendor_dir.of_string dirname in
+      let patches =
+        List.map pkg.patches ~f:(fun (patch, filter) ->
+          Option.iter filter ~f:(fun filter ->
+            raise_s
+              [%message
+                "Unsure whether to apply patch"
+                  (pkg.package : Opam.Package.t)
+                  (patch : string)
+                  (filter : Opam.Filter.t)]);
+          patch)
+      in
+      let build_info =
+        { Build_info.source = pkg.source
+        ; extra = pkg.extra
+        ; patches
+        ; build_steps = pkg.build_steps
+        }
+      in
+      dir, build_info)
+    |> Lock_file.Vendor_dir.Map.of_alist_multi
+    |> Map.map ~f:(List.dedup_and_sort ~compare:[%compare: Build_info.t])
+    |> Map.map ~f:(function
+      | [ build_info ] -> build_info
+      | options ->
+        raise_s
+          [%message
+            "Conflicting build info for the same dir name, maybe rename one of them"
+              (options : Build_info.t list)])
+  in
+  Map.mapi
+    build_info_by_name
+    ~f:(fun ~key:dir ~data:{ source; extra; patches; build_steps = _ } ->
+      let prepare_commands =
+        Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
+      in
+      { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands })
+;;
+
+let execute config ~project =
+  let%bind disk_packages = Disk_package.load_all ~project in
+  let includable_packages =
+    List.filter_map disk_packages ~f:(Includable_package.of_disk_package_opt ~config)
+  in
+  let%bind () = write_nonstandard_build_packages ~includable_packages ~project in
+  let lock_file = construct_lock_file ~includable_packages ~config in
+  Configs.save (module Lock_file) lock_file ~in_:project
+;;
+
 let command =
   Command.async ~summary:"plan how to vendor things based on opam files"
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind disk_packages = Disk_package.load_all ~project
-    and config = Configs.load (module Config.Solver_config) project in
-    let includable_packages =
-      List.filter_map disk_packages ~f:(Includable_package.of_disk_package_opt ~config)
-    in
-    List.iter includable_packages ~f:(fun package ->
-      print_s [%sexp (package : Includable_package.t)]);
-    return ()
+    let%bind config = Configs.load (module Config.Solver_config) project in
+    execute config ~project
 ;;

@@ -24,4 +24,13 @@
   ;; todo: exclude if we need it
 ))
 
-(vendoring ((exclude (dune ocamlbuild))))
+(vendoring (
+  (exclude (dune ocamlbuild))
+  ;; avoid naming conflicts if JS splits things into 2 packages
+  (rename_dirs (
+    (ojs        ojs)
+    (ppxlib_ast ppxlib_ast)))
+  ;; custom commands in the opam file that need to run before the build
+  (prepare_commands (
+    (ppxlib ((rm -rf ast astlib stdppx traverse_builtins)))
+    (ppxlib_ast ((bash ./cleanup.sh)))))))

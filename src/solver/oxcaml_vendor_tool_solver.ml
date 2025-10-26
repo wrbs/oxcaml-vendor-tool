@@ -10,7 +10,9 @@ let lock_command =
     let%bind config = Configs.load (module Config.Solver_config) project in
     let%bind repos = Repo_fetch.sync_all config ~project in
     let%bind desired_packages = Desired_package_resolution.execute config ~project in
-    Solver.solve_and_sync ~config ~repos ~desired_packages ~project
+    let%bind () = Solver.solve_and_sync ~config ~repos ~desired_packages ~project in
+    let%bind () = Vendor_planner.execute config ~project in
+    return ()
 ;;
 
 let phases_command =

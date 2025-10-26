@@ -41,7 +41,7 @@ end
 module Package_source = struct
   type t =
     { repo : Repo.t
-    ; package_dir : string
+    ; version_dir : string
     }
 end
 
@@ -60,9 +60,9 @@ let load_packages t name =
     let versions_dir =
       Repo.dir repo ~project:t.project ^/ "packages" ^/ OpamPackage.Name.to_string name
     in
-    List.filter_map (list_dir versions_dir) ~f:(fun subdir ->
-      let%bind.Option package = OpamPackage.of_string_opt subdir in
-      let package_dir = versions_dir ^/ subdir in
+    List.filter_map (list_dir versions_dir) ~f:(fun version_dir ->
+      let%bind.Option package = OpamPackage.of_string_opt version_dir in
+      let package_dir = versions_dir ^/ version_dir in
       let opam_file_path = package_dir ^/ "opam" in
       match Sys_unix.file_exists_exn opam_file_path with
       | false -> None
@@ -70,7 +70,7 @@ let load_packages t name =
         (match Hashtbl.mem t.package_sources package with
          | true -> None (* seen in some other repo *)
          | false ->
-           Hashtbl.add_exn t.package_sources ~key:package ~data:{ repo; package_dir };
+           Hashtbl.add_exn t.package_sources ~key:package ~data:{ repo; version_dir };
            Some (OpamPackage.version package, opam_file_path)))
     |> List.sort
          ~compare:(Comparable.lift [%compare: OpamPackage.Version.t] ~f:Tuple2.get1))

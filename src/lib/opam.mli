@@ -43,11 +43,11 @@ module Opam_file : sig
 end
 
 module Filter : sig
-  type t = OpamTypes.filter [@@deriving sexp]
+  type t = OpamTypes.filter [@@deriving sexp, compare]
 end
 
 module Filtered : sig
-  type 'a t = 'a * OpamTypes.filter option [@@deriving sexp]
+  type 'a t = 'a * OpamTypes.filter option [@@deriving sexp, compare]
 end
 
 module Par : sig

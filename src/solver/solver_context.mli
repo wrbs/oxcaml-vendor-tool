@@ -38,7 +38,7 @@ val create
 module Package_source : sig
   type t =
     { repo : Repo.t
-    ; package_dir : string
+    ; version_dir : string
     }
 end
 
