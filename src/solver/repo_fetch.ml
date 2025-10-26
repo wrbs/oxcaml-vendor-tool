@@ -71,8 +71,12 @@ let fetch (repos : Config.Repos.t) ~project =
      |> Opam.Par.all_unit)
 ;;
 
-let sync_all config ~project =
-  let%bind repos = lock config ~project in
+let sync_all config ~project ~update_lock =
+  let%bind repos =
+    if update_lock
+    then lock config ~project
+    else Configs.load (module Config.Repos) project
+  in
   fetch repos ~project;
   return repos
 ;;
@@ -83,7 +87,7 @@ let lock_and_sync_command =
   let%map_open.Command project = Project.param in
   fun () ->
     let%bind config = Configs.load (module Config.Solver_config) project in
-    let%map _repos = sync_all config ~project in
+    let%map _repos = sync_all config ~project ~update_lock:true in
     ()
 ;;
 

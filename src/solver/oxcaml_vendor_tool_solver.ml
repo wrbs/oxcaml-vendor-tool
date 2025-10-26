@@ -5,10 +5,15 @@ open Oxcaml_vendor_tool_lib
 let lock_command =
   Command.async ~summary:"refresh and lock the packages to fetch"
   @@
-  let%map_open.Command project = Project.param in
+  let%map_open.Command project = Project.param
+  and no_update_repos =
+    flag "no-update-repos" no_arg ~doc:"keep repos at previous commit revision"
+  in
   fun () ->
     let%bind config = Configs.load (module Config.Solver_config) project in
-    let%bind repos = Repo_fetch.sync_all config ~project in
+    let%bind repos =
+      Repo_fetch.sync_all config ~project ~update_lock:(not no_update_repos)
+    in
     let%bind desired_packages = Desired_package_resolution.execute config ~project in
     let%bind () = Solver.solve_and_sync ~config ~repos ~desired_packages ~project in
     let%bind () = Vendor_planner.execute config ~project in
