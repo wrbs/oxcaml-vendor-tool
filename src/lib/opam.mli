@@ -60,6 +60,16 @@ module Job : sig
 end
 
 module Par : sig
+  (** A graph-building interface around [OpamParallel] that makes it way easier
+     to mix up types.
+
+     Unlike a general monad, you must commit to the 'shape' of the graph
+     upfront, but you can execute different jobs based on the outputs in the
+     graph. This is why there's no [bind].
+     
+     The [?desc] arguments are used to annotate the jobs in the compiled graph's
+     json or dot output/label failure messages if present *)
+
   type 'a t
 
   (* Execution *)
@@ -72,13 +82,19 @@ module Par : sig
   val all : 'a t list -> 'a list t
   val all_unit : 'a t list -> unit t
 
-  (** Combinators  *)
-
+  (** Returns a value. Does not make a new node*)
   val return : 'a -> 'a t
-  val job : ?desc:string -> 'a Job.t -> 'a t
+
+  (** Main 'bind'-like interface: [spawn t ~f] creates a new node depending on
+      everything used to produce [t] that runs [f] on the value of [t] when ran *)
   val spawn : ?desc:string -> 'a t -> f:('a -> 'b Job.t) -> 'b t
+
+  (** Helper for jobs with no dependencies *)
+  val job : ?desc:string -> 'a Job.t -> 'a t
+
+  (** Map a value. Does not make a new node for constants but otherwise does 
+      (i.e. the output is cached as part of the graph) *)
   val map : ?desc:string -> 'a t -> f:('a -> 'b) -> 'b t
-  val both : 'a t -> 'b t -> ('a * 'b) t
 
   (** Maps an output without actually making a new node in the graph:
       each time the value is needed by some other node it will be recomputed *)
@@ -88,30 +104,54 @@ module Par : sig
       doesn't make a new node *)
   val ignore : 'a t -> unit t
 
-  (** Failure *)
+  (** Combines two values, never makes a new node *)
+  val both : 'a t -> 'b t -> ('a * 'b) t
+
+  (** Failure; raises exceptions that will be shown in the console nicely.
+
+      Unhandled exceptions turn into a version of this with a backtrace.
+  
+      If a node fails, every node that depends on it will be skipped. *)
+
+  (** [fail "message %s" "args..." ] raises a failure with main log message
+       given by the format string.
+
+      [extra] if present is shown when printing error details at the end of execution *)
+  val fail
+    :  ?extra:
+         [ `msg of string (* is autoformatted *)
+         | `raw of string (* passed raw, no ending newline *)
+         | `error of Error.t (* formats error sexp *)
+         | `exn of exn (* shows exception without backtrace *)
+         | `exn_backtrace of exn (* shows exception + backtrace *)
+         ]
+    -> ('a, unit, string, _) format4
+    -> 'a
+
+  (** Raise a failure with string details.
+
+     Syntax:
+     
+    - {[fail_details "message without args" "details without args"]}
+    - {[fail_details "message: %s %s" "arg1" "arg2" "details: %s" "arg"]} *)
+  val fail_details : ('a, unit, string, ('b, unit, string, _) format4 -> 'b) format4 -> 'a
+
+  (** Commands: raises failures on non-0 exit status.
+  
+      Failure details have stdout/stderr/exit code.  *)
 
   type 'a command_output =
-    | Expect_none : unit command_output
+    | Expect_none : unit command_output (* fails if non-empty *)
     | Ignore : unit command_output
     | Return : string list command_output
 
   val command_or_fail : OpamProcess.command -> output:'a command_output -> 'a Job.t
 
-  val fail
-    :  ?extra:
-         [ `msg of string
-         | `raw of string
-         | `error of Error.t
-         | `exn of exn
-         | `exn_backtrace of exn
-         ]
-    -> ('a, unit, string, _) format4
-    -> 'a
-
-  val fail_details : ('a, unit, string, ('b, unit, string, _) format4 -> 'b) format4 -> 'a
-
-  (* Compilation *)
   module Compiled : sig
+    (** A compiled graph. You can print it out for graphviz/as json. 
+    
+      The main [run] is the same as [compile t |> Compiled.run] *)
+
     type 'a t
 
     val run : 'a t -> jobs:int -> ('a, unit) Result.t
@@ -122,6 +162,7 @@ module Par : sig
 
   val compile : 'a t -> 'a Compiled.t
 
+  (** In let syntax, [bind] is actually 'spawn' *)
   module Let_syntax : sig
     module Let_syntax : sig
       val map : 'a t -> f:('a -> 'b) -> 'b t
@@ -130,6 +171,13 @@ module Par : sig
     end
   end
 
+  (** Allows using descriptions and let syntax. Syntax:
+
+  {[let%bind.Opam.Par.Desc x = "desc", x_par in]}
+
+  {[let%map.Opam.Par.Desc x = x_par
+    and y = y_par 
+    and z = "desc", z_par in]} *)
   module Desc : sig
     module Let_syntax : sig
       module Let_syntax : sig

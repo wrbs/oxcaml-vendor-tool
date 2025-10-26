@@ -187,6 +187,9 @@ module Job = struct
 end
 
 module Par = struct
+  (* Overengineered but I think useful wrapper around the [Parallel] interface:
+     exposes a functional api that compiles into the graph *)
+
   module Vertex_id = struct
     include Unique_id.Int ()
   end
