@@ -5,21 +5,26 @@ let main_dir = "_solver"
 let package_dir = main_dir ^/ "packages"
 
 module Package_and_constraint = struct
-  type t = Opam.Package.Name.t * Opam.Version_formula.t option
+  type t = Opam.Package.Name.t * Opam.Version_constraint.t option
 
   let sexp_of_t =
     fun (name, constraint_) ->
     match constraint_ with
     | None -> [%sexp (name : Opam.Package.Name.t)]
-    | Some formula ->
-      [%sexp [ (name : Opam.Package.Name.t); (formula : Opam.Version_formula.t) ]]
+    | Some (op, version) ->
+      [%sexp
+        [ (name : Opam.Package.Name.t)
+        ; (op : Opam.Relop.t)
+        ; (version : Opam.Package.Version.t)
+        ]]
   ;;
 
   let t_of_sexp (sexp : Sexp.t) =
     match sexp with
     | Atom _ -> [%of_sexp: Opam.Package.Name.t] sexp, None
-    | List [ n; f ] ->
-      [%of_sexp: Opam.Package.Name.t] n, Some ([%of_sexp: Opam.Version_formula.t] f)
+    | List [ n; o; v ] ->
+      ( [%of_sexp: Opam.Package.Name.t] n
+      , Some ([%of_sexp: Opam.Relop.t] o, [%of_sexp: Opam.Package.Version.t] v) )
     | _ -> of_sexp_error "expected package name, or '(name constraint)'" sexp
   ;;
 end
@@ -88,7 +93,7 @@ end
 module Desired_packages = struct
   let path = main_dir ^/ "desired-packages.sexp"
 
-  type t = Opam.Version_formula.t option Opam.Package.Name.Map.t
+  type t = Opam.Version_constraint.t option Opam.Package.Name.Map.t
 
   let sexp_of_t t =
     Sexp.List (Map.to_alist t |> List.map ~f:[%sexp_of: Package_and_constraint.t])

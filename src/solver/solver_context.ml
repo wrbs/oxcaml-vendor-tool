@@ -4,15 +4,15 @@ open Oxcaml_vendor_tool_lib
 let std_env = Opam_0install.Dir_context.std_env
 
 type rejection =
-  | User_constraint of Opam.Package.Name.t * Opam.Version_formula.t
+  | User_constraint of Opam.Package.Name.t * Opam.Version_constraint.t
   | Unavailable
 
 let pp_rejection f = function
-  | User_constraint (name, formula) ->
+  | User_constraint (name, constraint_) ->
     Fmt.pf
       f
       "Rejected by user-specified constraint %s"
-      (OpamFormula.to_string (Atom (name, formula)))
+      (OpamFormula.string_of_atom (name, Some constraint_))
   | Unavailable -> Fmt.string f "Availability condition not satisfied"
 ;;
 
@@ -50,7 +50,7 @@ type t =
   ; project : Project.t
   ; repos : Repo.t list
   ; pins : (OpamPackage.Version.t * OpamFile.OPAM.t) OpamPackage.Name.Map.t
-  ; constraints : OpamFormula.version_formula OpamPackage.Name.Map.t
+  ; constraints : OpamFormula.version_constraint OpamPackage.Name.Map.t
   ; test : OpamPackage.Name.Set.t
   ; package_sources : Package_source.t Package.Table.t
   }
@@ -103,7 +103,7 @@ let filter_deps t pkg f =
        ~default:false
 ;;
 
-let user_restrictions _ _ = None (* lie, but don't want to fork 0-install solver *)
+let user_restrictions t package = OpamPackage.Name.Map.find_opt package t.constraints
 
 let candidates t name =
   match OpamPackage.Name.Map.find_opt name t.pins with
@@ -117,11 +117,11 @@ let candidates t name =
          (OpamPackage.Name.to_string name);
        []
      | versions ->
-       let user_constraints = OpamPackage.Name.Map.find_opt name t.constraints in
        List.map versions ~f:(fun (version, opam_file_path) ->
          let result =
-           match user_constraints with
-           | Some formula when not (OpamFormula.check_version_formula formula version) ->
+           match user_restrictions t name with
+           | Some formula
+             when not (OpamFormula.check_version_formula (Atom formula) version) ->
              Error (User_constraint (name, formula))
            | _ ->
              let pkg = OpamPackage.create name version in

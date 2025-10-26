@@ -28,26 +28,26 @@ module Hash : sig
   type t = OpamHash.t [@@deriving string, sexp, compare]
 end
 
-module Version_formula : sig
-  type t = OpamFormula.version_formula [@@deriving sexp, compare]
+module Relop : sig
+  type t = OpamTypes.relop [@@deriving sexp, compare]
+end
+
+module Version_constraint : sig
+  type t = OpamFormula.version_constraint [@@deriving sexp, compare]
 
   val exact : Package.Version.t -> t
 end
 
-module Opam_file : sig
-  module Url : sig
-    type t = OpamFile.URL.t [@@deriving sexp_of]
-  end
-
-  type t = OpamFile.OPAM.t [@@deriving sexp_of]
+module Opam_file_url : sig
+  type t = OpamFile.URL.t [@@deriving sexp_of]
 end
 
 module Filter : sig
-  type t = OpamTypes.filter [@@deriving sexp, compare]
+  type t = OpamTypes.filter [@@deriving sexp_of, compare]
 end
 
 module Filtered : sig
-  type 'a t = 'a * OpamTypes.filter option [@@deriving sexp, compare]
+  type 'a t = 'a * Filter.t option [@@deriving sexp_of, compare]
 end
 
 module Job : sig

@@ -5,7 +5,7 @@ val main_dir : string
 val package_dir : string
 
 module Package_and_constraint : sig
-  type t = Opam.Package.Name.t * Opam.Version_formula.t option [@@deriving sexp]
+  type t = Opam.Package.Name.t * Opam.Version_constraint.t option [@@deriving sexp]
 end
 
 module Repo_source : sig
@@ -72,7 +72,7 @@ end
 module Desired_packages : sig
   val path : string
 
-  type t = Opam.Version_formula.t option Opam.Package.Name.Map.t [@@deriving sexp]
+  type t = Opam.Version_constraint.t option Opam.Package.Name.Map.t [@@deriving sexp]
 end
 
 module Fetched_packages : sig

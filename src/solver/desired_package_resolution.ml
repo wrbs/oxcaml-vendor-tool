@@ -20,7 +20,7 @@ let find_packages_matching_version ~in_repo ~of_ ~project =
   Map.to_alist package_versions
   |> List.filter_map ~f:(fun (name, versions) ->
     if List.mem versions target_version ~equal:OpamPackage.Version.equal
-    then Some (name, Some (Opam.Version_formula.exact target_version))
+    then Some (name, Some (Opam.Version_constraint.exact target_version))
     else None)
 ;;
 
@@ -41,13 +41,7 @@ let execute (config : Config.Solver_config.t) ~project =
         match op with
         | `Add l ->
           List.fold l ~init:selected ~f:(fun selected (package, constraint_) ->
-            Map.update selected package ~f:(function
-              | None -> constraint_
-              | Some existing ->
-                (match existing, constraint_ with
-                 | None, None -> None
-                 | Some f, None | None, Some f -> Some f
-                 | Some a, Some b -> Some (And (a, b)))))
+            Map.set selected ~key:package ~data:constraint_)
         | `Remove l ->
           List.fold l ~init:selected ~f:(fun selected package ->
             Map.remove selected package))

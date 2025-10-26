@@ -11,7 +11,7 @@ module Disk_package = struct
   type t =
     { package : Opam.Package.t
     ; repo_url : string
-    ; opam_file : Opam.Opam_file.t
+    ; opam_file : (OpamFile.OPAM.t[@sexp.opaque])
     }
   [@@deriving sexp_of]
 
@@ -43,7 +43,7 @@ let http_source_of_opam file_url =
   |> Option.value_or_thunk ~default:(fun () ->
     raise_s
       [%message
-        "Expected single file http source with hashes" (file_url : Opam.Opam_file.Url.t)])
+        "Expected single file http source with hashes" (file_url : Opam.Opam_file_url.t)])
 ;;
 
 let main_source_of_opam file_url =
@@ -52,7 +52,7 @@ let main_source_of_opam file_url =
     raise_s
       [%message
         "Expected http source with hashes or git source with commit"
-          (file_url : Opam.Opam_file.Url.t)])
+          (file_url : Opam.Opam_file_url.t)])
 ;;
 
 module Cmd = struct
@@ -65,17 +65,10 @@ module Cmd = struct
       | CIdent s -> [%sexp [ (s : string) ]]
     ;;
 
-    let t_of_sexp (sexp : Sexp.t) : t =
-      match sexp with
-      | Atom s -> CString s
-      | List [ Atom s ] -> CIdent s
-      | _ -> of_sexp_error "invalid arg" sexp
-    ;;
-
     let compare = Comparable.lift [%compare: Sexp.t] ~f:[%sexp_of: t]
   end
 
-  type t = Arg.t Opam.Filtered.t list [@@deriving sexp, compare]
+  type t = Arg.t Opam.Filtered.t list [@@deriving sexp_of, compare]
 
   let is_dune_build (t : t) =
     match t with
@@ -96,7 +89,7 @@ module Build_steps = struct
   type t =
     | Normal_dune
     | Custom of Cmd.t Opam.Filtered.t list
-  [@@deriving sexp, compare]
+  [@@deriving sexp_of, compare]
 
   let of_build (commands : Cmd.t Opam.Filtered.t list) =
     match commands with
@@ -116,7 +109,7 @@ module Includable_package = struct
     ; patches : string Opam.Filtered.t list [@sexp.list]
     ; build_steps : Build_steps.t
     }
-  [@@deriving sexp]
+  [@@deriving sexp_of]
 
   let extract_repo_basename url =
     let%bind.Option result =

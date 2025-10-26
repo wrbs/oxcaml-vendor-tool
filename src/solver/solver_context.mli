@@ -28,7 +28,7 @@ val create
   -> ?pins:(OpamTypes.version * OpamFile.OPAM.t) OpamTypes.name_map
   -> Repo.t list
   -> project:Project.t
-  -> constraints:OpamFormula.version_formula OpamTypes.name_map
+  -> constraints:OpamFormula.version_constraint OpamTypes.name_map
   -> env:
        (string
         -> OpamVariable.variable_contents option

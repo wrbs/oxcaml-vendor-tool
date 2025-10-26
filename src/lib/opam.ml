@@ -129,128 +129,28 @@ module Relop = struct
       end)
 end
 
-module Version_formula = struct
-  type base = Relop.t * Package.Version.t [@@deriving sexp]
+module Version_constraint = struct
+  type t = Relop.t * Package.Version.t [@@deriving sexp, compare]
 
-  let neg_base (relop, version) = OpamFormula.neg_relop relop, version
-
-  type t = OpamFormula.version_constraint OpamFormula.formula [@@deriving compare]
-
-  let t_of_sexp sexp =
-    let rec aux (sexp : Sexp.t) =
-      let sexps =
-        match sexp with
-        | Atom _ -> of_sexp_error "expected list" sexp
-        | List l -> l
-      in
-      match sexps with
-      | Atom "and" :: (_ :: _ as children) ->
-        let ands = List.map children ~f:aux in
-        OpamFormula.ands ands
-      | Atom "or" :: (_ :: _ as children) ->
-        let ors = List.map children ~f:aux in
-        OpamFormula.ors ors
-      | [ Atom "not"; child ] ->
-        let t' = aux child in
-        OpamFormula.neg neg_base t'
-      | _ -> OpamFormula.Atom (base_of_sexp sexp)
-    in
-    match (sexp : Sexp.t) with
-    | List [] -> OpamFormula.Empty
-    | _ -> aux sexp
-  ;;
-
-  let rec sexp_of_t t =
-    match (t : t) with
-    | Empty -> [%sexp []]
-    | Atom base -> [%sexp (base : base)]
-    | And _ ->
-      let children = List.map (OpamFormula.ands_to_list t) ~f:sexp_of_t in
-      [%sexp "and" :: (children : Sexp.t list)]
-    | Or _ ->
-      let children = List.map (OpamFormula.ors_to_list t) ~f:sexp_of_t in
-      [%sexp "and" :: (children : Sexp.t list)]
-    | Block t -> sexp_of_t t
-  ;;
-
-  let exact version : t = Atom (`Eq, version)
+  let exact version : t = `Eq, version
 end
 
-module Opam_file = struct
-  module Url = struct
-    type t = OpamFile.URL.t
-
-    let sexp_of_t t =
-      let url = OpamFile.URL.url t in
-      let mirrors = OpamFile.URL.mirrors t in
-      let checksum = OpamFile.URL.checksum t in
-      let subpath =
-        OpamFile.URL.subpath t |> Option.map ~f:OpamFilename.SubPath.to_string
-      in
-      [%sexp
-        (url : Url.t)
-        :: { mirrors : (Url.t list[@sexp.list])
-           ; checksum : (Hash.t list[@sexp.list])
-           ; subpath : (string option[@sexp.option])
-           }]
-    ;;
-  end
-
-  type t = OpamFile.OPAM.t
-  type relop = OpamParserTypes.FullPos.relop
-  type logop = OpamParserTypes.FullPos.logop
-  type pfxop = OpamParserTypes.FullPos.pfxop
-  type env_update_op = OpamParserTypes.FullPos.env_update_op
-
-  let sexp_string to_string x = [%sexp (to_string x : string)]
-  let sexp_of_relop : [%sexp_of: relop] = sexp_string OpamPrinter.FullPos.relop
-  let sexp_of_logop : [%sexp_of: logop] = sexp_string OpamPrinter.FullPos.logop
-  let sexp_of_pfxop : [%sexp_of: pfxop] = sexp_string OpamPrinter.FullPos.pfxop
-
-  let sexp_of_env_update_op : [%sexp_of: env_update_op] =
-    sexp_string OpamPrinter.FullPos.env_update_op
-  ;;
-
-  type value = OpamParserTypes.FullPos.value
-
-  let rec sexp_of_value (value : value) =
-    match value.pelem with
-    | Bool b -> [%sexp (b : bool)]
-    | Int i -> [%sexp (i : int)]
-    | String s -> [%sexp (s : string)]
-    | Relop (op, v, v') -> [%sexp [ (op : relop); (v : value); (v' : value) ]]
-    | Prefix_relop (op, v) -> [%sexp [ (op : relop); (v : value) ]]
-    | Logop (op, v, v') -> [%sexp [ (op : logop); (v : value); (v' : value) ]]
-    | Pfxop (op, v) -> [%sexp [ (op : pfxop); (v : value) ]]
-    | Ident s -> [%sexp ([%string "<%{s}>"] : string)]
-    | List { pelem = vs; _ } -> [%sexp (vs : value list)]
-    | Group { pelem = vs; _ } -> [%sexp (vs : value list)]
-    | Option (v, { pelem = vs; _ }) -> [%sexp [ (v : value); (vs : value list) ]]
-    | Env_binding (v, op, v') ->
-      [%sexp [ (v : value); (op : env_update_op); (v' : value) ]]
-  ;;
-
-  type opamfile_item = OpamParserTypes.FullPos.opamfile_item
-
-  let rec sexp_of_opamfile_item (item : opamfile_item) =
-    match item.pelem with
-    | Section
-        { section_kind = { pelem = kind; _ }
-        ; section_name = None
-        ; section_items = { pelem = items; _ }
-        } -> [%sexp (kind : string) :: (items : opamfile_item list)]
-    | Section
-        { section_kind = { pelem = kind; _ }
-        ; section_name = Some { pelem = name; _ }
-        ; section_items = { pelem = items; _ }
-        } -> [%sexp (kind : string) :: (name : string) :: (items : opamfile_item list)]
-    | Variable ({ pelem = name; _ }, value) ->
-      [%sexp [ (name : string); (value : value) ]]
-  ;;
+module Opam_file_url = struct
+  type t = OpamFile.URL.t
 
   let sexp_of_t t =
-    let items = (OpamFile.OPAM.contents t).file_contents in
-    [%sexp (items : opamfile_item list)]
+    let url = OpamFile.URL.url t in
+    let mirrors = OpamFile.URL.mirrors t in
+    let checksum = OpamFile.URL.checksum t in
+    let subpath =
+      OpamFile.URL.subpath t |> Option.map ~f:OpamFilename.SubPath.to_string
+    in
+    [%sexp
+      (url : Url.t)
+      :: { mirrors : (Url.t list[@sexp.list])
+         ; checksum : (Hash.t list[@sexp.list])
+         ; subpath : (string option[@sexp.option])
+         }]
   ;;
 end
 
@@ -258,83 +158,7 @@ module Filter = struct
   type t = OpamTypes.filter
 
   let compare = Comparable.lift [%compare: string] ~f:OpamFilter.to_string
-
-  let var_to_string packages var =
-    let var = OpamVariable.to_string var in
-    match packages with
-    | [] -> var
-    | _ ->
-      let prefix =
-        List.map packages ~f:(Option.value_map ~f:Package.Name.to_string ~default:"_")
-        |> String.concat ~sep:"+"
-      in
-      [%string "%{prefix}:%{var}"]
-  ;;
-
-  let var_of_string s =
-    match String.lsplit2 s ~on:':' with
-    | None -> [], OpamVariable.of_string s
-    | Some (package_string, v) ->
-      let packages =
-        String.split package_string ~on:'+'
-        |> List.map ~f:(function
-          | "_" -> None
-          | pkg -> Some (OpamPackage.Name.of_string pkg))
-      in
-      packages, OpamVariable.of_string v
-  ;;
-
-  let rec sexp_of_t (t : t) =
-    match t with
-    | FBool true -> [%sexp "true"]
-    | FBool false -> [%sexp "false"]
-    | FString s -> [%sexp (s : string)]
-    | FIdent (packages, var, None) -> [%sexp [ (var_to_string packages var : string) ]]
-    | FIdent (packages, var, Some (if_true, if_false)) ->
-      [%sexp
-        [ "%?"
-        ; (var_to_string packages var : string)
-        ; (if_true : string)
-        ; (if_false : string)
-        ]]
-    | FOp (t1, op, t2) -> [%sexp [ (op : Relop.t); (t1 : t); (t2 : t) ]]
-    | FAnd (t1, t2) -> [%sexp [ "&"; (t1 : t); (t2 : t) ]]
-    | FOr (t1, t2) -> [%sexp [ "|"; (t1 : t); (t2 : t) ]]
-    | FNot t -> [%sexp [ "!"; (t : t) ]]
-    | FDefined t -> [%sexp [ "?"; (t : t) ]]
-    | FUndef t -> [%sexp [ "!undef"; (t : t) ]]
-  ;;
-
-  let rec t_of_sexp : Sexp.t -> t = function
-    | Atom "true" -> FBool true
-    | Atom "false" -> FBool false
-    | Atom s -> FString s
-    | List [ s ] ->
-      let packages, var = var_of_string ([%of_sexp: string] s) in
-      FIdent (packages, var, None)
-    | List [ Atom "%?"; s; if_true; if_false ] ->
-      let packages, var = var_of_string ([%of_sexp: string] s) in
-      let if_true = [%of_sexp: string] if_true in
-      let if_false = [%of_sexp: string] if_false in
-      FIdent (packages, var, Some (if_true, if_false))
-    | List [ Atom op; s1; s2 ] ->
-      let t1 = [%of_sexp: t] s1 in
-      let t2 = [%of_sexp: t] s2 in
-      (match op with
-       | "&" -> FAnd (t1, t2)
-       | "|" -> FOr (t1, t2)
-       | _ ->
-         let relop = [%of_sexp: Relop.t] (Atom op) in
-         FOp (t1, relop, t2))
-    | List [ (Atom op as atom); s ] ->
-      let t = [%of_sexp: t] s in
-      (match op with
-       | "!" -> FNot t
-       | "?" -> FDefined t
-       | "!undef" -> FUndef t
-       | _ -> of_sexp_error "invalid filter" atom)
-    | sexp -> of_sexp_error "invalid filter" sexp
-  ;;
+  let sexp_of_t t = [%sexp (OpamFilter.to_string t : string)]
 end
 
 module Filtered = struct
@@ -344,12 +168,6 @@ module Filtered = struct
     match filter with
     | None -> sexp_of_a a
     | Some filter -> [%sexp [ (a : a); ":if"; (filter : Filter.t) ]]
-  ;;
-
-  let t_of_sexp a_of_sexp sexp =
-    match (sexp : Sexp.t) with
-    | List [ a; Atom ":if"; b ] -> a_of_sexp a, Some ([%of_sexp: Filter.t] b)
-    | _ -> a_of_sexp sexp, None
   ;;
 end
 
