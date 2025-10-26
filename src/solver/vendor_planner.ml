@@ -38,43 +38,21 @@ module Disk_package = struct
   ;;
 end
 
-let http_source_of_opam opam_url =
-  let url = OpamFile.URL.url opam_url in
-  let url =
-    match url.backend with
-    | `http -> OpamUrl.base_url url
-    | _ -> raise_s [%message "Invalid opam url, expected http" (url : Opam.Url.t)]
-  in
-  let () =
-    match OpamFile.URL.subpath opam_url with
-    | None -> ()
-    | Some subpath ->
-      raise_s
-        [%message
-          "Subpath unexpected"
-            (url : string)
-            ~subpath:(OpamFilename.SubPath.to_string subpath)]
-  in
-  let hash =
-    OpamFile.URL.checksum opam_url
-    |> OpamHash.sort
-    |> List.hd
-    |> Option.map ~f:Lock_file.Hash.of_opam
-    |> Option.value_or_thunk ~default:(fun () ->
-      raise_s [%message "Hash expected" (url : string)])
-  in
-  { Lock_file.Http_source.url; hash }
+let http_source_of_opam file_url =
+  Lock_file.Http_source.of_opam_file file_url
+  |> Option.value_or_thunk ~default:(fun () ->
+    raise_s
+      [%message
+        "Expected single file http source with hashes" (file_url : Opam.Opam_file.Url.t)])
 ;;
 
-let main_source_of_opam opam_url =
-  let url = OpamFile.URL.url opam_url in
-  match url.backend with
-  | `http -> Lock_file.Main_source.Http (http_source_of_opam opam_url)
-  | `git ->
-    let repo_url = [%string "%{url.transport}://%{url.path}"] in
-    let hash = Option.value_exn url.hash in
-    Lock_file.Main_source.Git { url = repo_url; rev = hash }
-  | _ -> raise_s [%message "Invalid opam url, expected http or git" (url : Opam.Url.t)]
+let main_source_of_opam file_url =
+  Lock_file.Main_source.of_opam_file file_url
+  |> Option.value_or_thunk ~default:(fun () ->
+    raise_s
+      [%message
+        "Expected http source with hashes or git source with commit"
+          (file_url : Opam.Opam_file.Url.t)])
 ;;
 
 module Cmd = struct
@@ -181,9 +159,13 @@ module Includable_package = struct
       OpamFile.OPAM.extra_files package.opam_file
       |> Option.value ~default:[]
       |> List.map ~f:(fun (name, hash) ->
-        let url = package.repo_url ^/ "files" ^/ OpamFilename.Base.to_string name in
-        let hash = Lock_file.Hash.of_opam hash in
-        OpamFilename.Base.to_string name, { Lock_file.Http_source.url; hash })
+        let url =
+          package.repo_url ^/ "files" ^/ OpamFilename.Base.to_string name
+          |> Lock_file.Http_url.of_string_opt
+          |> Option.value_exn
+        in
+        ( OpamFilename.Base.to_string name
+        , { Lock_file.Http_source.urls = [ url ]; hashes = [ hash ] } ))
     in
     let extra_sources =
       OpamFile.OPAM.extra_sources package.opam_file
@@ -229,10 +211,49 @@ module Build_info = struct
     { source : Lock_file.Main_source.t
     ; extra : Lock_file.Http_source.t String.Map.t [@sexp.map]
     ; patches : string list [@sexp.list]
-    ; build_steps : Build_steps.t
     }
-  [@@deriving sexp, compare]
+  [@@deriving sexp]
+
+  let map_merge_opt m1 m2 ~f =
+    let exception Fail in
+    match
+      Map.merge m1 m2 ~f:(fun ~key:_ -> function
+        | `Left _ | `Right _ -> raise Fail
+        | `Both (x1, x2) ->
+          (match f x1 x2 with
+           | Some y -> Some y
+           | None -> raise Fail))
+    with
+    | merged -> Some merged
+    | exception Fail -> None
+  ;;
+
+  let merge_opt t t' =
+    let%bind.Option patches =
+      Option.some_if ([%equal: string list] t.patches t'.patches) t.patches
+    in
+    let%bind.Option source = Lock_file.Main_source.merge_opt t.source t'.source in
+    let%map.Option extra =
+      map_merge_opt t.extra t'.extra ~f:Lock_file.Http_source.merge_opt
+    in
+    { source; extra; patches }
+  ;;
 end
+
+let merge_as_much_as_possible l ~f =
+  let rec aux = function
+    | [] -> []
+    | x :: rest ->
+      let merged, rest' =
+        List.fold rest ~init:(x, []) ~f:(fun (acc, rest') elem ->
+          match f acc elem with
+          | None -> acc, elem :: rest'
+          | Some merged -> merged, rest')
+      in
+      merged :: aux rest'
+  in
+  aux l
+;;
 
 let construct_lock_file
       ~(includable_packages : Includable_package.t list)
@@ -249,7 +270,7 @@ let construct_lock_file
              raise_s
                [%message
                  "Unsure what vendored dir name to use" (pkg.package : Opam.Package.t)]
-           | Some s -> s)
+           | Some s -> String.lowercase s)
       in
       let dir = Lock_file.Vendor_dir.of_string dirname in
       let patches =
@@ -263,16 +284,10 @@ let construct_lock_file
                   (filter : Opam.Filter.t)]);
           patch)
       in
-      let build_info =
-        { Build_info.source = pkg.source
-        ; extra = pkg.extra
-        ; patches
-        ; build_steps = pkg.build_steps
-        }
-      in
+      let build_info = { Build_info.source = pkg.source; extra = pkg.extra; patches } in
       dir, build_info)
     |> Lock_file.Vendor_dir.Map.of_alist_multi
-    |> Map.map ~f:(List.dedup_and_sort ~compare:[%compare: Build_info.t])
+    |> Map.map ~f:(merge_as_much_as_possible ~f:Build_info.merge_opt)
     |> Map.map ~f:(function
       | [ build_info ] -> build_info
       | options ->
@@ -281,13 +296,11 @@ let construct_lock_file
             "Conflicting build info for the same dir name, maybe rename one of them"
               (options : Build_info.t list)])
   in
-  Map.mapi
-    build_info_by_name
-    ~f:(fun ~key:dir ~data:{ source; extra; patches; build_steps = _ } ->
-      let prepare_commands =
-        Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
-      in
-      { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands })
+  Map.mapi build_info_by_name ~f:(fun ~key:dir ~data:{ source; extra; patches } ->
+    let prepare_commands =
+      Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
+    in
+    { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands })
 ;;
 
 let execute config ~project =

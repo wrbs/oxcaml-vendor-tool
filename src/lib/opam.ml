@@ -78,6 +78,12 @@ module Url = struct
   include Sexpable.Of_stringable (OpamUrl)
 end
 
+module Hash = struct
+  type t = OpamHash.t [@@deriving string, compare]
+
+  include Sexpable.Of_stringable (OpamHash)
+end
+
 module Relop = struct
   module Repr = struct
     module T = struct
@@ -171,6 +177,25 @@ module Version_formula = struct
 end
 
 module Opam_file = struct
+  module Url = struct
+    type t = OpamFile.URL.t
+
+    let sexp_of_t t =
+      let url = OpamFile.URL.url t in
+      let mirrors = OpamFile.URL.mirrors t in
+      let checksum = OpamFile.URL.checksum t in
+      let subpath =
+        OpamFile.URL.subpath t |> Option.map ~f:OpamFilename.SubPath.to_string
+      in
+      [%sexp
+        (url : Url.t)
+        :: { mirrors : (Url.t list[@sexp.list])
+           ; checksum : (Hash.t list[@sexp.list])
+           ; subpath : (string option[@sexp.option])
+           }]
+    ;;
+  end
+
   type t = OpamFile.OPAM.t
   type relop = OpamParserTypes.FullPos.relop
   type logop = OpamParserTypes.FullPos.logop
@@ -329,48 +354,18 @@ module Filtered = struct
 end
 
 module Job = struct
-  module T = struct
-    type 'a t = 'a OpamProcess.job
+  type 'a t = 'a OpamProcess.job
 
-    include Monad.Make (struct
-        type nonrec 'a t = 'a t
+  include Monad.Make (struct
+      type nonrec 'a t = 'a t
 
-        let return x : _ t = Done x
-        let bind = fun t ~f -> OpamProcess.Job.Op.(t @@+ f)
-        let map = `Custom (fun t ~f -> OpamProcess.Job.Op.(t @@| f))
-      end)
+      let return x : _ t = Done x
+      let bind = fun t ~f -> OpamProcess.Job.Op.(t @@+ f)
+      let map = `Custom (fun t ~f -> OpamProcess.Job.Op.(t @@| f))
+    end)
 
-    let run : 'a t -> 'a = OpamProcess.Job.run
-  end
-
-  module Or_error = struct
-    type 'a t = 'a Or_error.t T.t
-
-    let command cmd =
-      OpamProcess.Job.Op.(
-        cmd
-        @@> fun result ->
-        match result.r_code with
-        | 0 -> T.return (Ok ())
-        | code -> T.return (Or_error.error_s [%message "Command failed" (code : int)]))
-    ;;
-
-    include Monad.Make (struct
-        type nonrec 'a t = 'a t
-
-        let return x : _ t = T.return (Ok x)
-
-        let bind x ~f =
-          T.bind x ~f:(function
-            | Error error -> T.return (Error error)
-            | Ok x -> f x)
-        ;;
-
-        let map = `Custom (fun t ~f -> T.map t ~f:(Or_error.map ~f))
-      end)
-  end
-
-  include T
+  let run : 'a t -> 'a = OpamProcess.Job.run
+  let command command = OpamProcess.Job.Op.(command @@> return)
 end
 
 module Par = struct
@@ -482,6 +477,19 @@ module Par = struct
     | Getter _ -> spawn ?desc x ~f:(fun v -> Job.return (f v))
   ;;
 
+  let uncached_map x ~f:map_f =
+    match x with
+    | Const v -> Const (map_f v)
+    | Getter { deps; f } -> Getter { deps; f = (fun g -> map_f (f g)) }
+  ;;
+
+  let ignore t =
+    let deps, _ = get t in
+    match deps with
+    | [] -> return ()
+    | _ -> Getter { deps; f = (fun _ -> ()) }
+  ;;
+
   let both ta tb =
     match ta, tb with
     | Const xa, Const xb -> Const (xa, xb)
@@ -508,6 +516,76 @@ module Par = struct
     Getter { deps; f = (fun _ -> ()) }
   ;;
 
+  module Failure = struct
+    type extra =
+      [ `msg of string
+      | `raw of string
+      ]
+
+    type t =
+      { message : string
+      ; extra : extra option
+      }
+
+    let createf ?extra cont fmt =
+      let extra =
+        let error error = `raw (Error.to_string_hum error ^ "\n") in
+        Option.map extra ~f:(function
+          | `error e -> error e
+          | `exn exn -> `raw (Stdlib.Printexc.to_string exn ^ "\n")
+          | `exn_backtrace exn ->
+            let backtrace = Backtrace.get () in
+            `raw [%string "%{Stdlib.Printexc.to_string exn}\n%{backtrace#Backtrace}\n"]
+          | `raw s -> `raw s
+          | `msg s -> `msg s)
+      in
+      Printf.ksprintf (fun message -> cont { message; extra }) fmt
+    ;;
+  end
+
+  exception Failed of Failure.t
+  exception Skipped
+
+  let fail ?extra fmt = Failure.createf ?extra (fun failure -> raise (Failed failure)) fmt
+
+  let fail_details fmt =
+    Printf.ksprintf
+      (fun message fmt ->
+         Printf.ksprintf (fun details -> fail ~extra:(`msg details) "%s" message) fmt)
+      fmt
+  ;;
+
+  type 'a command_output =
+    | Expect_none : unit command_output
+    | Ignore : unit command_output
+    | Return : string list command_output
+
+  let command_or_fail (type a) command ~(output : a command_output) =
+    let%map.Job result = Job.command command in
+    let name = Option.value command.cmd_name ~default:command.cmd in
+    let stdout =
+      match result.r_code with
+      | 0 -> result.r_stdout
+      | code ->
+        fail
+          "command %s failed with code %d"
+          name
+          code
+          ~extra:(`raw (OpamProcess.string_of_result result))
+    in
+    match output with
+    | Return -> (stdout : a)
+    | Ignore -> ()
+    | Expect_none ->
+      if List.is_empty stdout
+      then ()
+      else
+        fail
+          "command %s returned unexpected output"
+          name
+          ~extra:(`raw (OpamProcess.string_of_result result))
+  ;;
+
   module Compiled = struct
     type 'a t =
       { nodes : Node.packed Vertex.Table.t
@@ -518,31 +596,73 @@ module Par = struct
     let output_dot t channel = G.Dot.output_graph channel t.graph
     let json t = G.to_json t.graph |> OpamJson.to_string
 
+    let report_and_reraise (failure : Failure.t) ~desc =
+      let failure =
+        match desc with
+        | None -> failure
+        | Some desc -> { failure with message = [%string "[%{desc}] %{failure.message}"] }
+      in
+      OpamConsole.error "%s" failure.message;
+      raise (Failed failure)
+    ;;
+
+    let wrap_failures f ~desc =
+      try f () with
+      | Skipped -> raise Skipped
+      | Failed failure -> report_and_reraise failure ~desc
+      | exn ->
+        Failure.createf
+          (fun failure -> report_and_reraise failure ~desc)
+          ~extra:(`exn_backtrace exn)
+          "exception raised"
+    ;;
+
+    let report_long exns =
+      let failures =
+        List.filter_map exns ~f:(function
+          | _, Failed failure -> Some failure
+          | _ -> None)
+      in
+      OpamConsole.header_error "Failures while running jobs" "";
+      List.iter failures ~f:(fun failure ->
+        OpamConsole.error "%s" failure.message;
+        Option.iter failure.extra ~f:(function
+          | `msg msg -> OpamConsole.formatted_errmsg "%s" msg
+          | `raw msg -> OpamConsole.errmsg "%s" msg));
+      ()
+    ;;
+
     let run t ~jobs =
       let results = Vertex_id.Table.create () in
       let getter =
         { Key.get =
             (fun key ->
-              let univ = Hashtbl.find_exn results key.id in
-              Univ.match_exn univ key.univ_key)
+              match Hashtbl.find results key.id with
+              | Some univ -> Univ.match_exn univ key.univ_key
+              | None -> raise Skipped)
         }
       in
-      try
+      match
         G.Parallel.iter t.graph ~jobs ~command:(fun ~pred:_ vertex ->
-          try
+          wrap_failures ~desc:vertex.desc (fun () ->
             let (T node) = Hashtbl.find_exn t.nodes vertex in
             let job = node.f getter in
             let%map.Job result = job in
             Hashtbl.add_exn
               results
               ~key:node.key.id
-              ~data:(Univ.create node.key.univ_key result)
-          with
-          | exn -> Error.raise (Error.of_exn ~backtrace:`Get exn));
-        t.get_root getter
+              ~data:(Univ.create node.key.univ_key result)))
       with
-      | G.Parallel.Errors (_, exns, _) ->
-        raise_s [%message "Parallel errors" (exns : (Vertex.t * exn) list)]
+      | () -> Ok (t.get_root getter)
+      | exception G.Parallel.Errors (_, exns, _) ->
+        report_long exns;
+        Error ()
+    ;;
+
+    let run_exn t ~jobs =
+      match run t ~jobs with
+      | Error () -> failwith "jobs failed"
+      | Ok x -> x
     ;;
   end
 
@@ -568,11 +688,14 @@ module Par = struct
         vertex
     in
     let deps, get_root = get t in
-    List.iter deps ~f:(fun dep -> ignore (aux dep : Vertex.t));
+    List.iter deps ~f:(fun dep ->
+      let _ = (aux dep : Vertex.t) in
+      ());
     { Compiled.nodes; graph; get_root }
   ;;
 
   let run t ~jobs = compile t |> Compiled.run ~jobs
+  let run_exn t ~jobs = compile t |> Compiled.run_exn ~jobs
 
   module Let_syntax = struct
     module Let_syntax = struct

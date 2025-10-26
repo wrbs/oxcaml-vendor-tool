@@ -24,29 +24,21 @@ module Url : sig
   type t = OpamUrl.t [@@deriving string, sexp, compare]
 end
 
+module Hash : sig
+  type t = OpamHash.t [@@deriving string, sexp, compare]
+end
+
 module Version_formula : sig
   type t = OpamFormula.version_formula [@@deriving sexp, compare]
 
   val exact : Package.Version.t -> t
 end
 
-module Job : sig
-  type 'a t = 'a OpamProcess.job
-
-  include Monad.S with type 'a t := 'a t
-
-  val run : 'a t -> 'a
-
-  module Or_error : sig
-    type nonrec 'a t = 'a Or_error.t t
-
-    include Monad.S with type 'a t := 'a t
-
-    val command : OpamProcess.command -> unit t
-  end
-end
-
 module Opam_file : sig
+  module Url : sig
+    type t = OpamFile.URL.t [@@deriving sexp_of]
+  end
+
   type t = OpamFile.OPAM.t [@@deriving sexp_of]
 end
 
@@ -58,12 +50,22 @@ module Filtered : sig
   type 'a t = 'a * OpamTypes.filter option [@@deriving sexp, compare]
 end
 
+module Job : sig
+  type 'a t = 'a OpamProcess.job
+
+  include Monad.S with type 'a t := 'a t
+
+  val run : 'a t -> 'a
+  val command : OpamProcess.command -> OpamProcess.result t
+end
+
 module Par : sig
   type 'a t
 
   (* Execution *)
 
-  val run : 'a t -> jobs:int -> 'a
+  val run : 'a t -> jobs:int -> ('a, unit) Result.t
+  val run_exn : 'a t -> jobs:int -> 'a
 
   (** Main sources of parallelism *)
 
@@ -78,11 +80,42 @@ module Par : sig
   val map : ?desc:string -> 'a t -> f:('a -> 'b) -> 'b t
   val both : 'a t -> 'b t -> ('a * 'b) t
 
+  (** Maps an output without actually making a new node in the graph:
+      each time the value is needed by some other node it will be recomputed *)
+  val uncached_map : 'a t -> f:('a -> 'b) -> 'b t
+
+  (** Ignores the result of a computation, but still keeps it as a dependency;
+      doesn't make a new node *)
+  val ignore : 'a t -> unit t
+
+  (** Failure *)
+
+  type 'a command_output =
+    | Expect_none : unit command_output
+    | Ignore : unit command_output
+    | Return : string list command_output
+
+  val command_or_fail : OpamProcess.command -> output:'a command_output -> 'a Job.t
+
+  val fail
+    :  ?extra:
+         [ `msg of string
+         | `raw of string
+         | `error of Error.t
+         | `exn of exn
+         | `exn_backtrace of exn
+         ]
+    -> ('a, unit, string, _) format4
+    -> 'a
+
+  val fail_details : ('a, unit, string, ('b, unit, string, _) format4 -> 'b) format4 -> 'a
+
   (* Compilation *)
   module Compiled : sig
     type 'a t
 
-    val run : 'a t -> jobs:int -> 'a
+    val run : 'a t -> jobs:int -> ('a, unit) Result.t
+    val run_exn : 'a t -> jobs:int -> 'a
     val output_dot : _ t -> Out_channel.t -> unit
     val json : _ t -> string
   end

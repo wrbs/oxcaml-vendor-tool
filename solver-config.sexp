@@ -1,6 +1,7 @@
 (repos (
-  ;; (ox (github oxcaml/opam-repository main))
+  ;; js-of-ocaml in oxcaml repo is broken, this branch has fixes
   (ox (github patricoferris/oxcaml-opam-repository jsoo))
+  ;; (ox (github oxcaml/opam-repository main))
   (dune-overlays (github dune-universe/opam-overlays master))
   (opam (github ocaml/opam-repository master))))
 

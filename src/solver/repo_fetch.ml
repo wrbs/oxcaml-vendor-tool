@@ -57,7 +57,7 @@ let lock (config : Config.Solver_config.t) ~project =
 let fetch (repos : Config.Repos.t) ~project =
   let repos_dir = Project.path project "_cache/repos" in
   let%map () = Unix.mkdir ~p:() repos_dir in
-  Opam.Par.Compiled.run
+  Opam.Par.run_exn
     ~jobs:8
     (List.map repos ~f:(fun (repo, paths) ->
        Opam.Par.job
@@ -69,8 +69,7 @@ let fetch (repos : Config.Repos.t) ~project =
             }
             (Repo.opam_dir repo ~project)
           |> Opam.Job.ignore_m))
-     |> Opam.Par.all_unit
-     |> Opam.Par.compile)
+     |> Opam.Par.all_unit)
 ;;
 
 let sync_all config ~project =

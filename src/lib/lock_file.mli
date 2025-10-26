@@ -1,37 +1,62 @@
 open! Core
 module Vendor_dir : Identifiable.S
 
-module Hash : sig
-  module Kind : sig
-    type t =
-      | SHA512
-      | SHA256
-      | MD5
-    [@@deriving sexp, compare]
-  end
+module Http_url : sig
+  type t [@@deriving sexp]
 
-  type t = Kind.t * string [@@deriving sexp, compare]
-
-  val of_opam : OpamHash.t -> t
-  val to_opam : t -> OpamHash.t
+  val of_string_opt : string -> t option
 end
 
 module Http_source : sig
   type t =
-    { url : string
-    ; hash : Hash.t
+    { urls : Http_url.t Nonempty.t
+    ; hashes : Opam.Hash.t Nonempty.t
     }
-  [@@deriving sexp, compare]
+  [@@deriving sexp]
+
+  val of_opam_file : OpamFile.URL.t -> t option
+
+  (** Merge two sources, hashes must overlap *)
+  val merge_opt : t -> t -> t option
+
+  val opam_urls : t -> Opam.Url.t list
+  val opam_hashes : t -> Opam.Hash.t list
+end
+
+module Git_source : sig
+  type t =
+    { urls : Http_url.t Nonempty.t
+    ; commit : string
+    }
+  [@@deriving sexp]
+
+  (** Merge two sources, commit must be identical *)
+  val merge_opt : t -> t -> t option
+
+  val opam_urls : t -> Opam.Url.t list
 end
 
 module Main_source : sig
+  module Base : sig
+    type t =
+      | Http of Http_source.t
+      | Git of Git_source.t
+    [@@deriving sexp]
+  end
+
   type t =
-    | Http of Http_source.t
-    | Git of
-        { url : string
-        ; rev : string
-        }
-  [@@deriving sexp, compare]
+    { base : Base.t
+    ; subpath : string option
+    }
+  [@@deriving sexp]
+
+  val of_opam_file : OpamFile.URL.t -> t option
+
+  (** Merge two sources, base must merge and subpath must be identical *)
+  val merge_opt : t -> t -> t option
+
+  val opam_urls : t -> Opam.Url.t list
+  val opam_hashes : t -> Opam.Hash.t list
 end
 
 module Vendor_dir_config : sig
