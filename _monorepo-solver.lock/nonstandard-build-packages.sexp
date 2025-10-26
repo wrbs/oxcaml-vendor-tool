@@ -14,6 +14,7 @@
     @install
     (@runtest :if with-test)
     (@doc     :if with-doc))))
+
 ((ppxlib 0.33.0+ox)
  ((rm -rf ast astlib stdppx traverse_builtins)
   ((dune subst) :if dev)
@@ -24,6 +25,7 @@
     @install
     (@runtest :if with-test)
     (@doc     :if with-doc))))
+
 ((ppxlib_ast 0.33.0+ox)
  ((bash ./cleanup.sh)
   ((dune subst) :if dev)
@@ -34,8 +36,10 @@
     @install
     (@runtest :if with-test)
     (@doc     :if with-doc))))
+
 ((topkg 1.0.8+ox)
  ((ocaml pkg/pkg.ml build --pkg-name (name) --dev-pkg %{dev}%)))
+
 ((uutf 1.0.3+ox)
  ((
    ocaml
@@ -45,6 +49,7 @@
    %{dev}%
    --with-cmdliner
    %{cmdliner:installed}%)))
+
 ((zarith 1.12+ox)
  (((./configure)
    :if

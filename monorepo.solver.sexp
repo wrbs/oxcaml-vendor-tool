@@ -19,7 +19,7 @@
     (in_repo ox)
     (of_     core))
   (include (grace))
-  ;; (include (package (package (= version)) (package (< version)))) ...
+  ;; (include package (package2 = version) (package3 <= version)) ...
   ;; (exclude (package1 package2 ...))
 ))
 
