@@ -1,27 +1,86 @@
 # oxcaml-vendor-tool
 
 This is a set of tools and patches to combine together a whole bunch of
-packages, code and patches to build a large 'oxcaml monorepo'.
+packages, code and patches to build a large 'oxcaml monorepo' where nearly all
+dependencies are vendored into the dune workspace and build as part of its
+build.
 
-Main advantage of using this model over using opam is dependencies build locally
-in the workspace with dune if needed by a package in the workspace: this means
-go to definition/merlin/... works even within dependencies.
+This means that things like go to definition works within the implementation of
+dependencies, not just the first step from your project. You can also experiment
+with tweaks to local libraries.
+
+### Comparisons
 
 It's like opam-monorepo but
 
 - works with patches (needed for lots of things in the oxcaml repo)
 - less general/will potentially do some things wrong outside of the tested use
   case
-- maybe a bit less tied to compatibility with opam
-- exposes internal phases to allow tweaking
+- doesn't care as much about compatibility with opam/producing opam lock files
 - has some tooling to manage custom patches on top of what upstream gives
+- exposes internal phases to allow tweaking
 
-~~Tested against every open source jane street package and their dependencies.~~
-(TODO update once true)
+Tested against most open source Jane Street packages and their dependencies (see
+`_example/dune` for what builds).
 
 ## Using
 
-TODO document
+Don't have detailed instructions yet as it's not quite ready for being released
+as a general tool on opam (and may never if I don't get around to it): you'll
+have to build it yourself (see below).
+
+If you can get the example working, you can copy the vendor directory it
+produces into your own monorepo and commit it for now.
+
+### Building
+
+The tool doesn't rely on anything oxcaml, and uses dune's own package management
+for its dependencies. Use an existing switch, or create one and link it for this
+directory:
+
+    opam switch create dune-pm 5.3.0
+    opam install dune ocamlformat ocaml-lsp-server
+    opam switch link dune-pm  # ensure you use in this dir
+
+Build:
+
+    dune build @default @runtest --watch
+
+### Testing
+
+Fetch the locked sources + apply patches
+
+    _build/default/bin/main.exe pull
+
+Set up a switch and install the dev tools
+
+    opam switch create oxcaml-monorepo 5.2.0+ox --repos ox=git+https://github.com/oxcaml/opam-repository.git,default
+    opam install -y ocamlformat merlin ocaml-lsp-server utop sexp dune
+    cd _example && opam switch link oxcaml-monorepo
+
+It definitely has some packages in it that won't build without other deps, the
+only packages that are likely to work are those defined in the `@vendor` alias
+in `_example/dune` and their dependencies.
+
+You can test those build with:
+
+    dune build @vendor
+
+### Tweaking for now
+
+Tweak `monorepo.solver.sexp`. Then run `rebuild-example.sh` (which locks, pulls and copies in the alias definition for testing)
+
+Test with above instructions/the oxcaml switch.
+
+Debug with the files in `_monorepo-solver.lock` / see the repos at
+`_cache/monorepo/repos`.
+
+To add/update a patch to `patches`, make the vendor directory look like you want
+it to stay, get it building then run
+
+    _build/default/bin/main.exe update-patch DIR_NAME
+
+Otherwise subsequent pulls will wipe out local modifications
 
 ## Phases
 
@@ -64,7 +123,6 @@ Applies the operations in `package_selection` in the solver config to determine
 the desired packages/version constraints. Output locked in
 `_monorepo-solver.lock/desired-packages.sexp` 
 
-
 ### Phase 3: solving
 
     oxcaml-vendor-tool lock-phases run-solver
@@ -73,7 +131,6 @@ Uses [opam-0install-solver](https://github.com/ocaml-opam/opam-0install-solver) 
 determine the versions of packages and dependencies that satisfies the desired
 package selection. Stores outputs in `_monorepo-solver.lock/packages.sexp` and
 caches opams of selected packages in `_monorepo-solver.lock/opams/`.
-
 
 ### Phase 4: planning vendoring + writing main lock
 
@@ -101,20 +158,6 @@ packages that may need either
 
 ## Fetch and patch
 
-TODO document
+This is where the lock file + any local patches (in `patches` get applied).
 
-## Developing tooling
-
-The tool doesn't rely on anything oxcaml, and uses dune's own package management for its dependencies.
-
-    opam switch create dune-pm 5.3.0
-    opam install dune ocamlformat ocaml-lsp-server
-    opam switch link dune-pm  # ensure you use in this dir
-
-Install packages (optional, but test it's all working)
-
-    dune build @pkg-install
-
-Normal dev
-
-    dune build @default @runtest --watch
+See instructions above -- the code's not as polished yet and details might change.

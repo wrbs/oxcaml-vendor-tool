@@ -1,0 +1,6 @@
+(lang dune 3.17)
+
+(env
+ (_
+  (ocamlopt_flags
+   (:standard -zero-alloc-check none))))

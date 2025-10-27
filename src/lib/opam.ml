@@ -1,6 +1,16 @@
 open! Core
 open! Async
 
+let jobs_flag =
+  Command.Param.(
+    flag_optional_with_default_doc
+      "jobs"
+      int
+      [%sexp_of: int]
+      ~default:16
+      ~doc:"(int) number of opam jobs to run")
+;;
+
 module Identifiable_of_opam
     (T : sig
        type t [@@deriving string, compare]
@@ -188,7 +198,7 @@ end
 
 module Par = struct
   (* Overengineered but I think useful wrapper around the [Parallel] interface:
-     exposes a functional api that compiles into the graph *)
+     exposes a functional api that compiles into the graph. See mli *)
 
   module Vertex_id = struct
     include Unique_id.Int ()

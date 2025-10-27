@@ -7,6 +7,8 @@ module Vendor_dir = struct
         let module_name = "Vendor_dir"
       end)
       ()
+
+  let arg_type = Command.Arg_type.create of_string
 end
 
 module Http_url = struct
@@ -192,7 +194,8 @@ end
 
 module Vendor_dir_config = struct
   type t =
-    { source : Main_source.t
+    { provides : Opam.Package.Set.t
+    ; source : Main_source.t
     ; extra : Http_source.t String.Map.t
           [@default String.Map.empty] [@sexp_drop_if Map.is_empty]
     ; patches : string list [@sexp.list]

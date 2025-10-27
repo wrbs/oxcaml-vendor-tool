@@ -1,0 +1,19 @@
+diff --git a/src/dune b/src/dune
+index 9f4d2e7..a3d3a72 100644
+--- a/src/dune
++++ b/src/dune
+@@ -24,11 +24,12 @@
+   (language c)
+   (names ffi_generated_stubs)
+   (flags
+-   (:standard \ -Werror -pedantic -Wall -Wunused -Wincompatible-pointer-types)
++   (:standard \ -Werror -pedantic -Wall -Wunused)
+    -w
+    (:include ../bindings/openssl-ccopt.sexp)
+    -Wno-int-conversion
+-   -Wno-implicit-function-declaration))
++   -Wno-implicit-function-declaration
++   -Wno-error=incompatible-pointer-types))
+  (name async_ssl)
+  (public_name async_ssl)
+  (modules import version opt verify_mode ffi_generated_types ffi_generated

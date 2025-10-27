@@ -73,7 +73,9 @@ let load_packages t name =
            Hashtbl.add_exn t.package_sources ~key:package ~data:{ repo; version_dir };
            Some (OpamPackage.version package, opam_file_path)))
     |> List.sort
-         ~compare:(Comparable.lift [%compare: OpamPackage.Version.t] ~f:Tuple2.get1))
+         ~compare:
+           (Comparable.reverse
+              (Comparable.lift [%compare: OpamPackage.Version.t] ~f:Tuple2.get1)))
 ;;
 
 let env t pkg v =

@@ -1,0 +1,153 @@
+diff --git b/discover.ml b/discover.ml
+new file mode 100644
+index 0000000..e84d47c
+--- /dev/null
++++ b/discover.ml
+@@ -0,0 +1,51 @@
++let () = Printexc.record_backtrace true
++
++let () =
++  if Array.length Sys.argv <> 2 then (
++    print_endline "Usage: ./configure_env.exe %{cc}";
++    exit 1)
++
++let uname () =
++  let ic = Unix.open_process_in "uname -s" in
++  let s = input_line ic in
++  String.trim s
++
++module Var : sig
++  val os : string
++  val is_homebrew_amr64 : bool
++end = struct
++  let is_homebrew_amr64 = Sys.file_exists "/opt/homebrew/bin/brew"
++
++  let normalise raw =
++    match String.lowercase_ascii raw with "darwin" | "osx" -> "macos" | s -> s
++
++  let os = normalise (match Sys.os_type with "Unix" -> uname () | s -> s)
++end
++
++let cc = Sys.argv.(1)
++
++let ldflags =
++  match Unix.getenv "LDFLAGS" with exception Not_found -> "" | s -> s
++
++let cflags =
++  match Unix.getenv "CFLAGS" with exception Not_found -> "" | s -> s
++
++let flags =
++  match Var.os with
++  | "openbsd" | "freebsd" ->
++      Printf.sprintf
++        "LDFLAGS=\"%s -L/usr/local/lib\" CFLAGS=\"%s -I/usr/local/include\""
++        ldflags cflags
++  | "macos" when Var.is_homebrew_amr64 ->
++      Printf.sprintf
++        "LDFLAGS=\"%s -L/opt/homebrew/lib\" CFLAGS=\"%s \
++         -I/opt/homebrew/include\""
++        ldflags cflags
++  | "macos" ->
++      Printf.sprintf
++        "LDFLAGS=\"%s -L/opt/local/lib -L/usr/local/lib\" CFLAGS=\"%s \
++         -I/opt/local/include -I/usr/local/include\""
++        ldflags cflags
++  | _ -> ""
++
++let () = Printf.printf "CC=\"%s\" %s%!" cc flags
+\ No newline at end of file
+diff --git b/dune b/dune
+new file mode 100644
+index 0000000..a58c938
+--- /dev/null
++++ b/dune
+@@ -0,0 +1,78 @@
++(env
++ (dev
++  (flags
++   (:standard -w -6-32-39))))
++
++(library
++ (name zarith)
++ (public_name zarith)
++ (modules z q big_int_Z zarith_version)
++ (wrapped false)
++ (foreign_stubs
++  (language c)
++  (names caml_z)
++  (flags
++   :standard
++   (:include cflags.sexp)))
++ (c_library_flags
++  (:include libs.sexp)))
++
++(executable
++ (name discover)
++ (libraries unix)
++ (modules discover))
++
++(rule
++ (target Makefile)
++ (deps configure gmp.env)
++ (action
++  (with-stdout-to
++   configure.out
++   (bash "env %{read:gmp.env} ./configure"))))
++
++(rule
++ (target gmp.env)
++ (deps
++  (:exe discover.exe))
++ (action
++  (with-stdout-to
++   %{target}
++   (run %{exe} "%{cc}"))))
++
++(rule
++ (target cflags.sexp)
++ (deps Makefile)
++ (action
++  (with-stdout-to
++   %{target}
++   (progn
++    (bash "echo -n '('")
++    (bash "cat Makefile | sed -n -e 's/CFLAGS=//p'")
++    (bash "echo -n ')'")))))
++
++(rule
++ (target libs.sexp)
++ (deps Makefile)
++ (action
++  (with-stdout-to
++   %{target}
++   (progn
++    (bash "echo -n '('")
++    (bash "cat Makefile | sed -n -e 's/LIBS=//p'")
++    (bash "echo -n ')'")))))
++
++(rule
++ (deps META)
++ (action
++  (with-stdout-to
++   zarith_version.ml
++   (progn
++    (run echo "let")
++    (bash "grep \"version\" META | head -1")))))
++
++(library
++ (name zarith_top)
++ (optional)
++ (public_name zarith.top)
++ (modules zarith_top)
++ (libraries zarith compiler-libs.toplevel))
+diff --git b/dune-project b/dune-project
+new file mode 100644
+index 0000000..e444612
+--- /dev/null
++++ b/dune-project
+@@ -0,0 +1,5 @@
++(lang dune 2.0)
++
++(name zarith)
++
++(formatting disabled)

@@ -1,5 +1,12 @@
 open! Core
-module Vendor_dir : Identifiable.S
+
+module Vendor_dir : sig
+  type t
+
+  include Identifiable.S with type t := t
+
+  val arg_type : t Command.Arg_type.t
+end
 
 module Http_url : sig
   type t [@@deriving sexp]
@@ -61,7 +68,8 @@ end
 
 module Vendor_dir_config : sig
   type t =
-    { source : Main_source.t
+    { provides : Opam.Package.Set.t
+    ; source : Main_source.t
     ; extra : Http_source.t String.Map.t
           [@default String.Map.empty] [@sexp_drop_if Map.is_empty]
     ; patches : string list [@sexp.list]

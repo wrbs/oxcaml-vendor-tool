@@ -1,3 +1,14 @@
+((dune 3.20.2+ox)
+ ((ocaml boot/bootstrap.ml -j (jobs))
+  (./_boot/dune.exe
+   build
+   dune.install
+   --release
+   --profile
+   dune-bootstrap
+   -j
+   (jobs))))
+
 ((lwt 5.9.2+ox)
  (((dune subst) :if dev)
   (dune exec -p

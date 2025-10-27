@@ -60,8 +60,9 @@ module Solver_config = struct
 
   module Vendoring = struct
     type t =
-      { exclude : Opam.Package.Name.Set.t
+      { exclude_pkgs : Opam.Package.Name.Set.t
       ; rename_dirs : string Opam.Package.Name.Map.t
+      ; exclude_dirs : Lock_file.Vendor_dir.Set.t
       ; prepare_commands : string list list Lock_file.Vendor_dir.Map.t
       }
     [@@deriving sexp]

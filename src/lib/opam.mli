@@ -2,6 +2,8 @@ open! Core
 
 (** Monadic/JS-y interfaces around opam stuff *)
 
+val jobs_flag : int Command.Param.t
+
 module Package : sig
   module Name : sig
     type t = OpamPackage.Name.t
@@ -63,9 +65,12 @@ module Par : sig
   (** A graph-building interface around [OpamParallel] that makes it way easier
      to mix up types.
 
-     Unlike a general monad, you must commit to the 'shape' of the graph
+     Unlike something like async, you must commit to the 'shape' of the graph
      upfront, but you can execute different jobs based on the outputs in the
      graph. This is why there's no [bind].
+
+     Upside is you can generate a graphviz file of every step in your
+     computation.
      
      The [?desc] arguments are used to annotate the jobs in the compiled graph's
      json or dot output/label failure messages if present *)
@@ -173,9 +178,9 @@ module Par : sig
 
   (** Allows using descriptions and let syntax. Syntax:
 
-  {[let%bind.Opam.Par.Desc x = "desc", x_par in]}
+      {[let%bind.Opam.Par.Desc x = "desc", x_par in]}
 
-  {[let%map.Opam.Par.Desc x = x_par
+      {[let%map.Opam.Par.Desc x = x_par
     and y = y_par 
     and z = "desc", z_par in]} *)
   module Desc : sig

@@ -2,8 +2,6 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
-let upstream_sources_dir = Project.cache_dir ^/ "upstream-sources"
-
 let handle_download_result job =
   match%map.Opam.Job job with
   | OpamTypes.Up_to_date _ | Result _ -> ()
@@ -57,10 +55,9 @@ let apply_patches
       ~dir_with_sources
       ~vendor_dir
       ~(dir_config : Lock_file.Vendor_dir_config.t)
-      ~no_patch
   =
   let patched_sources =
-    if no_patch || List.is_empty dir_config.patches
+    if List.is_empty dir_config.patches
     then
       Opam.Par.uncached_map dir_with_sources ~f:(fun (`All_sources dir) ->
         `Sources_patched dir)
@@ -90,56 +87,52 @@ let apply_patches
 let fetch_and_patch_dir ~dest_dir ~vendor_dir ~dir_config ~cache_dir ~no_patch =
   let fetched_sources = fetch_sources ~dest_dir ~vendor_dir ~dir_config ~cache_dir in
   let patched_sources =
-    apply_patches ~dir_with_sources:fetched_sources ~vendor_dir ~dir_config ~no_patch
+    if no_patch
+    then
+      Opam.Par.uncached_map fetched_sources ~f:(fun (`All_sources dir) ->
+        `Sources_patched dir)
+    else apply_patches ~dir_with_sources:fetched_sources ~vendor_dir ~dir_config
   in
   Opam.Par.spawn
     patched_sources
     ~desc:(make_desc "done" ~vendor_dir)
-    ~f:(fun (`Sources_patched _) ->
+    ~f:(fun (`Sources_patched dest_dir) ->
       OpamConsole.msg
         "[%s] fetched\n"
         (OpamConsole.colorise `green (Lock_file.Vendor_dir.to_string vendor_dir));
-      Opam.Job.return ())
+      Opam.Job.return dest_dir)
 ;;
 
-let execute' ~jobs ~dirs ~project ~no_patch =
+let execute ~dest ~jobs ~dirs ~project ~no_patch =
   let cache_dir = Project.opam_download_cache project in
-  let sources_dir = Project.path project upstream_sources_dir in
-  let%bind () =
-    Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; sources_dir ] ()
-  in
-  let%map () = Unix.mkdir ~p:() sources_dir in
+  let%bind () = Process.run_expect_no_output_exn ~prog:"rm" ~args:[ "-rf"; dest ] () in
+  let%map () = Unix.mkdir ~p:() dest in
+  let dest = Filename_unix.realpath dest in
   Map.to_alist dirs
   |> List.map ~f:(fun (vendor_dir, dir_config) ->
-    let dest_dir = sources_dir ^/ Lock_file.Vendor_dir.to_string vendor_dir in
+    let dest_dir = dest ^/ Lock_file.Vendor_dir.to_string vendor_dir in
     fetch_and_patch_dir
       ~dest_dir:(Opam.Par.return dest_dir)
       ~vendor_dir
       ~dir_config
       ~cache_dir
-      ~no_patch)
+      ~no_patch
+    |> Opam.Par.ignore)
   |> Opam.Par.all_unit
   |> Opam.Par.run ~jobs
 ;;
 
-let execute ~jobs ~dirs ~project = execute' ~jobs ~dirs ~project ~no_patch:false
-
 let command =
   Command.async
-    ~summary:"fetch all sources, apply upstream patches and run prepare commands"
+    ~summary:"fetch all sources and apply upstream patches, writing result to \n    "
   @@
   let%map_open.Command project = Project.param
-  and jobs =
-    flag_optional_with_default_doc
-      "jobs"
-      int
-      [%sexp_of: int]
-      ~default:16
-      ~doc:"(int) number of opam jobs to run"
+  and dest_dir = anon ("DEST_DIR" %: string)
+  and jobs = Opam.jobs_flag
   and no_patch = flag "no-patch" no_arg ~doc:"don't patch" in
   fun () ->
     let%bind dirs = Configs.load (module Lock_file) project in
-    match%bind execute' ~dirs ~project ~jobs ~no_patch with
+    match%bind execute ~dest:dest_dir ~dirs ~project ~jobs ~no_patch with
     | Ok () -> return ()
     | Error () -> exit 1
 ;;

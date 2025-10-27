@@ -1,5 +1,6 @@
-(abstract_algebra ((
-  source (
+(abstract_algebra (
+  (provides ((abstract_algebra v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -8,8 +9,9 @@
           sha256=23fa055e3d908a602d93bc2beb07c830ea3bc53d15776eaa75b86dfdbe6be54e)))))
     (subpath ())))))
 
-(accessor ((
-  source (
+(accessor (
+  (provides ((accessor v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -18,8 +20,9 @@
           sha256=2fe9eefbcec6225f38ce3d242c994d0e7288700ff49c2228ba7d3856b1a9c9fb)))))
     (subpath ())))))
 
-(accessor_async ((
-  source (
+(accessor_async (
+  (provides ((accessor_async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -28,8 +31,9 @@
           sha256=83aa96baf3ab642c4c7ded0230891bc48b0b78dddfa37ccc7b29990ef1f10e59)))))
     (subpath ())))))
 
-(accessor_base ((
-  source (
+(accessor_base (
+  (provides ((accessor_base v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -38,8 +42,9 @@
           sha256=a8d31c918854a47681698da06e8902100872b1125f4d8063cf43f96742c264b2)))))
     (subpath ())))))
 
-(accessor_core ((
-  source (
+(accessor_core (
+  (provides ((accessor_core v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -48,8 +53,9 @@
           sha256=b4b3d30aee44da8dddd4647d2b84d4fd80b645cc3cf3170e2ec08ee2962d1d20)))))
     (subpath ())))))
 
-(am_running_how_js ((
-  source (
+(am_running_how_js (
+  (provides ((am_running_how_js v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -58,29 +64,34 @@
           sha256=6d8672f0a211d7e9c072c0e97d94f0a96db76cd56a578140fb56b39c17d2dfde)))))
     (subpath ())))))
 
-(angstrom ((
-  source (
+(angstrom (
+  (provides (
+    (angstrom       0.16.1)
+    (angstrom-async 0.16.1)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/inhabitedtype/angstrom/archive/0.15.0.tar.gz))
+          https://github.com/inhabitedtype/angstrom/archive/0.16.1.tar.gz))
         (hashes (
-          md5=5104768c404ea92fd0a53a5b0f75cd50
-          sha256=f119ac08d2dfa6687af426b31c047265a2aa7a3418f8b48b1055cb8da8929205)))))
+          md5=a9e096b4b2b8e4e3bb17d472bbccaad0
+          sha256=143536fb4d049574c539b9990840615e078ed3dd94e1d24888293f68349a100b)))))
     (subpath ())))))
 
-(astring ((
-  source (
+(astring (
+  (provides ((astring 0.8.5+dune)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/dune-universe/astring/archive/v0.8.4+dune.tar.gz))
+          https://github.com/dune-universe/astring/archive/v0.8.5+dune.tar.gz))
         (hashes (
-          sha256=f033789895d92081d9926880c5fe364f925576b2236cb179ad85bf7b8dc84efb)))))
+          sha256=11327c202fd0115f3a2bf7710c9c603b979a32ba9b16c1a64ba155857233acc8)))))
     (subpath ())))))
 
-(async ((
-  source (
+(async (
+  (provides ((async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -89,8 +100,9 @@
           sha256=0e7d59c4cc034bd15df788af8fb7723149e589dda911d15bf4ac2cc76f22eef6)))))
     (subpath ())))))
 
-(async_durable ((
-  source (
+(async_durable (
+  (provides ((async_durable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -99,8 +111,9 @@
           sha256=9569e183c1e1057f881f8b39e37b0402d7f59b5fc8859d1f98645168bc6b6b2b)))))
     (subpath ())))))
 
-(async_extra ((
-  source (
+(async_extra (
+  (provides ((async_extra v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -109,8 +122,9 @@
           sha256=77f3ec7979e865e48ae7603ec87cada1737927bb3775e969c464a6e0d4dd6f06)))))
     (subpath ())))))
 
-(async_find ((
-  source (
+(async_find (
+  (provides ((async_find v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -119,8 +133,9 @@
           sha256=5f6a133edf1ecbe151657d83c6e29a1ad2bfb02f25ba0cef9efc0a34725e9cca)))))
     (subpath ())))))
 
-(async_inotify ((
-  source (
+(async_inotify (
+  (provides ((async_inotify v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -129,8 +144,9 @@
           sha256=3f1ff51ea6f346364fbf580b6c56a3729bd571b3c2f6969a9b4d07a48e3f7fb1)))))
     (subpath ())))))
 
-(async_interactive ((
-  source (
+(async_interactive (
+  (provides ((async_interactive v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -139,8 +155,9 @@
           sha256=483dee8c8eec41ed7622a81d8f891c29fc893bf9e17fa1bbcaae8f9ac0979bcb)))))
     (subpath ())))))
 
-(async_iterator ((
-  source (
+(async_iterator (
+  (provides ((async_iterator v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -149,8 +166,9 @@
           sha256=cf5759a8596dfb609c5cbe4e23461ecbe0d063d37dcabf82208f0e96302829d9)))))
     (subpath ())))))
 
-(async_js ((
-  source (
+(async_js (
+  (provides ((async_js v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -159,8 +177,9 @@
           sha256=54b2a8272f45f73c5e529bbeccb1a398d0910c5ff155e324cee81e1545b3602a)))))
     (subpath ())))))
 
-(async_kernel ((
-  source (
+(async_kernel (
+  (provides ((async_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -169,8 +188,9 @@
           sha256=7b0d7eed1229f470bd39070e8ca92ad2e04f464fbd2ebd3b51d11a125025a7e7)))))
     (subpath ())))))
 
-(async_log ((
-  source (
+(async_log (
+  (provides ((async_log v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -179,8 +199,9 @@
           sha256=4657160fbaa70ea4cd671c992c5c4dd5c77a509edf6f484031f0da2bb5b1f527)))))
     (subpath ())))))
 
-(async_rpc_kernel ((
-  source (
+(async_rpc_kernel (
+  (provides ((async_rpc_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -189,8 +210,9 @@
           sha256=e1267e3788c18e634d802f2e0d691453d7db04bbd39cb3cd78f9922284631c16)))))
     (subpath ())))))
 
-(async_rpc_websocket ((
-  source (
+(async_rpc_websocket (
+  (provides ((async_rpc_websocket v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -199,8 +221,9 @@
           sha256=e48fb4a9fdf0b2c11cbe75ee315f5bcad5f3b28624da1895c6a7a4176790afd9)))))
     (subpath ())))))
 
-(async_sendfile ((
-  source (
+(async_sendfile (
+  (provides ((async_sendfile v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -209,8 +232,9 @@
           sha256=d4c5d30c41b6280f0a31dd4b489282ab9d09e42d11f02ed0eff3d136a5734b09)))))
     (subpath ())))))
 
-(async_shell ((
-  source (
+(async_shell (
+  (provides ((async_shell v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -219,8 +243,9 @@
           sha256=be219947e51c59308e5b33dd9621edc03db452b3c7f1990b8aa758e8662a38b3)))))
     (subpath ())))))
 
-(async_smtp ((
-  source (
+(async_smtp (
+  (provides ((async_smtp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -229,8 +254,9 @@
           sha256=176c8176c3cb50265e7ae95eedb6ef9ec15d5aa73086cead9a49ee8ab84aea58)))))
     (subpath ())))))
 
-(async_ssl ((
-  source (
+(async_ssl (
+  (provides ((async_ssl v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -239,8 +265,9 @@
           sha256=5f91ea08269e4492c5a910fd00b74f17c577658ae7bcfcdfa6714b1824e61196)))))
     (subpath ())))))
 
-(async_udp ((
-  source (
+(async_udp (
+  (provides ((async_udp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -249,8 +276,9 @@
           sha256=6a13e71adf68862bf29ed72cff5e4bd9dea7838e3021b5e3da50e49c5c3ea4e5)))))
     (subpath ())))))
 
-(async_unix ((
-  source (
+(async_unix (
+  (provides ((async_unix v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -259,8 +287,9 @@
           sha256=157057224c35ebcecb0381ea2b8fe4b197b6579ee31cb4ea9db1a84942cb07fb)))))
     (subpath ())))))
 
-(async_websocket ((
-  source (
+(async_websocket (
+  (provides ((async_websocket v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -269,8 +298,9 @@
           sha256=6d818940b97f634e74da56f584c556aa455f6f1d8a5e7e8c740efc4a578892d8)))))
     (subpath ())))))
 
-(await ((
-  source (
+(await (
+  (provides ((await v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -279,8 +309,9 @@
           sha256=29fb955634cad22853964094b480a73561f6f55595f4d36625efec27fb3398c2)))))
     (subpath ())))))
 
-(babel ((
-  source (
+(babel (
+  (provides ((babel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -289,8 +320,9 @@
           sha256=1fb6111bad1084d159597edf77f78ed9a0a62db06a6ec9c97033a1e6e908528f)))))
     (subpath ())))))
 
-(base ((
-  source (
+(base (
+  (provides ((base v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -299,8 +331,9 @@
           sha256=e42116dcc079ecd03ebd87b2bd0ccfb2a054e0c9972855cab567b379edc346ae)))))
     (subpath ())))))
 
-(base_bigstring ((
-  source (
+(base_bigstring (
+  (provides ((base_bigstring v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -309,8 +342,9 @@
           sha256=c8215a3a8265f5281dcc2c951d59c6983856bb76e362289f3650b3a00ed39309)))))
     (subpath ())))))
 
-(base_quickcheck ((
-  source (
+(base_quickcheck (
+  (provides ((base_quickcheck v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -319,8 +353,9 @@
           sha256=f547771cbcacd8c267d1b99121f39fd1ff4006007548abdb9d24ffd0b8622ca4)))))
     (subpath ())))))
 
-(base_trie ((
-  source (
+(base_trie (
+  (provides ((base_trie v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -329,8 +364,9 @@
           sha256=b70712d1165383b5df52f80b0ed33be7572268667bef0d3602241b38efba9d84)))))
     (subpath ())))))
 
-(basement ((
-  source (
+(basement (
+  (provides ((basement v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -339,8 +375,9 @@
           sha256=2201829a1d1fe13138d75a7ae856bd742e38fe78ffdbfb06e38ecd624ccbfefd)))))
     (subpath ())))))
 
-(bidirectional_map ((
-  source (
+(bidirectional_map (
+  (provides ((bidirectional_map v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -349,8 +386,9 @@
           sha256=04a8000eab6337b5c3e52698750da129ca2fbc837d892e0172ea7a9c1cce2ece)))))
     (subpath ())))))
 
-(big_percent ((
-  source (
+(big_percent (
+  (provides ((big_percent v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -359,8 +397,9 @@
           sha256=6323992146662c5ea65120af8203eaa0915563fbb940f848a07f8da29d22efbf)))))
     (subpath ())))))
 
-(bigarray-compat ((
-  source (
+(bigarray-compat (
+  (provides ((bigarray-compat 1.1.0)))
+  (source (
     (base (
       Http (
         (urls (
@@ -370,8 +409,9 @@
           sha512=7be283fd957ee168ce1e62835d22114da405e4b7da9619b4f2030a832d45ca210a0c8f1d1c57c92e224f3512308a8a0f0923b94f44b6f582acbe0e7728d179d4)))))
     (subpath ())))))
 
-(bigdecimal ((
-  source (
+(bigdecimal (
+  (provides ((bigdecimal v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -380,8 +420,9 @@
           sha256=00a98e72d22b901f6c82373e3a1674384428a4f5d59f30c76b80dff63068f930)))))
     (subpath ())))))
 
-(bignum ((
-  source (
+(bignum (
+  (provides ((bignum v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -390,19 +431,19 @@
           sha256=fe85affbc9b2bbac9158276b37d2b0d45cc8c711406f11cc5f1c79ce78ff8189)))))
     (subpath ())))))
 
-(bigstringaf ((
-  source (
+(bigstringaf (
+  (provides ((bigstringaf 0.10.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/inhabitedtype/bigstringaf/archive/0.5.0.tar.gz))
-        (hashes (
-          sha256=212448913180e52c85307236f5aa4059c58dfe841dfeefb7978697dc043deaeb
-          md5=e6b5e7eb0469ef21b27d1c66feeac356)))))
+          https://github.com/inhabitedtype/bigstringaf/archive/0.10.0.tar.gz))
+        (hashes (md5=be0a44416840852777651150757a0a3b)))))
     (subpath ())))))
 
-(bin_prot ((
-  source (
+(bin_prot (
+  (provides ((bin_prot v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -411,8 +452,9 @@
           sha256=5b320ce8cd28e223ea4b9a24e36b5d175578f764bfe3f1fde2b48d841bf4bebb)))))
     (subpath ())))))
 
-(bitset ((
-  source (
+(bitset (
+  (provides ((bitset v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -421,8 +463,9 @@
           sha256=314ee908e43b67d7ca2b7be470c7eea23b7ec757f5d0c627ad91d976c5499924)))))
     (subpath ())))))
 
-(bonsai ((
-  source (
+(bonsai (
+  (provides ((bonsai v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -431,8 +474,9 @@
           sha256=371e12953188b72bb3b1964736f45e085851c65d999f5081cb1372a7fd501ad1)))))
     (subpath ())))))
 
-(bonsai_bench ((
-  source (
+(bonsai_bench (
+  (provides ((bonsai_bench v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -441,8 +485,9 @@
           sha256=05cf30a2793c1c28f04ddf4e694f4d1a6a55b720ecf5b5c4b35de1e4c1933af5)))))
     (subpath ())))))
 
-(bonsai_concrete ((
-  source (
+(bonsai_concrete (
+  (provides ((bonsai_concrete v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -451,8 +496,9 @@
           sha256=caa893dd4ce6bdc707b2f8826191925077783cf7c779718797196c22994ef146)))))
     (subpath ())))))
 
-(bonsai_examples ((
-  source (
+(bonsai_examples (
+  (provides ((bonsai_examples v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -461,8 +507,9 @@
           sha256=04184fc4aec3cdeefc1f665fdc4baeeae3866c9f83c5f6f1bd5795d421d1d283)))))
     (subpath ())))))
 
-(bonsai_test ((
-  source (
+(bonsai_test (
+  (provides ((bonsai_test v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -471,8 +518,9 @@
           sha256=8adbcf8aed7de629812eb029453262c19edbe34be9b3589b3f3d90f1df7b8a4c)))))
     (subpath ())))))
 
-(bonsai_web ((
-  source (
+(bonsai_web (
+  (provides ((bonsai_web v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -481,8 +529,9 @@
           sha256=78566a36f7376e33e3d326e78f19fcf995857cf8aff16b6a1fbe67799423e48c)))))
     (subpath ())))))
 
-(bonsai_web_components ((
-  source (
+(bonsai_web_components (
+  (provides ((bonsai_web_components v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -491,8 +540,9 @@
           sha256=c3c64ccd308cde6d98d51786ff713f7c021a731e70846e7739f1085268af91eb)))))
     (subpath ())))))
 
-(bonsai_web_test ((
-  source (
+(bonsai_web_test (
+  (provides ((bonsai_web_test v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -501,8 +551,9 @@
           sha256=72a6c903eaea16cb70274386203b65d72000cc50820f67fc92db1227a8b35efa)))))
     (subpath ())))))
 
-(bytes ((
-  source (
+(bytes (
+  (provides ((base-bytes base+dune)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/kit-ty-kate/bytes/archive/v0.1.0.tar.gz))
@@ -510,8 +561,9 @@
           sha256=795b9bf545841714aaf0e517b62834a589937f65ad815ed4589ea56fa614d238)))))
     (subpath ())))))
 
-(camlp-streams ((
-  source (
+(camlp-streams (
+  (provides ((camlp-streams 5.0.1)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/ocaml/camlp-streams/archive/v5.0.1.tar.gz))
@@ -520,8 +572,9 @@
           sha512=2efa8dd4a636217c8d49bac1e4e7e5558fc2f45cfea66514140a59fd99dd08d61fb9f1e17804997ff648b71b13820a5d4a1eb70fed9d848aa2abd6e41f853c86)))))
     (subpath ())))))
 
-(capitalization ((
-  source (
+(capitalization (
+  (provides ((capitalization v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -530,18 +583,21 @@
           sha256=b909d2f006aff8cc53fb2acde6f75682d6ff9c4f4a5e45f10462919aafc774b1)))))
     (subpath ())))))
 
-(cmdliner ((
-  source (
+(cmdliner (
+  (provides ((cmdliner 1.3.0+dune)))
+  (source (
     (base (
       Http (
         (urls (
-          https://erratique.ch/software/cmdliner/releases/cmdliner-1.1.0.tbz))
+          https://github.com/dune-universe/cmdliner/releases/download/v1.3.0%2Bdune/cmdliner-1.3.0.dune.tbz))
         (hashes (
-          sha512=e2fad706829e7b8b50d1a510b59b87e44294252d8e8bdd9d6cb07f435d7c1c123f82353eedf29e9a4b7768da485516b89b62bf956234e90d7eae1bbaae2c9263)))))
+          sha256=0a27faaefde77c3954b4f0254105831df79cb9b2c930406aacae402b44796e53
+          sha512=e11d7341dc708318e04f3e9c69c680c24309a550170392c2105f9eefee2b448014145ace29bb0dc2df6fc31473a679e51fc86fe4f834f7db3e53da665233bfa5)))))
     (subpath ())))))
 
-(codicons ((
-  source (
+(codicons (
+  (provides ((codicons v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -550,8 +606,9 @@
           sha256=96c5af1e6d157bab30c439f1f9a668cddcb32469d62e1b3c0d2c36964b0fdae1)))))
     (subpath ())))))
 
-(cohttp_async_websocket ((
-  source (
+(cohttp_async_websocket (
+  (provides ((cohttp_async_websocket v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -560,8 +617,9 @@
           sha256=85333b57c808f11c51df0bfa0ca91938c57e08a1fed49d6990a0db3b8709163c)))))
     (subpath ())))))
 
-(cohttp_static_handler ((
-  source (
+(cohttp_static_handler (
+  (provides ((cohttp_static_handler v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -570,8 +628,9 @@
           sha256=19b135ae85ef37a50eeb2ce423975184271f6f87476d48a1a7460a0716772267)))))
     (subpath ())))))
 
-(command_nodejs ((
-  source (
+(command_nodejs (
+  (provides ((command_nodejs v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -580,8 +639,9 @@
           sha256=d6a3676f293911928e5d56d2fe36fde5b59ba85057d1c669622d6fa7373b1257)))))
     (subpath ())))))
 
-(command_rpc ((
-  source (
+(command_rpc (
+  (provides ((command_rpc v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -590,8 +650,9 @@
           sha256=7c4299f16f78c3308e4610793074d8e84e73dd51602b0d328b1f7f556af94eea)))))
     (subpath ())))))
 
-(concurrent ((
-  source (
+(concurrent (
+  (provides ((concurrent v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -600,8 +661,9 @@
           sha256=cf5fbd84d959268656dc6b79eac86457f0b65d54f2f327a9ebfa43d7259e2289)))))
     (subpath ())))))
 
-(content_security_policy ((
-  source (
+(content_security_policy (
+  (provides ((content_security_policy v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -610,8 +672,9 @@
           sha256=85fa8577a5aae3edeb282e683fc9e83ce23805c8136f2459ff2cd57233a34c20)))))
     (subpath ())))))
 
-(core ((
-  source (
+(core (
+  (provides ((core v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -620,8 +683,9 @@
           sha256=cc35033bcdeea71bb5a53f4ca6783fe440ee84c2d34ee665c777a14724d6b297)))))
     (subpath ())))))
 
-(core_bench ((
-  source (
+(core_bench (
+  (provides ((core_bench v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -630,8 +694,9 @@
           sha256=f5beac5203dc8ea0f8636be5d980df4f0b57435491a3a0baabf3395746c5dcf3)))))
     (subpath ())))))
 
-(core_extended ((
-  source (
+(core_extended (
+  (provides ((core_extended v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -640,8 +705,9 @@
           sha256=8f3da27b0926de9cfb4f2b9bf58961f3f33fe457ae49332dbb8054e45b9b35cc)))))
     (subpath ())))))
 
-(core_kernel ((
-  source (
+(core_kernel (
+  (provides ((core_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -650,8 +716,9 @@
           sha256=c046834116c92b8ec2e687b67ccea0dd1a3b9da1610970faf9ade471045838c5)))))
     (subpath ())))))
 
-(core_profiler ((
-  source (
+(core_profiler (
+  (provides ((core_profiler v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -660,8 +727,9 @@
           sha256=1e292a11abb5b8f62419b123d23932b8c8e2f4fd4cd63204f109b74c4bcc82b3)))))
     (subpath ())))))
 
-(core_unix ((
-  source (
+(core_unix (
+  (provides ((core_unix v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -670,19 +738,20 @@
           sha256=bd072aef9ae9cee6a77b287d6a8a6a3bd309a1ecd6e0e3b2d5756aaf797e228a)))))
     (subpath ())))))
 
-(cppo ((
-  source (
+(cppo (
+  (provides ((cppo 1.8.0)))
+  (source (
     (base (
       Http (
-        (urls (
-          https://github.com/ocaml-community/cppo/releases/download/v1.6.7/cppo-v1.6.7.tbz))
+        (urls (https://github.com/ocaml-community/cppo/archive/v1.8.0.tar.gz))
         (hashes (
-          sha256=db553e3e6c206df09b1858c3aef5e21e56564d593642a3c78bcedb6af36f529d
-          sha512=9722b50fd23aaccf86816313333a3bf8fc7c6b4ef06b153e5e1e1aaf14670cf51a4aac52fb1b4a0e5531699c4047a1eff6c24c969f7e5063e78096c2195b5819)))))
+          md5=a197cb393b84f6b30e0ff55080ac429b
+          sha512=3840725b767a0300bdc48f11d26d798bdcae0a764ed6798df3a08dfc8cc76fe124b14a19d47c9b5ea8e229d68b0311510afce77c0e4d9131fbda5116dc2689a2)))))
     (subpath ())))))
 
-(cryptokit ((
-  source (
+(cryptokit (
+  (provides ((cryptokit 1.16.1)))
+  (source (
     (base (
       Http (
         (urls (
@@ -692,19 +761,21 @@
           sha512=28913a7c35ae951a4c464287acc511ee1bdc9d03b5928e2243c5ae5cbb8b10afe8e84d7a73ba6478ed62657d01fdb6f02472739255c33de3671c4130b659da52)))))
     (subpath ())))))
 
-(csexp ((
-  source (
+(csexp (
+  (provides ((csexp 1.5.2)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/ocaml-dune/csexp/releases/download/1.3.1/csexp-1.3.1.tbz))
+          https://github.com/ocaml-dune/csexp/releases/download/1.5.2/csexp-1.5.2.tbz))
         (hashes (
-          sha256=89e8c4181dc13e99cf67ddf2e258ea334352470e65b39041e62b61bcf0825155
-          sha512=dd6b3894529c828926ee05070548125822ad3bee8324623de0188d49655439286343f8cbc2ede8a27e01af5715e3bc1e643d6a0d770061b384d6dcefdb545eb2)))))
+          sha256=1a14dd04bb4379a41990248550628c77913a9c07f3c35c1370b6960e697787ff
+          sha512=be281018bcfc20d4db14894ef51c4b836d6338d2fdfe22e63d46f405f8dea7349e16f1c0ecd65f73d4c85a2a80e618cdbb8c9dafcbb9f229f04f1adca5b1973c)))))
     (subpath ())))))
 
-(csvfields ((
-  source (
+(csvfields (
+  (provides ((csvfields v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -713,8 +784,9 @@
           sha256=e233502a378f0be257011fdf5bfeb310c10b7ebd5d3ce44e58c519538ea80bba)))))
     (subpath ())))))
 
-(dedent ((
-  source (
+(dedent (
+  (provides ((dedent v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -723,8 +795,9 @@
           sha256=9b0d7c5c92d18315272a2ca3807a08dbb4764f577678f2e0385e06d5540df6f9)))))
     (subpath ())))))
 
-(delimited_parsing ((
-  source (
+(delimited_parsing (
+  (provides ((delimited_parsing v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -733,40 +806,52 @@
           sha256=77c31d99d657809e3220610329c4d1a4acc71b113246f409a0a027bab104a44f)))))
     (subpath ())))))
 
-(domain-name ((
-  source (
+(domain-name (
+  (provides ((domain-name 0.5.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/hannesm/domain-name/releases/download/v0.3.0/domain-name-v0.3.0.tbz))
+          https://github.com/hannesm/domain-name/releases/download/v0.5.0/domain-name-0.5.0.tbz))
         (hashes (
-          sha256=4dd9ed1bc619886d1adcaff14edfb503dedb77fc0b7a28d88d213aa1c44d6c8a
-          sha512=8229766b20a44622d3a94250c6909dbe64269aab6dde8dd13f6b1c027d63e119658fd35b459c6556817ab583bbfdbc5dbea97d3022f590184d70a72ecd7c0a34)))))
+          sha256=9ec7ae2c22772c150b84cfa3f21d9bf25fae14a796f31e20df52d86f46499d89
+          sha512=923acab434ebb197f44075711030fd1b7f61783e20cc6f74387ce0acf1bc5f48eb8a8a5e29d3440e7c249ab00673e250ddfdc7e53d71c5a1613f1dbb557c0ae1)))))
     (subpath ())))))
 
-(dune ((
-  source (
+(dune-compiledb (
+  (provides ((dune-compiledb 0.6.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/ocaml/dune/releases/download/2.9.3/dune-site-2.9.3.tbz))
+          https://github.com/edwintorok/dune-compiledb/releases/download/0.6.0/dune-compiledb-0.6.0.tbz))
         (hashes (
-          sha256=3e65ec73ab2c80d50d4ffd6c46cbfb22eacd0e5587a4be8af8ae69547d5f88d6
-          sha512=04b48501ac16c3608e3b6bfbdbabf810df0fb844ea3b7d25ba50f03b9d6cb1d2c933cf747d694029d82a9777a774e48e5c38ab010fe53ce1eae367da0ed04d6d)))))
+          sha256=f5e74fd4c2af89df731f53832d8388592d44fed9f50d6d82ba8f71ea1e8ff9ff
+          sha512=74e50c759ef50ce13d0f1a424f91176f1327349d6c1b97d0a20c848417920c1490ff7d5a8cabc541b1409a6a6e488f807e34c3cf7ac0d9866938bd43eab08de8)))))
     (subpath ())))))
 
-(ecaml ((
-  source (
+(dune_ (
+  (provides ((dune 3.20.2+ox)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/janestreet/ecaml/archive/3753b3ec1324a67dcee82091f1319b69751800c6.tar.gz))
+          https://github.com/ocaml/dune/releases/download/3.20.2/dune-3.20.2.tbz))
         (hashes (
-          sha256=c5b0cb94ccd53ebc81b04b9f36cb2b003c36d2755823074a040ab76c8cf69890)))))
-    (subpath ())))))
+          sha256=b1a86b2d60bdb4a8b9bb6861bdf2f9f28a6e7cb5d833ce81afecceb9ef9ca549
+          sha512=ed14df9163e487d4ae7d0a2427eaab7823ef1f0ef2d93f0b783e6f163bbd5b44ba73f055d60b84e76f476fe11d38e794013628a1da776d9ec13cca9666e7b7ff)))))
+    (subpath ())))
+  (extra ((
+    oxcaml-dune.patch (
+      (urls (
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/dune/dune.3.20.2+ox/files/oxcaml-dune.patch))
+      (hashes (
+        sha256=fe1d266b70e4f7bc884eda337f68c6a539bebc4e9b3e2ed0fdf7293797fc3f33))))))
+  (patches (oxcaml-dune.patch))))
 
-(email_message ((
-  source (
+(email_message (
+  (provides ((email_message v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -775,8 +860,9 @@
           sha256=dc4a4010ed577ff77a7b38bb85cbc2c2fd402e0ab6fe3fe9cde83e4989f5ad42)))))
     (subpath ())))))
 
-(env_config ((
-  source (
+(env_config (
+  (provides ((env_config v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -785,8 +871,9 @@
           sha256=7bb5e27d6c2cc8a162b20c50bf324e2dd029aad6834618a7aade1e9f3e9a63f0)))))
     (subpath ())))))
 
-(expect_test_helpers_async ((
-  source (
+(expect_test_helpers_async (
+  (provides ((expect_test_helpers_async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -795,8 +882,9 @@
           sha256=4c3bac7fa3574f9d2dc5d6e06a5a9d389e813e0f17ae97bf4f50bf4281bd6e56)))))
     (subpath ())))))
 
-(expect_test_helpers_core ((
-  source (
+(expect_test_helpers_core (
+  (provides ((expect_test_helpers_core v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -805,8 +893,9 @@
           sha256=011df05014c56fa8da35a19f8daa8e350f7b37087496aa3741dc0245a3f2f4a7)))))
     (subpath ())))))
 
-(expectable ((
-  source (
+(expectable (
+  (provides ((expectable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -815,8 +904,9 @@
           sha256=3697fdcab57a663e1adf311c3f0d573e9cbc49d24829b622f9cbf95b46fb1510)))))
     (subpath ())))))
 
-(expectree ((
-  source (
+(expectree (
+  (provides ((expectree v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -825,18 +915,32 @@
           sha256=54c8b876ba9a7e011e63bcee57d807b38014734d11b029f3ebcdbe8bc3cf2145)))))
     (subpath ())))))
 
-(faraday ((
-  source (
+(ezjsonm (
+  (provides ((ezjsonm 1.3.0)))
+  (source (
     (base (
       Http (
-        (urls (https://github.com/inhabitedtype/faraday/archive/0.8.1.tar.gz))
+        (urls (
+          https://github.com/mirage/ezjsonm/releases/download/v1.3.0/ezjsonm-1.3.0.tbz))
         (hashes (
-          sha256=8e9dd906ca4f365c56e8b4855781550fd26d8b279b4446162d5c297adb56cf7a
-          md5=51b97f082af4679e3b428a03c3b657de)))))
+          sha256=08633e0f0e767a8ae81935ca7e74f1693b85a79c4502d568eedff5170f0cd77b
+          sha512=b731036384115603af9187464695418d27b7cf6f763c8dbc0812db62a7657cac1b6019d3b205b1c95ae81b7dab0bd4037390d977ee8c122bef29a9ddef771e18)))))
     (subpath ())))))
 
-(fieldslib ((
-  source (
+(faraday (
+  (provides ((faraday 0.8.2)))
+  (source (
+    (base (
+      Http (
+        (urls (https://github.com/inhabitedtype/faraday/archive/0.8.2.tar.gz))
+        (hashes (
+          sha256=720ea90b39fd3ea7de6e8722330a25514e67306e94d4af41ad48d8a7cfa035c6
+          md5=307dccc4ea67ff0eeff394701d05bbe7)))))
+    (subpath ())))))
+
+(fieldslib (
+  (provides ((fieldslib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -845,8 +949,9 @@
           sha256=be385e06deec5c539298f4b5c33385a60ffb85b598790996b534be51457d7f7c)))))
     (subpath ())))))
 
-(file_path ((
-  source (
+(file_path (
+  (provides ((file_path v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -855,8 +960,9 @@
           sha256=e3570af921daa903a5e90830785db94f41e298ea6c2b8529a70d6a9418f1f0f6)))))
     (subpath ())))))
 
-(filesystem ((
-  source (
+(filesystem (
+  (provides ((filesystem v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -865,8 +971,9 @@
           sha256=75c00de33e070ed119501c2132c75cedfefed94f3767a276fdb590a3a203b82d)))))
     (subpath ())))))
 
-(flexible_sexp ((
-  source (
+(flexible_sexp (
+  (provides ((flexible_sexp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -875,8 +982,9 @@
           sha256=21d942775c9476affda708cc266a48f9efe33fe12964709a8a78f781c2070d58)))))
     (subpath ())))))
 
-(float_array ((
-  source (
+(float_array (
+  (provides ((float_array v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -885,18 +993,21 @@
           sha256=ea38401bac2992fd3acbbcb2664f0c455c25c96bfabab6d6fdfde14502155eed)))))
     (subpath ())))))
 
-(fmt ((
-  source (
+(fmt (
+  (provides ((fmt 0.11.0+dune)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/dune-universe/fmt/archive/v0.8.8+dune.tar.gz))
+          https://github.com/dune-universe/fmt/releases/download/v0.11.0%2Bdune/fmt-0.11.0.dune.tbz))
         (hashes (
-          sha256=da16172528cc5ebde062fcb25e46085962ddd5fd32d2dc00eb07697384f0eb2d)))))
+          sha256=1df182f0851793f2a250ac6d957d188eb5c37d658a7bfd29a6498bce022fec30
+          sha512=d1a91b65752977f2492abf39f43d121559d50da822e6c1f3b641240e203db45dca6b1e2bc6c4adbf39d59e81ad80d61963ac7ce17ac7ba8317e433967a99d00f)))))
     (subpath ())))))
 
-(font_awesome_icons ((
-  source (
+(font_awesome_icons (
+  (provides ((font_awesome_icons v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -905,8 +1016,20 @@
           sha256=5b8ff1ee630179c2a0ec27541572437d12ea7facbbd2510d294fa869a4edfcbc)))))
     (subpath ())))))
 
-(fuzzy_match ((
-  source (
+(fpath (
+  (provides ((fpath 0.7.3+dune)))
+  (source (
+    (base (
+      Http (
+        (urls (
+          https://github.com/dune-universe/fpath/archive/v0.7.3+dune.tar.gz))
+        (hashes (
+          sha256=792ecf88d2a311596106e30775864629558ed0c2d0501590fda55f363dbb6ebc)))))
+    (subpath ())))))
+
+(fuzzy_match (
+  (provides ((fuzzy_match v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -915,8 +1038,9 @@
           sha256=9281660f400580561bbb2f768f6efbfdf0bd4a8b2bbe6a4f043732a2f44e8ee3)))))
     (subpath ())))))
 
-(fzf ((
-  source (
+(fzf (
+  (provides ((fzf v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -925,17 +1049,21 @@
           sha256=b31d35d7600d77dd25b8518f25e5eede7916faca8f6ac304ff9e9177108d8d22)))))
     (subpath ())))))
 
-(gen ((
-  source (
+(gen (
+  (provides ((gen 1.1)))
+  (source (
     (base (
       Http (
-        (urls (https://github.com/c-cube/gen/archive/0.5.3.tar.gz))
+        (urls (https://github.com/c-cube/gen/archive/v1.1.tar.gz))
         (hashes (
-          md5=f242db157222474b9715fef49a1259a4
-          sha512=192178de106d2ae5f936caead8b21b4b9ec1b8fe35ba56296825900ea15a4ea702caf8824ac34d4478d107b954e22c3dffd81f12d4c08fbd6d9760f49a0deb14)))))
+          md5=fa8066511b693815fe659fd022f4c6bc
+          sha512=71a4b5c3666a7c11935398a78feea7383f61d2c549dfb96e324d40783ffa87b5ec492c5ec468803aabfb9b48e7d0ebaa30b24d2b974540afc7cca5feea3121c1)))))
     (subpath ())))))
 
 (gen_js_api (
+  (provides (
+    (gen_js_api 1.1.2+ox)
+    (ojs        1.1.2+ox)))
   (source (
     (base (
       Http (
@@ -948,32 +1076,38 @@
   (extra (
     (dune.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/dune.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/dune.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/dune.patch))
       (hashes (
         sha256=486d4235a5baa84b63b867ceaa9000b8c7fa6c9429999ab247e4ba3401da214e))))
     (gen-js-api+js_of_ocaml-globalThis.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch))
       (hashes (
         sha256=7828fe1796e89139bbfe38e9fdf6b0d959d15bf4e9762f24bfe3749de409398d))))
     (gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch))
       (hashes (
         sha256=4bcca59531d1c30227f153728b653a03cfca4048fe0dd6e14c0702fde8739e12))))
     (gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch))
       (hashes (
         sha256=813d51aee7836858c33494e3bc458516a39aac6f3f515ae70631cf66e026e329))))
     (gen-js-api+unsafe_multidomain_alert.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch))
       (hashes (
         sha256=41fd51a6dd20b44bc07451e4635623554c4aa80e5e5f9472faf4161c7a7b0a7a))))
     (gen-js-api-ast.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api-ast.patch))
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/gen_js_api/gen_js_api.1.1.2+ox/files/gen-js-api-ast.patch
+        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api-ast.patch))
       (hashes (
         sha256=969f7ae0ac3a269f5fecffc659a875d7ba458364aa85da2e9bfa8cd3a214ae2f))))))
   (patches (
@@ -984,19 +1118,9 @@
     gen-js-api-ast.patch
     dune.patch))))
 
-(grace ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/johnyob/grace/releases/download/0.1.0/grace-0.1.0.tbz))
-        (hashes (
-          sha256=19576d3f32e4a69c7ebad26a801b568a2e3bff24a0e4d5ddf3b8bf4eac479d4c
-          sha512=436db3699126eec797da1be9f530759547804cc081ed365a75ba8ae9b053c05999ae820d294dd20f6a68e0712084579c585105a3855d71b459efc1367172bd66)))))
-    (subpath ())))))
-
-(hardcaml ((
-  source (
+(hardcaml (
+  (provides ((hardcaml v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1005,8 +1129,9 @@
           sha256=bd3a60efd19eb60d6eb6004b0c4f207ab2fbd29d5b45c6576028ce75d26b6e9f)))))
     (subpath ())))))
 
-(hardcaml_axi ((
-  source (
+(hardcaml_axi (
+  (provides ((hardcaml_axi v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1015,8 +1140,9 @@
           sha256=10525a67cfdc8a78dcd002b731aa669f619b53ae905a29fe622746c35e38aaf8)))))
     (subpath ())))))
 
-(hardcaml_c ((
-  source (
+(hardcaml_c (
+  (provides ((hardcaml_c v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1025,8 +1151,9 @@
           sha256=22319f492a2e27941a9117b099ff60ffe43352f057a1e5a39b27eaaa47216f17)))))
     (subpath ())))))
 
-(hardcaml_circuits ((
-  source (
+(hardcaml_circuits (
+  (provides ((hardcaml_circuits v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1035,8 +1162,9 @@
           sha256=7afa54d1d6ce4c5aeec5bdff19bb1942f4a0a2f8336a2d51889ee6c27b643a90)))))
     (subpath ())))))
 
-(hardcaml_event_driven_sim ((
-  source (
+(hardcaml_event_driven_sim (
+  (provides ((hardcaml_event_driven_sim v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1045,8 +1173,9 @@
           sha256=38971cf03131d5bbdecad8a203e26bc6d9ecf03a4fa5771fb9bc5c137cef3ed0)))))
     (subpath ())))))
 
-(hardcaml_fixed_point ((
-  source (
+(hardcaml_fixed_point (
+  (provides ((hardcaml_fixed_point v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1055,8 +1184,9 @@
           sha256=662d6c19ea7881fbc60cdd78f37070126f0b96d622a677e273b76fc12433fae1)))))
     (subpath ())))))
 
-(hardcaml_handshake ((
-  source (
+(hardcaml_handshake (
+  (provides ((hardcaml_handshake v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1065,8 +1195,9 @@
           sha256=c1ed997fab37cd9ed9f9b0f25d73839d1e9018989603d2b519dcec25de0969c7)))))
     (subpath ())))))
 
-(hardcaml_hobby_boards ((
-  source (
+(hardcaml_hobby_boards (
+  (provides ((hardcaml_hobby_boards v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1075,8 +1206,9 @@
           sha256=243799ea3235ba9e9b8ef70a64daec92c18406f66579baa5bd63ee4c5fe10b6b)))))
     (subpath ())))))
 
-(hardcaml_of_verilog ((
-  source (
+(hardcaml_of_verilog (
+  (provides ((hardcaml_of_verilog v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1085,8 +1217,9 @@
           sha256=66f2fab4dac73bff242a70b1d62d6f9f84aab52892980a6b230a88f9608bd325)))))
     (subpath ())))))
 
-(hardcaml_step_testbench ((
-  source (
+(hardcaml_step_testbench (
+  (provides ((hardcaml_step_testbench v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1095,8 +1228,9 @@
           sha256=75613d9ffc477b597b4653b52ad4e9f74869d0dee6379f1ae02b34b4d4f1943a)))))
     (subpath ())))))
 
-(hardcaml_test_harness ((
-  source (
+(hardcaml_test_harness (
+  (provides ((hardcaml_test_harness v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1105,8 +1239,9 @@
           sha256=9e2b9e08ef77ae4a0d27c7cf31805c9453904aac1299c340caa0b9bfa9b56ab8)))))
     (subpath ())))))
 
-(hardcaml_verify ((
-  source (
+(hardcaml_verify (
+  (provides ((hardcaml_verify v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1115,8 +1250,9 @@
           sha256=36e3336b36bbe7032daff1dfa88a8a50916dcba72572c8c3b6fcbb53f773f6a0)))))
     (subpath ())))))
 
-(hardcaml_verilator ((
-  source (
+(hardcaml_verilator (
+  (provides ((hardcaml_verilator v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1125,8 +1261,9 @@
           sha256=3787233ef79fd05fb68e4b90d30a6d2290d92b97544e342d9f1fc746815918e2)))))
     (subpath ())))))
 
-(hardcaml_waveterm ((
-  source (
+(hardcaml_waveterm (
+  (provides ((hardcaml_waveterm v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1135,8 +1272,9 @@
           sha256=27e342711f3cb5ac1049f27b2c90e76e1f8f760edcf67da94f6f279a795cd9ea)))))
     (subpath ())))))
 
-(hardcaml_xilinx ((
-  source (
+(hardcaml_xilinx (
+  (provides ((hardcaml_xilinx v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1145,8 +1283,9 @@
           sha256=3d37f82e316f3084054dd1d913813b68ab2085c0f283835803e227f79474107d)))))
     (subpath ())))))
 
-(hardcaml_xilinx_components ((
-  source (
+(hardcaml_xilinx_components (
+  (provides ((hardcaml_xilinx_components v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1155,8 +1294,9 @@
           sha256=1b930fb70ab64590ac78793586149decdcc4f78b1b48dde84b8f6b8a207b11ce)))))
     (subpath ())))))
 
-(hardcaml_xilinx_reports ((
-  source (
+(hardcaml_xilinx_reports (
+  (provides ((hardcaml_xilinx_reports v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1165,8 +1305,9 @@
           sha256=e2e5864a3d59f47ea141afaa8970c58992133f9ba14ec6a84677402dfccf4969)))))
     (subpath ())))))
 
-(hex_encode ((
-  source (
+(hex_encode (
+  (provides ((hex_encode v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1175,8 +1316,9 @@
           sha256=a04813b04a8da3018ec1ac786b50d02d1441159d67a95e9796b87d39d582d5dc)))))
     (subpath ())))))
 
-(hg_lib ((
-  source (
+(hg_lib (
+  (provides ((hg_lib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1185,8 +1327,9 @@
           sha256=0028c064f8b26ce463a7a84bb75d79b00bfbdd65ddf5ecc67f203df0af210d25)))))
     (subpath ())))))
 
-(higher_kinded ((
-  source (
+(higher_kinded (
+  (provides ((higher_kinded v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1195,8 +1338,9 @@
           sha256=01ae31f23abcaf21a990fd66f538b6232ec40f72004ff9e33eb9bde49ddcda57)))))
     (subpath ())))))
 
-(httpaf ((
-  source (
+(httpaf (
+  (provides ((httpaf 0.7.1)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/inhabitedtype/httpaf/archive/0.7.1.tar.gz))
@@ -1205,8 +1349,9 @@
           md5=8c8b199d0553f02fb361cf52c57c0412)))))
     (subpath ())))))
 
-(incr_dom ((
-  source (
+(incr_dom (
+  (provides ((incr_dom v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1215,8 +1360,9 @@
           sha256=1d082ae27a58947f6782864efdcd06d45cc05703c74ae3b708fd4239e153a3fe)))))
     (subpath ())))))
 
-(incr_dom_interactive ((
-  source (
+(incr_dom_interactive (
+  (provides ((incr_dom_interactive v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1225,8 +1371,9 @@
           sha256=405d69b5ddbf40d17eb5a5d97d382bf6ba80263bc049d32a13db10be7fca514b)))))
     (subpath ())))))
 
-(incr_dom_partial_render ((
-  source (
+(incr_dom_partial_render (
+  (provides ((incr_dom_partial_render v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1235,8 +1382,9 @@
           sha256=97187335947aae8ce3fd2600bec449e1c6636a2b5ebac386ad36816e409a7746)))))
     (subpath ())))))
 
-(incr_dom_sexp_form ((
-  source (
+(incr_dom_sexp_form (
+  (provides ((incr_dom_sexp_form v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1245,8 +1393,9 @@
           sha256=46a4783670517af61af7d88170e8c185e7cb9fa1d0110627075463f81b4b902f)))))
     (subpath ())))))
 
-(incr_map ((
-  source (
+(incr_map (
+  (provides ((incr_map v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1255,8 +1404,9 @@
           sha256=3c3172ade2fce8c570bf01eb55ec6b03b957cc902bbe0b2f32a9885514e2fc08)))))
     (subpath ())))))
 
-(incr_select ((
-  source (
+(incr_select (
+  (provides ((incr_select v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1265,8 +1415,9 @@
           sha256=c9ea3f3114245564dcc54818fc3b9fec6a7f3bea05c525539fdc082f35322786)))))
     (subpath ())))))
 
-(incremental ((
-  source (
+(incremental (
+  (provides ((incremental v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1275,8 +1426,9 @@
           sha256=0862107adae16a9db0e4740a836adf49a42a76482c86f276c93f8e377d169c66)))))
     (subpath ())))))
 
-(indentation_buffer ((
-  source (
+(indentation_buffer (
+  (provides ((indentation_buffer v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1285,8 +1437,9 @@
           sha256=7a8b90d1b20059647be1cb70390209c4e151860d39b17913f49b53f5145dafc7)))))
     (subpath ())))))
 
-(insertion_ordered_map ((
-  source (
+(insertion_ordered_map (
+  (provides ((insertion_ordered_map v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1295,8 +1448,9 @@
           sha256=a462aa23739e7032af1235a0437938acb924f60f5e3013d179f80a80b552c3e7)))))
     (subpath ())))))
 
-(int_repr ((
-  source (
+(int_repr (
+  (provides ((int_repr v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1305,18 +1459,9 @@
           sha256=4b522689dde52dd6794a148797a4bffd78874e95d122590f8429406673a60a8d)))))
     (subpath ())))))
 
-(iter ((
-  source (
-    (base (
-      Http (
-        (urls (https://github.com/c-cube/iter/archive/v1.5.tar.gz))
-        (hashes (
-          md5=b66942eced29eb73b69ea39987287f93
-          sha512=a591bf60ba8b51b9e6b9078bda987cd1c6d54ed5a20a27bbe61d938733e8e864666c249dcce25731480e22ca5d46007cb16e789947828807483163afc0077465)))))
-    (subpath ())))))
-
-(jane-street-headers ((
-  source (
+(jane-street-headers (
+  (provides ((jane-street-headers v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1325,8 +1470,9 @@
           sha256=e3738c59eae1c3ba74eeb3b2fbb59eb5bcc2e0b5c03eb396012d1ef8201c3fab)))))
     (subpath ())))))
 
-(jane_rope ((
-  source (
+(jane_rope (
+  (provides ((jane_rope v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1335,8 +1481,9 @@
           sha256=ef119aeb51147e3c55d2c46e740f694776c3d1a3a32db9627b8e38cf4882ae03)))))
     (subpath ())))))
 
-(janestreet_cpuid ((
-  source (
+(janestreet_cpuid (
+  (provides ((janestreet_cpuid v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1345,8 +1492,9 @@
           sha256=d7d707105d52a6050ac1f8a6fcfd8b6b3da3eaafac56b7e9b0e8593b0502a3f3)))))
     (subpath ())))))
 
-(janestreet_csv ((
-  source (
+(janestreet_csv (
+  (provides ((janestreet_csv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1355,8 +1503,9 @@
           sha256=fdf57adb298e4b4cfadf57f562b344dd5568bc7d328965de36d1d2bc394eb393)))))
     (subpath ())))))
 
-(janestreet_lru_cache ((
-  source (
+(janestreet_lru_cache (
+  (provides ((janestreet_lru_cache v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1365,8 +1514,9 @@
           sha256=7b0c974019bbd906d9c4dd2b5a3cba83a6430bb87612e0feae0c6d4bae463de3)))))
     (subpath ())))))
 
-(janestreet_shims ((
-  source (
+(janestreet_shims (
+  (provides ((janestreet_shims v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1375,8 +1525,9 @@
           sha256=8836acb80ace3d78fd4825477545b2ddda3f59c8efff413f14c79ac312795d68)))))
     (subpath ())))))
 
-(jingoo ((
-  source (
+(jingoo (
+  (provides ((jingoo 1.4.4)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/tategakibunko/jingoo/archive/v1.4.4.tar.gz))
@@ -1386,6 +1537,10 @@
     (subpath ())))))
 
 (js_of_ocaml (
+  (provides (
+    (js_of_ocaml          6.0.1+ox)
+    (js_of_ocaml-compiler 6.0.1+ox)
+    (js_of_ocaml-ppx      6.0.1+ox)))
   (source (
     (base (
       Http (
@@ -1765,8 +1920,9 @@
     dune.patch
     js_of_ocaml-toplevel.patch))))
 
-(js_of_ocaml_patches ((
-  source (
+(js_of_ocaml_patches (
+  (provides ((js_of_ocaml_patches v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1775,8 +1931,9 @@
           sha256=68efd90e1a95f3db6030a33aabec39658ea7da630a8540625d10c6becb3f8af8)))))
     (subpath ())))))
 
-(jsonaf ((
-  source (
+(jsonaf (
+  (provides ((jsonaf v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1785,8 +1942,9 @@
           sha256=e96f7cd3b156cc71f95579951610e23b40c2825e81ffef11b2e21fd319e4dd65)))))
     (subpath ())))))
 
-(jsonm ((
-  source (
+(jsonm (
+  (provides ((jsonm 1.0.1+dune)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1795,8 +1953,9 @@
           sha256=cb82b2742662636029644db0354a8ff028b9e7495d4fe5278ddef72656b88d1b)))))
     (subpath ())))))
 
-(jst-config ((
-  source (
+(jst-config (
+  (provides ((jst-config v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1805,18 +1964,19 @@
           sha256=885c0e87818008dbf62a22225cebf14fb177f977eb8e90ea4a938b653eff7e0e)))))
     (subpath ())))))
 
-(lambdasoup ((
-  source (
+(lambdasoup (
+  (provides ((lambdasoup 1.1.1)))
+  (source (
     (base (
       Http (
-        (urls (https://github.com/aantron/lambdasoup/archive/1.0.0.tar.gz))
+        (urls (https://github.com/aantron/lambdasoup/archive/1.1.1.tar.gz))
         (hashes (
-          sha256=a393c4ce2ee426d07839165ad080da0bf7aa3523ef974f7529e7130174c8b2bc
-          md5=35d2d399d1033c0cc081b80dd1a04cc7)))))
+          sha256=05d97f38e534a431176ed8d3dbe6dfb7bdcf7770109193c5a69dff53e38f10fe)))))
     (subpath ())))))
 
-(legacy_diffable ((
-  source (
+(legacy_diffable (
+  (provides ((legacy_diffable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1825,18 +1985,9 @@
           sha256=04fefe48c14ba1ed7aa79a66e28325dc4a0f69fe3dd92b34c8f46dd9b9f3d902)))))
     (subpath ())))))
 
-(lib-findlib ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/dune-universe/lib-findlib/archive/v1.8.1+dune.tar.gz))
-        (hashes (
-          sha256=1a337aaedca94837d4d6a1689ed18109e4a2cfd4aa99a56252a6f19fe1291bb0)))))
-    (subpath ())))))
-
-(line-up-words ((
-  source (
+(line-up-words (
+  (provides ((line-up-words v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1845,18 +1996,21 @@
           sha256=b5a28d5c2034ba067b89324be4ca496750e6db92cb2b58d6027205ac6cc68bd0)))))
     (subpath ())))))
 
-(logs ((
-  source (
+(logs (
+  (provides ((logs 0.9.0+dune2)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/dune-universe/logs/archive/v0.7.0+dune.tar.gz))
+          https://github.com/dune-universe/logs/releases/download/v0.9.0%2Bdune2/logs-0.9.0.dune2.tbz))
         (hashes (
-          sha256=06ab994e5fc195f9b655544bffdc7d6aecec8f0f9b285e46f5668ec78030d13c)))))
+          sha256=7afc1c0c9c1214dbc58b4c463bbe1e3b1a6f4d2e72b1aa8a990b0566eaf5a8fa
+          sha512=d34a38671ed975d078551e2c3d926ceb7e84caaca3ff9781f6ef5faf60da45343f1376c80062cd3496880b57b2a5c5a700f58ab99a08accf58411077ad9d80ff)))))
     (subpath ())))))
 
-(lsp_rpc ((
-  source (
+(lsp_rpc (
+  (provides ((lsp_rpc v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1866,6 +2020,7 @@
     (subpath ())))))
 
 (lwt (
+  (provides ((lwt 5.9.2+ox)))
   (source (
     (base (
       Http (
@@ -1882,8 +2037,9 @@
         sha256=97dbcee73e200403694c9b9fd95f9ec7a1d08428343d4d163c945e7f0c431551))))))
   (patches (oxcaml-lwt.patch))))
 
-(man_in_the_middle_debugger ((
-  source (
+(man_in_the_middle_debugger (
+  (provides ((man_in_the_middle_debugger v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1892,8 +2048,9 @@
           sha256=340dc41284561a94274abd7792cec052b4e7c00316de3c69023a6779575aec14)))))
     (subpath ())))))
 
-(markup.ml ((
-  source (
+(markup.ml (
+  (provides ((markup 1.0.3)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/aantron/markup.ml/archive/1.0.3.tar.gz))
@@ -1902,8 +2059,9 @@
           md5=3609724f5408dff41b1cb43107bc24ef)))))
     (subpath ())))))
 
-(maybe_pushback ((
-  source (
+(maybe_pushback (
+  (provides ((maybe_pushback v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1912,28 +2070,12 @@
           sha256=0b7303fae46e4501aea07f8601153a94b52403e5faf0feaafd52f6f64adf656a)))))
     (subpath ())))))
 
-(memtrace ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/memtrace/archive/refs/tags/v0.2.3.tar.gz))
-        (hashes (
-          sha256=fa47379e78be5dbb3066cf96962d18a05d1defb4530588c14e5bc0289e0df520)))))
-    (subpath ())))))
-
-(memtrace_viewer ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/memtrace_viewer/archive/9a65972a537feb006362d6e58b4882f26c0704f5.tar.gz))
-        (hashes (
-          sha256=e48edc0941b1187ac7ab3a35092f7887863080805125f3e0387d722dc353d199)))))
-    (subpath ())))))
-
-(menhir ((
-  source (
+(menhir (
+  (provides (
+    (menhir    20200624+dune)
+    (menhirLib 20200624+dune)
+    (menhirSdk 20200624+dune)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1942,8 +2084,9 @@
           sha256=a85fcee494adb8f17a4de44ed4079c501adec6b5a33ce791c92f8e5d2481e40a)))))
     (subpath ())))))
 
-(mlt_parser ((
-  source (
+(mlt_parser (
+  (provides ((mlt_parser v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1952,8 +2095,9 @@
           sha256=87ecbd4d41d5d920b29f1946b43a5a8062c0ccfeb6fd62c85bbbaf2dfd5b1956)))))
     (subpath ())))))
 
-(n_ary ((
-  source (
+(n_ary (
+  (provides ((n_ary v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1962,18 +2106,9 @@
           sha256=da614b9ab82aa57db3b4ba9ccf14c504aafa60cad970530ad0907917653f5b7a)))))
     (subpath ())))))
 
-(netsnmp ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/netsnmp/archive/e68f3a00c91d9ceec36c5c69037e0b75f0b9d779.tar.gz))
-        (hashes (
-          sha256=6572a96c2002613a40412319bd6170e1f7a6eac907dd662f76331fa9c77cab6e)))))
-    (subpath ())))))
-
-(nonempty_interval_lib ((
-  source (
+(nonempty_interval_lib (
+  (provides ((nonempty_interval_lib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1982,8 +2117,9 @@
           sha256=5ee546a17dba8a637142acb0d059affafc9c9c8f14fc97bd2645e2204e85d2bd)))))
     (subpath ())))))
 
-(notty ((
-  source (
+(notty (
+  (provides ((notty 0.2.3)))
+  (source (
     (base (
       Http (
         (urls (
@@ -1993,8 +2129,9 @@
           sha512=6e21d44fe39f3d80884b87635bebae55cb2b931ef74f9184ba4d74cc3e51cb0b3e976c3b6dc61d377288504e8bfabe21acdc1069eacb30df1fbf6686b80f7c6b)))))
     (subpath ())))))
 
-(notty_async ((
-  source (
+(notty_async (
+  (provides ((notty_async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2003,18 +2140,21 @@
           sha256=c66a6eb42c0af28e59b98b84dd22a0ea7cfee2f8070fc32af151f00404dfe6f2)))))
     (subpath ())))))
 
-(num ((
-  source (
+(num (
+  (provides ((num 1.4+dune2)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/dune-universe/num/archive/v1.3+dune-2.tar.gz))
+          https://github.com/dune-universe/num/releases/download/v1.4%2Bdune2/num-v1.4.dune2.tbz))
         (hashes (
-          sha256=32156376be05260eb72f651ae33df41fe0af03ad322bee29a10495efadfb2d1d)))))
+          sha256=ec52dcab09b6b638d1a2048e733ec402ee687e89383c3a62d7c0e12f8ed661ad
+          sha512=7d6035bd96a71d248c31662b877330656cd29040f45a143695bfa96765b91cea2f4c04b6ff78fdfa5876c1032c3baf4fd22c679b0ae09858d93cf46c1474b5cb)))))
     (subpath ())))))
 
-(numeric_string ((
-  source (
+(numeric_string (
+  (provides ((numeric_string v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2023,19 +2163,23 @@
           sha256=d5f65bd8efd806a1b156bf803aa8714aae011ae7b452c020a687e0896e1aa468)))))
     (subpath ())))))
 
-(ocaml-base64 ((
-  source (
+(ocaml-base64 (
+  (provides ((base64 3.5.2)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-base64/releases/download/v3.4.0/base64-v3.4.0.tbz))
+          https://github.com/mirage/ocaml-base64/releases/download/v3.5.2/base64-3.5.2.tbz))
         (hashes (
-          sha256=1c9cf655bdd771a4d20014f7f29aadfde7e3821b01772b49f8ba4d4bda2b1634
-          sha512=e66a67302a9eb136044bebf66a89a1d6e38a96c70622bb6cd27916fec36dcaf4b5b7e7d00c25608f0a2363f2ca4264a5fe765fe7747590958325dbce06311db9)))))
+          sha256=b3f5ce301aa72c7032ef90be2332d72ff3962922c00ee2aec6bcade187a2f59b
+          sha512=82148a1fefec9493aaeac032c8d46b9548369d7fd90a57865e009a32c8a0eef950f0f8dbb52b74bb46880a590a0b49f2daa7ab4857233734aee8e383f5a164ec)))))
     (subpath ())))))
 
-(ocaml-cohttp ((
-  source (
+(ocaml-cohttp (
+  (provides (
+    (cohttp       5.3.0)
+    (cohttp-async 5.3.0)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2046,6 +2190,7 @@
     (subpath ())))))
 
 (ocaml-compiler-libs (
+  (provides ((ocaml-compiler-libs v0.17.0+ox)))
   (source (
     (base (
       Http (
@@ -2063,29 +2208,36 @@
         sha256=65c1f6a92d5c52781a0b6241d97ad0ce14dcd7834c14cef9a1e810ce85b27be4))))))
   (patches (read_cma.patch))))
 
-(ocaml-conduit ((
-  source (
+(ocaml-conduit (
+  (provides (
+    (conduit       8.0.0)
+    (conduit-async 8.0.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-conduit/releases/download/v5.1.0/conduit-5.1.0.tbz))
+          https://github.com/mirage/ocaml-conduit/releases/download/v8.0.0/conduit-8.0.0.tbz))
         (hashes (
-          sha256=e51c8c3e879cbbe9e09989b00595093832dc86642088072e03e5a59a2a2391cd
-          sha512=ffe4ca1e372a94db999f51fe4903f4a8f2f3ddb079cd0470c499dbd61109674df8de968e535c1c6f5bd7b00a6aed2c6b6d193c8dcf370102e27150903646a73e)))))
+          sha256=0a63d910865b5473893a170cda51f61388f488ecf4c4b2ed7fe9ec4e2cf66f61
+          sha512=63c73616c5a4a6436aa9a1c8d2771d70e15789c639aaec6b9a95622aee0b364f18278e88ed769fbae84fefb817bef1c9c81fe41e969f03db99612295a159b536)))))
     (subpath ())))))
 
-(ocaml-cstruct ((
-  source (
+(ocaml-cstruct (
+  (provides ((cstruct 6.2.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-cstruct/releases/download/v6.0.0/cstruct-v6.0.0.tbz))
+          https://github.com/mirage/ocaml-cstruct/releases/download/v6.2.0/cstruct-6.2.0.tbz))
         (hashes (
-          sha256=78a16d2f258cf308e9600374d8fe4ec21cf09e618acf86337663805f90642676
-          sha512=9f8be171ec365f04df18cb4c144c9cfb843f6a3190d01006138a7736b80b3012788b9b799d784b9a2bea480f92d635edd138ee8ac619442ca2fb666279d7c2d1)))))
+          sha256=9a78073392580e8349148fa3ab4b1b2e989dc9d30d07401b04c96b7c60f03e62
+          sha512=8d33fe6b3707a3994d0225cd33cadde0bb2ca834ef01096e3df33a08e4a8c6d02ebccddf558a73988b8a5595b65fdc10de61efbf872c6c9e55c719c7e19c463d)))))
     (subpath ())))))
 
 (ocaml-ctypes (
+  (provides (
+    (ctypes         0.23.0+ox)
+    (ctypes-foreign 0.23.0+ox)))
   (source (
     (base (
       Http (
@@ -2104,8 +2256,9 @@
         sha256=c5d59b4624382cd61ff8da5c9ec3153ada0880efc43fbb2a20491984bd509a3e))))))
   (patches (bigarray.patch))))
 
-(ocaml-embed-file ((
-  source (
+(ocaml-embed-file (
+  (provides ((ocaml-embed-file v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2114,40 +2267,61 @@
           sha256=9e379825370b934926f8ae140afe50880667bfd735e63a62166e9f1e9f32ce23)))))
     (subpath ())))))
 
-(ocaml-inotify ((
-  source (
+(ocaml-hex (
+  (provides ((hex 1.5.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/whitequark/ocaml-inotify/archive/v2.4.1.tar.gz))
+          https://github.com/mirage/ocaml-hex/releases/download/v1.5.0/hex-1.5.0.tbz))
         (hashes (
-          md5=5bb1c5754d305acf9c1f10611f49aae2
-          sha512=3e114ee0e8b5b9c7c996df0d2cd8f03e0efdfb9837c1990f98c256868c0e2ad275f91be1adcfbbbcf1bdab801f18e82efa483510d2566e0d12cb303dfc91e4e5)))))
+          sha256=2e67eeca1b03049307a30831b5cd694bcb2d3e7f2a6b4fb597fbdb647351b4dc
+          sha512=baa09b47a90f0a54ad2becfb272f0674219e4fc0c03559deff26aaf13ccd59258b31bf98e56c44a5a8fa03437e3eba2bf5f0cd76e52d184d26cfb1170c490462)))))
     (subpath ())))))
 
-(ocaml-integers ((
-  source (
-    (base (
-      Http (
-        (urls (https://github.com/yallop/ocaml-integers/archive/0.6.0.tar.gz))
-        (hashes (
-          sha256=7b4bd5f03270201aa22612137edb7844f752e201012b6b584620b76fa0062bf8
-          md5=a1e2412f4a0d88757d1a4297f18b374e)))))
-    (subpath ())))))
-
-(ocaml-ipaddr ((
-  source (
+(ocaml-inotify (
+  (provides ((inotify 2.6)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-ipaddr/releases/download/v5.6.0/ipaddr-5.6.0.tbz))
+          https://github.com/whitequark/ocaml-inotify/releases/download/v2.6/inotify-2.6.tbz))
         (hashes (
-          sha256=9e30433fdb4ca437a6aa8ffb447baca5eba7615fb88e7b0cd8a4b416c3208133
-          sha512=66a3bedfd91dacd6c1de9ba35abac3ef2ad3c2c8543f7b4e2a0cc6283a8d42138b48d02e904df0232ee9f320920e889bddbbda9a5148c5c6b72fd0164e0c6a34)))))
+          sha256=1d103e7dd32fddd0f1201b2d2f6c5b762548277bc173beef7b072f30ea89ccc4
+          sha512=660a44e3083f76f0342a6214ba9df4e18b42cc5da833cae3200345e5f0c5c353a3d67dace21ba00d3365d6866a82c90e5b732c9f8e3d9e38687239d6d0fe41f5)))))
     (subpath ())))))
 
-(ocaml-lsp ((
-  source (
+(ocaml-integers (
+  (provides ((integers 0.7.0)))
+  (source (
+    (base (
+      Http (
+        (urls (https://github.com/yallop/ocaml-integers/archive/0.7.0.tar.gz))
+        (hashes (
+          sha256=8bb517fa9a1818246eb8c4ce34ee1489fbebb4b92defa3a25d13cab8d23ec685
+          md5=201cf24143d7cb9a3921d572b6e6c42c)))))
+    (subpath ())))))
+
+(ocaml-ipaddr (
+  (provides (
+    (ipaddr      5.6.1)
+    (ipaddr-sexp 5.6.1)
+    (macaddr     5.6.1)))
+  (source (
+    (base (
+      Http (
+        (urls (
+          https://github.com/mirage/ocaml-ipaddr/releases/download/v5.6.1/ipaddr-5.6.1.tbz))
+        (hashes (
+          sha256=1e617df8abd45843c823e9be75267d27426cb578661cf25622d50b25ae14a319
+          sha512=09c37f963d27f697ee17b83f26364002cc2e60516c2199f78cd20663aaf293a1ce4380d728641b4c9b79066dc814c8f9293722a567ce6898261c4e98b34d80c2)))))
+    (subpath ())))))
+
+(ocaml-lsp (
+  (provides (
+    (jsonrpc 1.19.0+ox)
+    (lsp     1.19.0+ox)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2156,19 +2330,21 @@
           sha256=9dd1e2822f0334d064c714464acf7a45188063b5f3fc69f77cab83ddfdc1edc0)))))
     (subpath ())))))
 
-(ocaml-magic-mime ((
-  source (
+(ocaml-magic-mime (
+  (provides ((magic-mime 1.3.1)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-magic-mime/releases/download/v1.1.2/magic-mime-v1.1.2.tbz))
+          https://github.com/mirage/ocaml-magic-mime/releases/download/v1.3.1/magic-mime-1.3.1.tbz))
         (hashes (
-          sha256=0c590bbc747531b56d392ee8f063d879df1e2026ba2dfa2d1bc98c9a9acb04eb
-          sha512=8264db78adc2c75b8adabc23c26ad34eab98383bd3a8f2068f2236ff3425d653c0238fbd7361e55a3d70d843413ef8671b6e97293074b4d3a1e300628d5292ab)))))
+          sha256=e0234d03625dba1efac58e57e387672d75a5e9a621ff49acfe0f609c00f13b08
+          sha512=607f7469caa2e800a92e3c5248125108fad5e0513f4230a37ed774c86112eacdae0ee533c5c78ec2752e939e83e2201dd4ee02cbbff92ae32e25683710d7b365)))))
     (subpath ())))))
 
-(ocaml-probes ((
-  source (
+(ocaml-probes (
+  (provides ((ocaml-probes v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2178,6 +2354,7 @@
     (subpath ())))))
 
 (ocaml-re (
+  (provides ((re 1.14.0+ox)))
   (source (
     (base (
       Http (
@@ -2435,8 +2612,9 @@
     re+lib_test+expect+test_re.ml.patch
     re+lib_test+re_private.ml.patch))))
 
-(ocaml-syntax-shims ((
-  source (
+(ocaml-syntax-shims (
+  (provides ((ocaml-syntax-shims 1.0.0)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2446,19 +2624,23 @@
           sha512=75c4c6b0bfa1267a8a49a82ba494d08cf0823fc8350863d6d3d4971528cb09e5a2a29e2981d04c75e76ad0f49360b05a432c9efeff9a4fbc1ec6b28960399852)))))
     (subpath ())))))
 
-(ocaml-uri ((
-  source (
+(ocaml-uri (
+  (provides (
+    (uri      4.4.0)
+    (uri-sexp 4.4.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mirage/ocaml-uri/releases/download/v4.0.0/uri-v4.0.0.tbz))
+          https://github.com/mirage/ocaml-uri/releases/download/v4.4.0/uri-4.4.0.tbz))
         (hashes (
-          sha256=000d9928877581c4f2fe6e02dee41db9cc4cb1f21e383f3b6ee3a7eadfb4298f
-          sha512=954b082b9409717bd59164b8a03196af9320f60fcb529bf885ba1771a4097aaf6c4cc3769e1d7b8be5239bfb690119b53b6a3fa6282a5ac5a5544119d82b1b7e)))))
+          sha256=cdabaf6ef5cd2161e59cc7b74c6e4a68ecb80a9f4e96002e338e1b6bf17adec4
+          sha512=88374143e0d8aaf6d40aa3cbd7593f9832e9c9727738c6e651498125150c83d5646e13b5737d5c3e81484dd041127f67f8acea13fdc0300ac4e46107559f8ae2)))))
     (subpath ())))))
 
-(ocaml_intrinsics ((
-  source (
+(ocaml_intrinsics (
+  (provides ((ocaml_intrinsics v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2467,8 +2649,9 @@
           sha256=8e9bb506c76f8f7acd732ae6d87fb288fc76e181f886899fa5a84676f90429b4)))))
     (subpath ())))))
 
-(ocaml_intrinsics_kernel ((
-  source (
+(ocaml_intrinsics_kernel (
+  (provides ((ocaml_intrinsics_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2477,8 +2660,9 @@
           sha256=1888cae1e68f8f03a4cdfbea93d3ae81a9a067022c49447510856347e8da7c12)))))
     (subpath ())))))
 
-(ocaml_openapi_generator ((
-  source (
+(ocaml_openapi_generator (
+  (provides ((ocaml_openapi_generator v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2487,18 +2671,9 @@
           sha256=c63546623a2060454b761177dd311255311e622d733593cd4b8ff9508ba82b0d)))))
     (subpath ())))))
 
-(ocaml_simd ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/ocaml_simd/archive/97a46879ef79427d97596ced718ae693f4cf046f.tar.gz))
-        (hashes (
-          sha256=6ef92bba933d324091d6795992f58427f5c6710eb30aad71f9578d5d13e8e04b)))))
-    (subpath ())))))
-
-(ocamlgraph ((
-  source (
+(ocamlgraph (
+  (provides ((ocamlgraph 2.0.0)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2508,26 +2683,30 @@
           sha512=c4973ac03bdff52d1c8a1ed01c81e0fbe2f76486995e57ff4e4a11bcc7b1793556139d52a81ff14ee8c8de52f1b40e4bd359e60a2ae626cc630ebe8bccefb3f1)))))
     (subpath ())))))
 
-(ocplib-endian ((
-  source (
+(ocplib-endian (
+  (provides ((ocplib-endian 1.2)))
+  (source (
     (base (
       Http (
-        (urls (https://github.com/OCamlPro/ocplib-endian/archive/1.1.tar.gz))
+        (urls (
+          https://github.com/OCamlPro/ocplib-endian/archive/refs/tags/1.2.tar.gz))
         (hashes (
-          md5=dedf4d69c1b87b3c6c7234f632399285
-          sha512=39351c666d1394770696fa89ac62f7c137ad1697d99888bfba2cc8de2c61df05dd8b3aa327c117bf38f3e29e081026d2c575c5ad0022bde92b3d43aba577d3f9)))))
+          md5=8d5492eeb7c6815ade72a7415ea30949
+          sha512=2e70be5f3d6e377485c60664a0e235c3b9b24a8d6b6a03895d092c6e40d53810bfe1f292ee69e5181ce6daa8a582bfe3d59f3af889f417134f658812be5b8b85)))))
     (subpath ())))))
 
-(odoc ((
-  source (
+(odoc (
+  (provides ((odoc-parser 3.1.0+ox)))
+  (source (
     (base (
       Git (
         (urls (https://github.com/oxcaml/odoc.git))
         (commit 97e1daecb432d33a7137d525f7a554f203073a95))))
     (subpath ())))))
 
-(of_json ((
-  source (
+(of_json (
+  (provides ((of_json v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2536,57 +2715,9 @@
           sha256=35c482b0ab0f783a4cc9babcdb820afa6af166351acb32fd52fb52cc87e29ea2)))))
     (subpath ())))))
 
-(ojs (
+(oklab (
+  (provides ((oklab v0.18~preview.130.55+197)))
   (source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/LexiFi/gen_js_api/archive/refs/tags/v1.1.2.tar.gz))
-        (hashes (
-          md5=58ab892f1702400247d692f44215b365
-          sha512=26196c124f6c4dc488012990ac99dbde2377b17ac178709e55cf493385ba6253c05d1118415f55accc4cb487e6b4494c24a2f8ac113f65a374e55f3036f6b9ec)))))
-    (subpath ())))
-  (extra (
-    (dune.patch (
-      (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/dune.patch))
-      (hashes (
-        sha256=486d4235a5baa84b63b867ceaa9000b8c7fa6c9429999ab247e4ba3401da214e))))
-    (gen-js-api+js_of_ocaml-globalThis.patch (
-      (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+js_of_ocaml-globalThis.patch))
-      (hashes (
-        sha256=7828fe1796e89139bbfe38e9fdf6b0d959d15bf4e9762f24bfe3749de409398d))))
-    (gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
-     ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch))
-      (hashes (
-        sha256=4bcca59531d1c30227f153728b653a03cfca4048fe0dd6e14c0702fde8739e12))))
-    (gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
-     ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch))
-      (hashes (
-        sha256=813d51aee7836858c33494e3bc458516a39aac6f3f515ae70631cf66e026e329))))
-    (gen-js-api+unsafe_multidomain_alert.patch
-     ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api+unsafe_multidomain_alert.patch))
-      (hashes (
-        sha256=41fd51a6dd20b44bc07451e4635623554c4aa80e5e5f9472faf4161c7a7b0a7a))))
-    (gen-js-api-ast.patch (
-      (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/ojs/ojs.1.1.2+ox/files/gen-js-api-ast.patch))
-      (hashes (
-        sha256=969f7ae0ac3a269f5fecffc659a875d7ba458364aa85da2e9bfa8cd3a214ae2f))))))
-  (patches (
-    gen-js-api+js_of_ocaml-globalThis.patch
-    gen-js-api+ppx-driver+gen_js_api_ppx_driver.ml.patch
-    gen-js-api+ppx-lib+gen_js_api_ppx.ml.patch
-    gen-js-api+unsafe_multidomain_alert.patch
-    gen-js-api-ast.patch
-    dune.patch))))
-
-(oklab ((
-  source (
     (base (
       Http (
         (urls (
@@ -2595,8 +2726,9 @@
           sha256=04c55ede8b4ac74b0604443849bcd32ec9f911051d3490dbe36c362251ba5c72)))))
     (subpath ())))))
 
-(ordinal_abbreviation ((
-  source (
+(ordinal_abbreviation (
+  (provides ((ordinal_abbreviation v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2605,19 +2737,21 @@
           sha256=f54454a822d80214b5be36cfd3992a116c2f4b7591f8e1b4e383f9ee06c4a297)))))
     (subpath ())))))
 
-(owee ((
-  source (
+(owee (
+  (provides ((owee 0.8)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/let-def/owee/releases/download/v0.4/owee-0.4.tbz))
+          https://github.com/let-def/owee/releases/download/v0.8/owee-0.8.tbz))
         (hashes (
-          sha256=6b7f3c4241ba41732ffc04705cf5935cf917b7ab3cc3f514be21cee63c88ab14
-          sha512=8625045c55abd99568c9720aebd4b2ef1705287cb9c60047e25d291db169ca6b956e6308001afa3e8bd4507dc56e9bd108d5aea27742384e7d6513817d205ebd)))))
+          sha256=064f6245f5995d5d2f4f1f9c6d2992e2fdbe3dde328216baec7cfabd4857940d
+          sha512=c79cdaeedbd08ee58784e965a2865aff94d41013c4f978fd21ebd84df742402aeddaab2f1880bde0d0ff7311fe0565151882e6060590d751119ad0fd9d62a901)))))
     (subpath ())))))
 
-(oxcaml_effect ((
-  source (
+(oxcaml_effect (
+  (provides ((oxcaml_effect v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2626,8 +2760,9 @@
           sha256=48010e4807dcd211efa887359936f946b2e7b1bc5d56271dc902219c2cdc3651)))))
     (subpath ())))))
 
-(pam ((
-  source (
+(pam (
+  (provides ((pam v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2636,8 +2771,9 @@
           sha256=2d1310b9b002eb57c25d0b9ee79d02cb68f2edac5f5a35ba9b0698c324d41d32)))))
     (subpath ())))))
 
-(parallel ((
-  source (
+(parallel (
+  (provides ((parallel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2646,8 +2782,9 @@
           sha256=9b7aaa4898c161809a647918dc91b17bd2a979f193c3333abf1d2a0992fface1)))))
     (subpath ())))))
 
-(parsexp ((
-  source (
+(parsexp (
+  (provides ((parsexp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2656,8 +2793,9 @@
           sha256=ea1cebc7d001fe884b31b989b8a517774f23c52f57dd3d1d08731f93fdaf17a0)))))
     (subpath ())))))
 
-(parsexp_io ((
-  source (
+(parsexp_io (
+  (provides ((parsexp_io v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2666,8 +2804,9 @@
           sha256=767a5798da24a70c5db7eba955d52c7b872eccaf1d3ea9dcaf651b9dad24be22)))))
     (subpath ())))))
 
-(parsexp_prefix ((
-  source (
+(parsexp_prefix (
+  (provides ((parsexp_prefix v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2676,8 +2815,9 @@
           sha256=89dec4511b8fc9406eeb61c0e23259f305de2b84f2c464b40026aa47d0ff7284)))))
     (subpath ())))))
 
-(parsexp_symbolic_automaton ((
-  source (
+(parsexp_symbolic_automaton (
+  (provides ((parsexp_symbolic_automaton v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2686,8 +2826,9 @@
           sha256=20dd8653f58deee1128af55ec5c10d8db638be61b70e15f1ad5b1403813b9b8d)))))
     (subpath ())))))
 
-(patdiff ((
-  source (
+(patdiff (
+  (provides ((patdiff v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2696,8 +2837,9 @@
           sha256=2564427df2d648c00c6d5f64d59294186db6ee8c66a84a8a307649133e1f2589)))))
     (subpath ())))))
 
-(patience_diff ((
-  source (
+(patience_diff (
+  (provides ((patience_diff v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2706,19 +2848,21 @@
           sha256=e1ffffee48d7d93c52ec70a83a4b8f14f3c8a1c2721dd9cd2eb592dc556473f1)))))
     (subpath ())))))
 
-(pcre-ocaml ((
-  source (
+(pcre-ocaml (
+  (provides ((pcre 8.0.5)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/mmottl/pcre-ocaml/releases/download/7.3.5/pcre-7.3.5.tbz))
+          https://github.com/mmottl/pcre-ocaml/releases/download/8.0.5/pcre-8.0.5.tbz))
         (hashes (
-          sha256=d8f8dfeb6368fcff126f6a09c6a28d8287118a7cdd16b8ac1b69074745967e16
-          md5=f1ad11d393d2df08c03c0e7eb0ce85e4)))))
+          sha256=ed9bcf88d781767ad6a7c0480aff09d5889f2fc500dda0d1620a1786d4e44490
+          sha512=3b221f39641864d16ee72ab80cc984eb8cd3b4bad0caa649e4fe0b89eb04e5d05ed3986135826761773fbbd83f87b28acc4f329bb0242790a2c1ea18602857a1)))))
     (subpath ())))))
 
-(pending_or_error ((
-  source (
+(pending_or_error (
+  (provides ((pending_or_error v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2727,8 +2871,9 @@
           sha256=ca61f4b743c830092caa6fb61ea287a952fcbd5dde6d0f92c3ec7577c9d6a7e0)))))
     (subpath ())))))
 
-(pipe_with_writer_error ((
-  source (
+(pipe_with_writer_error (
+  (provides ((pipe_with_writer_error v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2737,8 +2882,9 @@
           sha256=1833e2ee2902e20413c89184b14985076b213962bb124b6e08e8ced91b269e11)))))
     (subpath ())))))
 
-(polling_state_rpc ((
-  source (
+(polling_state_rpc (
+  (provides ((polling_state_rpc v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2747,8 +2893,9 @@
           sha256=c91f5d45d7d22425d413e9ed8d9dbffd3dbdf0ee35c57ecb29ed4e9fc4154d24)))))
     (subpath ())))))
 
-(portable ((
-  source (
+(portable (
+  (provides ((portable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2757,8 +2904,9 @@
           sha256=69437dc6aaae3545f405a917a10729e222d36eff185b1faf81e07cdf1d54abe1)))))
     (subpath ())))))
 
-(portable_async ((
-  source (
+(portable_async (
+  (provides ((portable_async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2767,8 +2915,9 @@
           sha256=49ddadd9072bd1e1b01662f1aa09afa06b8c0641c80877394966e7e11d8e584e)))))
     (subpath ())))))
 
-(portable_ws_deque ((
-  source (
+(portable_ws_deque (
+  (provides ((portable_ws_deque v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2777,8 +2926,9 @@
           sha256=f4ccbca5e9e41391c9dc7b374eca5fa8d1438553f576250232120443ecbd4071)))))
     (subpath ())))))
 
-(posixat ((
-  source (
+(posixat (
+  (provides ((posixat v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2787,8 +2937,9 @@
           sha256=ec2ad8edc9d1423a20ce309d636880ad7f782ccd8666a4455c4197d860aa232e)))))
     (subpath ())))))
 
-(postgres_async ((
-  source (
+(postgres_async (
+  (provides ((postgres_async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2797,8 +2948,9 @@
           sha256=dd90e777993fa87d6f70942fcb4b1bae6f8de00339a340146e35a8ac67370efb)))))
     (subpath ())))))
 
-(ppx_accessor ((
-  source (
+(ppx_accessor (
+  (provides ((ppx_accessor v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2807,8 +2959,9 @@
           sha256=58611ae70106d839a72e5c3715e9aabbe35745df22097f1da5a4a6e5d4abf8a6)))))
     (subpath ())))))
 
-(ppx_anonymous_record ((
-  source (
+(ppx_anonymous_record (
+  (provides ((ppx_anonymous_record v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2817,8 +2970,9 @@
           sha256=3c97980a0d1b0d7eecb2feef491181904469e3ba5bc67402a2170c0b39bf3427)))))
     (subpath ())))))
 
-(ppx_array ((
-  source (
+(ppx_array (
+  (provides ((ppx_array v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2827,8 +2981,9 @@
           sha256=fa100441348373e3e9f9d838dda4d8b01c5dbbcce00df7f6b188b6d7f4714e9b)))))
     (subpath ())))))
 
-(ppx_array_base ((
-  source (
+(ppx_array_base (
+  (provides ((ppx_array_base v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2837,8 +2992,9 @@
           sha256=679aeeb2bb638a372683e09c9a15f0c8ca3bf443eadb674977727ed49d489c69)))))
     (subpath ())))))
 
-(ppx_assert ((
-  source (
+(ppx_assert (
+  (provides ((ppx_assert v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2847,8 +3003,9 @@
           sha256=d74ade59641e3a3a6e8fe5d555b727886e6700894a4ae929861d86452ead8aca)))))
     (subpath ())))))
 
-(ppx_base ((
-  source (
+(ppx_base (
+  (provides ((ppx_base v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2857,8 +3014,9 @@
           sha256=75873c9d4ddb5abde050f9bb444207614f0c5ace6e0b5e7ea6e1885694810d66)))))
     (subpath ())))))
 
-(ppx_bench ((
-  source (
+(ppx_bench (
+  (provides ((ppx_bench v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2867,8 +3025,9 @@
           sha256=ef3a92a05ca51200c07dc3edc2e80c9b3a6b5b27521a20fbef7bf256d7d1b859)))))
     (subpath ())))))
 
-(ppx_bin_prot ((
-  source (
+(ppx_bin_prot (
+  (provides ((ppx_bin_prot v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2877,8 +3036,9 @@
           sha256=a427274d4e036c06fa5f7dfaed7f4316fbdf0543a58eb50c74262826212f5696)))))
     (subpath ())))))
 
-(ppx_box ((
-  source (
+(ppx_box (
+  (provides ((ppx_box v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2887,8 +3047,9 @@
           sha256=b972e141c2994a0475cbdeedbbde39bfcc415c1b43c884002ebbc3430e597f6c)))))
     (subpath ())))))
 
-(ppx_cold ((
-  source (
+(ppx_cold (
+  (provides ((ppx_cold v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2897,8 +3058,9 @@
           sha256=9ad1bd94aacea1b091ccde2083d386302f77eb611867f69dc9afb253465e6dc0)))))
     (subpath ())))))
 
-(ppx_compare ((
-  source (
+(ppx_compare (
+  (provides ((ppx_compare v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2907,8 +3069,9 @@
           sha256=106de00263d6bfb8b01080e7a59430b7ccf17eed0579e040ce5aac68216a5669)))))
     (subpath ())))))
 
-(ppx_conv_func ((
-  source (
+(ppx_conv_func (
+  (provides ((ppx_conv_func v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2917,8 +3080,9 @@
           sha256=7815f04aecb313844aa9b09baa91f89d7c3ac5a4e797acf5599dfe73fcc8d10f)))))
     (subpath ())))))
 
-(ppx_css ((
-  source (
+(ppx_css (
+  (provides ((ppx_css v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2927,8 +3091,9 @@
           sha256=5a79ab68d0771acca7f1dcfe73ccab5f0afe56d955ffbe4adecc78ed8baa5290)))))
     (subpath ())))))
 
-(ppx_csv_conv ((
-  source (
+(ppx_csv_conv (
+  (provides ((ppx_csv_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2937,8 +3102,9 @@
           sha256=f53b875f2f36589d0b05a6b288490d831c806c0622f012169ff1cf8375e1a266)))))
     (subpath ())))))
 
-(ppx_custom_printf ((
-  source (
+(ppx_custom_printf (
+  (provides ((ppx_custom_printf v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2947,8 +3113,9 @@
           sha256=45fdd79931fb49620bb882a5c60f78b147d2601f2e44759e28ef061516409d11)))))
     (subpath ())))))
 
-(ppx_debug_assert ((
-  source (
+(ppx_debug_assert (
+  (provides ((ppx_debug_assert v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2957,18 +3124,9 @@
           sha256=8394cccfd7305455f6a6eb03397afc5b402f8b247a1125a1589a2fd3776c7707)))))
     (subpath ())))))
 
-(ppx_demo ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/ppx_demo/archive/7a94f8cf47743dde73f378199b99122ca17c86bb.tar.gz))
-        (hashes (
-          sha256=006da03dda861fab0e75fbe1ad8ef80f1e14e4bf849389d5a9e1b31d44016e59)))))
-    (subpath ())))))
-
-(ppx_derive_at_runtime ((
-  source (
+(ppx_derive_at_runtime (
+  (provides ((ppx_derive_at_runtime v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -2977,8 +3135,9 @@
           sha256=e361554cffe2cb8ad04b22623213d704dc42d2de2c3ad9e3ae8a3d09e95dc38a)))))
     (subpath ())))))
 
-(ppx_derivers ((
-  source (
+(ppx_derivers (
+  (provides ((ppx_derivers 1.2.1)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/ocaml-ppx/ppx_derivers/archive/1.2.1.tar.gz))
@@ -2987,16 +3146,18 @@
           md5=5dc2bf130c1db3c731fe0fffc5648b41)))))
     (subpath ())))))
 
-(ppx_deriving ((
-  source (
+(ppx_deriving (
+  (provides ((ppx_deriving 6.1.1+ox)))
+  (source (
     (base (
       Git (
         (urls (https://github.com/patricoferris/ppx_deriving.git))
         (commit 4cb09f54ff13e525804852190bfed8abb9267014))))
     (subpath ())))))
 
-(ppx_diff ((
-  source (
+(ppx_diff (
+  (provides ((ppx_diff v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3005,8 +3166,9 @@
           sha256=23fdeb4ca373c08b1464b03519fec46c25216ea6dd44f51a8fd70a6261883a6d)))))
     (subpath ())))))
 
-(ppx_disable_unused_warnings ((
-  source (
+(ppx_disable_unused_warnings (
+  (provides ((ppx_disable_unused_warnings v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3015,8 +3177,9 @@
           sha256=3ca05f9c4713db1e982e5567d9a521ee3731add6b239060f2b36657465207d8d)))))
     (subpath ())))))
 
-(ppx_embed_file ((
-  source (
+(ppx_embed_file (
+  (provides ((ppx_embed_file v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3025,8 +3188,9 @@
           sha256=a8d6dc00c9380dfc7f9a69117d10369925e35b7d84a362497195c7cbdc677511)))))
     (subpath ())))))
 
-(ppx_enumerate ((
-  source (
+(ppx_enumerate (
+  (provides ((ppx_enumerate v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3035,8 +3199,9 @@
           sha256=af1eb3b295f669efb5cccc703d4226665bca3bff5f036c730ee4fc21df963417)))))
     (subpath ())))))
 
-(ppx_expect ((
-  source (
+(ppx_expect (
+  (provides ((ppx_expect v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3045,8 +3210,9 @@
           sha256=909827c7efe7af21f65b71a362b0470cdc2db853ccc0119eac1315baa4936f8c)))))
     (subpath ())))))
 
-(ppx_fields_conv ((
-  source (
+(ppx_fields_conv (
+  (provides ((ppx_fields_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3055,8 +3221,9 @@
           sha256=44b45853dff7e3d0f211d393cc91cbc05c8916a40fb5ce3dec167431b892abd0)))))
     (subpath ())))))
 
-(ppx_fixed_literal ((
-  source (
+(ppx_fixed_literal (
+  (provides ((ppx_fixed_literal v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3065,8 +3232,9 @@
           sha256=8bdaa2f9b07caefae41838a88f2a9204e21244fafc8f3e1f84d52bce025ad6c9)))))
     (subpath ())))))
 
-(ppx_for_loop ((
-  source (
+(ppx_for_loop (
+  (provides ((ppx_for_loop v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3075,8 +3243,9 @@
           sha256=4cc2f1bd97d726e2714c57666e20285daadec8d54b297570c32a532648aff7af)))))
     (subpath ())))))
 
-(ppx_fuelproof ((
-  source (
+(ppx_fuelproof (
+  (provides ((ppx_fuelproof v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3085,8 +3254,9 @@
           sha256=407e412eb81575fbb64eb0903a9f53968c9aad37f2e3e3ec6a31dded5fe92702)))))
     (subpath ())))))
 
-(ppx_globalize ((
-  source (
+(ppx_globalize (
+  (provides ((ppx_globalize v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3095,8 +3265,9 @@
           sha256=48f81070f92c764c46eab8736a86bf28547e76ee3eb31ff1de8fb675512c8577)))))
     (subpath ())))))
 
-(ppx_hardcaml ((
-  source (
+(ppx_hardcaml (
+  (provides ((ppx_hardcaml v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3105,8 +3276,9 @@
           sha256=e405ac926990862490d4a259b6534abc7addbe410b0bf669b49df4f70a9fbd9b)))))
     (subpath ())))))
 
-(ppx_hash ((
-  source (
+(ppx_hash (
+  (provides ((ppx_hash v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3115,8 +3287,9 @@
           sha256=0335a6603e9ca4567b1677d95b4e5869510fb8a23de63e43e3a7463d898353f4)))))
     (subpath ())))))
 
-(ppx_helpers ((
-  source (
+(ppx_helpers (
+  (provides ((ppx_helpers v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3125,8 +3298,9 @@
           sha256=6fdeff284d56a956dbcabe6c54f95295fcfabc72e74387c3cc2ad5f57aa05c03)))))
     (subpath ())))))
 
-(ppx_here ((
-  source (
+(ppx_here (
+  (provides ((ppx_here v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3135,8 +3309,9 @@
           sha256=d5dfa41252f621cffc619d6ca137b6df9582093652cf9161b50960ed023b455c)))))
     (subpath ())))))
 
-(ppx_html ((
-  source (
+(ppx_html (
+  (provides ((ppx_html v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3145,8 +3320,9 @@
           sha256=1b7a13f86c5b8f1be62c7a6238d12d6ba73c0eb52dc50c210c29af31cdfa6494)))))
     (subpath ())))))
 
-(ppx_ignore_instrumentation ((
-  source (
+(ppx_ignore_instrumentation (
+  (provides ((ppx_ignore_instrumentation v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3155,8 +3331,9 @@
           sha256=492b06578131f87c40d0454793e80c96322adc010b138bdce3c4e67349453594)))))
     (subpath ())))))
 
-(ppx_inline_test ((
-  source (
+(ppx_inline_test (
+  (provides ((ppx_inline_test v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3165,8 +3342,9 @@
           sha256=c8777cd65d8932930be0d7688f6be72be2c67ff0d2efe0bba7df73588526dfd8)))))
     (subpath ())))))
 
-(ppx_jane ((
-  source (
+(ppx_jane (
+  (provides ((ppx_jane v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3175,8 +3353,9 @@
           sha256=157269bc4eb78e14be22949de0df0bd4ba8d0a1965eb5f0b8aaf5cfe6164166f)))))
     (subpath ())))))
 
-(ppx_js_style ((
-  source (
+(ppx_js_style (
+  (provides ((ppx_js_style v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3185,8 +3364,9 @@
           sha256=1215065d382f82b77131d151abda90234f94e7d9826539c125dd46aab095fa1c)))))
     (subpath ())))))
 
-(ppx_jsonaf_conv ((
-  source (
+(ppx_jsonaf_conv (
+  (provides ((ppx_jsonaf_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3195,8 +3375,9 @@
           sha256=a7aedd039cfded41a5f6c5b5ec5597fa2ee93d982ecc32d4e314e152f1c37971)))))
     (subpath ())))))
 
-(ppx_let ((
-  source (
+(ppx_let (
+  (provides ((ppx_let v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3205,8 +3386,9 @@
           sha256=b6cf607998359bebae94d7e2a48a567bee4d012408c2a733ca45702597e657c7)))))
     (subpath ())))))
 
-(ppx_log ((
-  source (
+(ppx_log (
+  (provides ((ppx_log v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3215,8 +3397,9 @@
           sha256=1be7093966f4107beafae370c0a4dfc15baea1d28d9df94c25aaebf49c9ccc5b)))))
     (subpath ())))))
 
-(ppx_module_timer ((
-  source (
+(ppx_module_timer (
+  (provides ((ppx_module_timer v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3225,8 +3408,9 @@
           sha256=6cb051d357658e4e0092b902ed1761e2619cf8ee12bcafce636a5956bccc55bc)))))
     (subpath ())))))
 
-(ppx_optcomp ((
-  source (
+(ppx_optcomp (
+  (provides ((ppx_optcomp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3235,8 +3419,9 @@
           sha256=d14321688b5b38a3ef98a78c3cd6f0f2ef64c6a4f8233ddf81b16133f1c7d918)))))
     (subpath ())))))
 
-(ppx_optional ((
-  source (
+(ppx_optional (
+  (provides ((ppx_optional v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3245,8 +3430,9 @@
           sha256=c29bcda0402ed215c6831ba0b5f153617dca07fefd5ffafc85781ef4cbcc80ae)))))
     (subpath ())))))
 
-(ppx_pattern_bind ((
-  source (
+(ppx_pattern_bind (
+  (provides ((ppx_pattern_bind v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3255,8 +3441,9 @@
           sha256=da930c3383826c8219199a8a8f485ff248341fb68b0ef52045eb75aa94db1bb1)))))
     (subpath ())))))
 
-(ppx_pipebang ((
-  source (
+(ppx_pipebang (
+  (provides ((ppx_pipebang v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3265,8 +3452,9 @@
           sha256=bf6fe929a731fe7dab6f6e6ce18a5a6b5767550a1554597e1c68e46e3cfc6e7b)))))
     (subpath ())))))
 
-(ppx_portable ((
-  source (
+(ppx_portable (
+  (provides ((ppx_portable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3275,8 +3463,9 @@
           sha256=6f23bc1c95b8072218028c02641302622b82d67c50cdc59069392ed0e95276cc)))))
     (subpath ())))))
 
-(ppx_quick_test ((
-  source (
+(ppx_quick_test (
+  (provides ((ppx_quick_test v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3285,8 +3474,9 @@
           sha256=fdd09bfda8d311104655633fec927871ac22fe0d86f4697722270f4cd0ffa45f)))))
     (subpath ())))))
 
-(ppx_rope ((
-  source (
+(ppx_rope (
+  (provides ((ppx_rope v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3295,8 +3485,9 @@
           sha256=68605adc6c0e8ce16c5848c37201e6ce5cdf28fbf2a20a0e973e72e3d745acc7)))))
     (subpath ())))))
 
-(ppx_sexp_conv ((
-  source (
+(ppx_sexp_conv (
+  (provides ((ppx_sexp_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3305,8 +3496,9 @@
           sha256=3e596a47afb5788c136e47d100d4b75a4030c7304d0163bb167bfac92d91509b)))))
     (subpath ())))))
 
-(ppx_sexp_message ((
-  source (
+(ppx_sexp_message (
+  (provides ((ppx_sexp_message v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3315,8 +3507,9 @@
           sha256=3abf9f5f32231496b35c8fdc14c3aa9647f10f816a47bdf1b5a4e6d395c6de59)))))
     (subpath ())))))
 
-(ppx_sexp_value ((
-  source (
+(ppx_sexp_value (
+  (provides ((ppx_sexp_value v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3325,8 +3518,9 @@
           sha256=0b562ef302a1d964536d14b38d8c726df6d8784ebbc823ae6123946e1bb5c029)))))
     (subpath ())))))
 
-(ppx_shorthand ((
-  source (
+(ppx_shorthand (
+  (provides ((ppx_shorthand v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3335,8 +3529,9 @@
           sha256=9a0b06eb8a9f9e7c9052dfaf576454cb5a1c6bdfcaa7164112dbe470688523c7)))))
     (subpath ())))))
 
-(ppx_simple_xml_conv ((
-  source (
+(ppx_simple_xml_conv (
+  (provides ((ppx_simple_xml_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3345,8 +3540,9 @@
           sha256=9b681028fd175706a742df9003ad1d2822c622d93fd4733395a3b48fc6d22ef6)))))
     (subpath ())))))
 
-(ppx_stable ((
-  source (
+(ppx_stable (
+  (provides ((ppx_stable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3355,8 +3551,9 @@
           sha256=510d2d2c22b114b6dedc2302b0b30f047b8d3abdba08702df3f566635945ee79)))))
     (subpath ())))))
 
-(ppx_stable_witness ((
-  source (
+(ppx_stable_witness (
+  (provides ((ppx_stable_witness v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3365,8 +3562,9 @@
           sha256=d1b113ae2d0eb104c59595d203ca8b31b2f5687966a5fe80c8e1b791a94e6169)))))
     (subpath ())))))
 
-(ppx_string ((
-  source (
+(ppx_string (
+  (provides ((ppx_string v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3375,8 +3573,9 @@
           sha256=d4085d5973ca5ca2b2e9db6c9a0b74ccd98dfebfe701fcc7d172a0ae21255161)))))
     (subpath ())))))
 
-(ppx_string_conv ((
-  source (
+(ppx_string_conv (
+  (provides ((ppx_string_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3385,8 +3584,9 @@
           sha256=3ba8163c6b8316b4469eb343f70bc54aadfda1fca0babb66fc01b6174ee8b9e3)))))
     (subpath ())))))
 
-(ppx_template ((
-  source (
+(ppx_template (
+  (provides ((ppx_template v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3395,8 +3595,9 @@
           sha256=64596c9a6cc1f358e7c8bb496579054b2a4a22cdb744e5c6aa06f2ba35356f7a)))))
     (subpath ())))))
 
-(ppx_tydi ((
-  source (
+(ppx_tydi (
+  (provides ((ppx_tydi v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3405,8 +3606,9 @@
           sha256=86222f4134743e8140e34675329c6f5e45174d6d8a724cf90cf48f183f804e4e)))))
     (subpath ())))))
 
-(ppx_typed_fields ((
-  source (
+(ppx_typed_fields (
+  (provides ((ppx_typed_fields v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3415,8 +3617,9 @@
           sha256=597aa9c307a088afb51f2a104dd672a73e0cbd6a89e1e3ab7de95f897d102042)))))
     (subpath ())))))
 
-(ppx_typerep_conv ((
-  source (
+(ppx_typerep_conv (
+  (provides ((ppx_typerep_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3425,8 +3628,9 @@
           sha256=023d8ca993220e6ca8aa00dbda41c218fe2381ba554b35e043e726b83bf4d658)))))
     (subpath ())))))
 
-(ppx_var_name ((
-  source (
+(ppx_var_name (
+  (provides ((ppx_var_name v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3435,8 +3639,9 @@
           sha256=5c9bc9529cd5c8ef34999b855a4ff34370540032cb4810140c739b8a5ea853f3)))))
     (subpath ())))))
 
-(ppx_variants_conv ((
-  source (
+(ppx_variants_conv (
+  (provides ((ppx_variants_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3445,8 +3650,9 @@
           sha256=7ba39b11ef830432a06f36160972d8eccc4063c986683a69002ab8dd59bbe787)))))
     (subpath ())))))
 
-(ppx_with ((
-  source (
+(ppx_with (
+  (provides ((ppx_with v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3455,8 +3661,9 @@
           sha256=adbf2988d8040663806818e4b151d384dd7341913b76669d9b1429ed459e91f0)))))
     (subpath ())))))
 
-(ppx_xml_conv ((
-  source (
+(ppx_xml_conv (
+  (provides ((ppx_xml_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3465,8 +3672,9 @@
           sha256=9320439f4daca434d7688b170f08608fb6b796890d30e829ac504f501f144140)))))
     (subpath ())))))
 
-(ppx_yojson_conv ((
-  source (
+(ppx_yojson_conv (
+  (provides ((ppx_yojson_conv v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3475,8 +3683,9 @@
           sha256=21922f3afd36acab7a370d20cd254eb6b23d95e4f7c9ca8f466f51b14517c5bf)))))
     (subpath ())))))
 
-(ppx_yojson_conv_lib ((
-  source (
+(ppx_yojson_conv_lib (
+  (provides ((ppx_yojson_conv_lib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3486,6 +3695,7 @@
     (subpath ())))))
 
 (ppxlib (
+  (provides ((ppxlib 0.33.0+ox)))
   (source (
     (base (
       Http (
@@ -3709,6 +3919,7 @@
   (prepare_commands ((rm -rf ast astlib stdppx traverse_builtins)))))
 
 (ppxlib_ast (
+  (provides ((ppxlib_ast 0.33.0+ox)))
   (source (
     (base (
       Http (
@@ -3864,8 +4075,9 @@
     dune.patch))
   (prepare_commands ((bash ./cleanup.sh)))))
 
-(ppxlib_jane ((
-  source (
+(ppxlib_jane (
+  (provides ((ppxlib_jane v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3874,8 +4086,9 @@
           sha256=37fe6d17b62d1eeff6b0cd1b6668eac16888dc67e6d683e0c0eeecdba1ce6145)))))
     (subpath ())))))
 
-(profunctor ((
-  source (
+(profunctor (
+  (provides ((profunctor v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3884,8 +4097,9 @@
           sha256=6b425af17c5316e0d1ebc57f58bb26d48c1e6f0d909528a8bb778a3f411c5021)))))
     (subpath ())))))
 
-(protocol_version_header ((
-  source (
+(protocol_version_header (
+  (provides ((protocol_version_header v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3894,8 +4108,9 @@
           sha256=318ceec08139b1c3492fb98432cb5ba5451ae4f24b4ab5980df176c2ae4f8783)))))
     (subpath ())))))
 
-(re2 ((
-  source (
+(re2 (
+  (provides ((re2 v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3904,8 +4119,9 @@
           sha256=347fd1546b27dff20844e60ccc1479eb3bb5b7af6cbccdb34d9e9961bb36eb0b)))))
     (subpath ())))))
 
-(re_parser ((
-  source (
+(re_parser (
+  (provides ((re_parser v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3914,8 +4130,9 @@
           sha256=84dcfc042ca84d226d1552dbdd024da67f6d14b3e8ba71f44ab8a8b8e256eb4a)))))
     (subpath ())))))
 
-(record_builder ((
-  source (
+(record_builder (
+  (provides ((record_builder v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3924,8 +4141,9 @@
           sha256=07bd8f084706a8034483b0e72b96c1337574f868c3fd8be7685ba5dca7422908)))))
     (subpath ())))))
 
-(redis-async ((
-  source (
+(redis-async (
+  (provides ((redis-async v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3934,8 +4152,9 @@
           sha256=8ff5215b43cbfa15866c294712a57dce965f445d2456eb29345587032b0fec67)))))
     (subpath ())))))
 
-(regex_parser_intf ((
-  source (
+(regex_parser_intf (
+  (provides ((regex_parser_intf v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3944,8 +4163,9 @@
           sha256=2c14ab4f057697251380b35dca6b00b436a2443b51b783a59dce3644545ee6da)))))
     (subpath ())))))
 
-(resource_cache ((
-  source (
+(resource_cache (
+  (provides ((resource_cache v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3954,8 +4174,9 @@
           sha256=5a6059417c7cac0efdae75b37343e91a6b4e30a5c2ee7d1ac9b329ee4435a738)))))
     (subpath ())))))
 
-(result ((
-  source (
+(result (
+  (provides ((result 1.5)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3965,8 +4186,9 @@
           md5=1b82dec78849680b49ae9a8a365b831b)))))
     (subpath ())))))
 
-(rpc_parallel ((
-  source (
+(rpc_parallel (
+  (provides ((rpc_parallel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -3976,6 +4198,7 @@
     (subpath ())))))
 
 (sedlex (
+  (provides ((sedlex 3.3+ox)))
   (source (
     (base (
       Http (
@@ -3993,8 +4216,9 @@
         sha256=67fd4616d46d1c98cc6658620de963bb1ceabb6a0168faaa465626d87381bc74))))))
   (patches (sedlex+syntax+ppx_sedlex.ml.patch))))
 
-(semantic_version ((
-  source (
+(semantic_version (
+  (provides ((semantic_version v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4003,8 +4227,9 @@
           sha256=b1abfdb550daddb0a3f7d72c4cc54187441d3c78470dffd2a06670303b1a3593)))))
     (subpath ())))))
 
-(seq ((
-  source (
+(seq (
+  (provides ((seq base+dune)))
+  (source (
     (base (
       Http (
         (urls (https://github.com/c-cube/seq/archive/0.2.2.tar.gz))
@@ -4013,8 +4238,9 @@
           sha512=cab0eb4cb6d9788b7cbd7acbefefc15689d706c97ff7f75dd97faf3c21e466af4d0ff110541a24729db587e7172b1a30a3c2967e17ec2e49cbd923360052c07c)))))
     (subpath ())))))
 
-(sequencer_table ((
-  source (
+(sequencer_table (
+  (provides ((sequencer_table v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4023,8 +4249,9 @@
           sha256=a802ba92a69d16182f3f4e7409722c8b45425dc40e38ae16316599ca30370dcf)))))
     (subpath ())))))
 
-(sexp ((
-  source (
+(sexp (
+  (provides ((sexp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4033,8 +4260,9 @@
           sha256=eb5d193ae4abc36302728d64da6df861269f07b2b7d43107f8be89d67fcaa986)))))
     (subpath ())))))
 
-(sexp_diff ((
-  source (
+(sexp_diff (
+  (provides ((sexp_diff v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4043,8 +4271,9 @@
           sha256=7d3ce203d511aa467b9742010e9eafb1534c9bc03de061ba4f89c3527547857d)))))
     (subpath ())))))
 
-(sexp_grammar ((
-  source (
+(sexp_grammar (
+  (provides ((sexp_grammar v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4053,8 +4282,9 @@
           sha256=ff27fd4834abb6dda05d98348fea2830093b04bcd813a36dff17d8c718ad9aea)))))
     (subpath ())))))
 
-(sexp_macro ((
-  source (
+(sexp_macro (
+  (provides ((sexp_macro v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4063,8 +4293,9 @@
           sha256=c264f8ba6d7149213f1e9c5bf5b023bc769d3a4167b0b07be1d2650012eb3680)))))
     (subpath ())))))
 
-(sexp_pretty ((
-  source (
+(sexp_pretty (
+  (provides ((sexp_pretty v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4073,8 +4304,9 @@
           sha256=bffe9ec1ce269c94959bc46f198f7584f5c272e5d8bb42f16fcd3f9ef4615b71)))))
     (subpath ())))))
 
-(sexp_select ((
-  source (
+(sexp_select (
+  (provides ((sexp_select v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4083,8 +4315,9 @@
           sha256=6e50f23dbd2632d090b3569aae19ab5e759f9d0e136e6c004afa510a69531799)))))
     (subpath ())))))
 
-(sexp_string_quickcheck ((
-  source (
+(sexp_string_quickcheck (
+  (provides ((sexp_string_quickcheck v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4093,8 +4326,9 @@
           sha256=dcf82361be0dffb2fec363c71144740819bd319cd1742f550bbc1d271d973e55)))))
     (subpath ())))))
 
-(sexplib ((
-  source (
+(sexplib (
+  (provides ((sexplib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4103,8 +4337,9 @@
           sha256=ca231cefbd58e90def9a8db1e5848080035b244e9860e38d2681476e6705fdad)))))
     (subpath ())))))
 
-(sexplib0 ((
-  source (
+(sexplib0 (
+  (provides ((sexplib0 v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4113,8 +4348,9 @@
           sha256=1258db5fc1d9cd3207daad8c9ad523faeb223646699d96f9b637eeac8e29d004)))))
     (subpath ())))))
 
-(shell ((
-  source (
+(shell (
+  (provides ((shell v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4123,8 +4359,9 @@
           sha256=5694d1af21d40a26ab4184cf8fcea07ae1567a6d05d433f0059e80e29b6b8722)))))
     (subpath ())))))
 
-(shexp ((
-  source (
+(shexp (
+  (provides ((shexp v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4133,8 +4370,9 @@
           sha256=44fa74ef10474f9648ce9784b79b6507d55c75878ed6db28383dd35ca4038800)))))
     (subpath ())))))
 
-(simple_xml ((
-  source (
+(simple_xml (
+  (provides ((simple_xml v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4144,6 +4382,7 @@
     (subpath ())))))
 
 (spawn (
+  (provides ((spawn v0.15.1+ox)))
   (source (
     (base (
       Http (
@@ -4173,8 +4412,9 @@
     spawn+src+spawn.mli.patch
     spawn+src+spawn_stubs.c.patch))))
 
-(splay_tree ((
-  source (
+(splay_tree (
+  (provides ((splay_tree v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4183,8 +4423,9 @@
           sha256=7137e478f6071ea54f943054dc16776c94bdf16ec0846c63239a87c3aecb007c)))))
     (subpath ())))))
 
-(splittable_random ((
-  source (
+(splittable_random (
+  (provides ((splittable_random v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4193,8 +4434,9 @@
           sha256=184c777fe1d2cfed5a54592f50c4a30cca79ba0b9cecc45cd664a28a6cb1fae3)))))
     (subpath ())))))
 
-(stdio ((
-  source (
+(stdio (
+  (provides ((stdio v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4203,19 +4445,21 @@
           sha256=f8ff9053ca670212db9f07fc5ec7f2e10b4880491d1a7eea5de508489d35f7cd)))))
     (subpath ())))))
 
-(stdlib-shims ((
-  source (
+(stdlib-shims (
+  (provides ((stdlib-shims 0.3.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/ocaml/stdlib-shims/releases/download/0.1.0/stdlib-shims-0.1.0.tbz))
+          https://github.com/ocaml/stdlib-shims/releases/download/0.3.0/stdlib-shims-0.3.0.tbz))
         (hashes (
-          sha256=5373c987e9f82a4434fffa3eb7d795159138f8ffe76b786a1ac21877c8f266cb
-          md5=12b5704eed70c6bff5ac39a16db1425d)))))
+          sha256=babf72d3917b86f707885f0c5528e36c63fccb698f4b46cf2bab5c7ccdd6d84a
+          sha512=1151d7edc8923516e9a36995a3f8938d323aaade759ad349ed15d6d8501db61ffbe63277e97c4d86149cf371306ac23df0f581ec7e02611f58335126e1870980)))))
     (subpath ())))))
 
-(stored_reversed ((
-  source (
+(stored_reversed (
+  (provides ((stored_reversed v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4224,8 +4468,9 @@
           sha256=8a05a197123e11c2f24fa7a042071b8bf4f5209f0543678357c7e8c01ee551e3)))))
     (subpath ())))))
 
-(streamable ((
-  source (
+(streamable (
+  (provides ((streamable v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4234,8 +4479,9 @@
           sha256=491477c2db4b2234d1c20dce490500b58ad9ee8ba75ead8af5ed67fa890e8bca)))))
     (subpath ())))))
 
-(string_dict ((
-  source (
+(string_dict (
+  (provides ((string_dict v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4244,8 +4490,9 @@
           sha256=b856769070fbc54c0196420aef7b8aa814228193ced120cc8a09eb772a899485)))))
     (subpath ())))))
 
-(stringext ((
-  source (
+(stringext (
+  (provides ((stringext 1.6.0)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4255,8 +4502,9 @@
           sha512=d8ebe40f42b598a9bd99f1ef4b00ba93458385a4accd121af66a0bf3b3f8d7135f576740adf1a43081dd409977c2219fd4bdbb5b3d1308890d301d553ed49900)))))
     (subpath ())))))
 
-(testable_timeout ((
-  source (
+(testable_timeout (
+  (provides ((testable_timeout v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4265,8 +4513,9 @@
           sha256=48d0048a0f33f9fcffae334b55db5c124cf2ed1f4f86a3dd2067567b3e1f5701)))))
     (subpath ())))))
 
-(textutils ((
-  source (
+(textutils (
+  (provides ((textutils v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4275,8 +4524,9 @@
           sha256=f8e545aad112bbf409054fcb8809fa5144ecfec60270738227e1414be84dfbf2)))))
     (subpath ())))))
 
-(textutils_kernel ((
-  source (
+(textutils_kernel (
+  (provides ((textutils_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4285,8 +4535,9 @@
           sha256=30e50687df53b6012a71fa37838a93d7f3c84e78b2f1bcc5c4c6370ce50be713)))))
     (subpath ())))))
 
-(tilde_f ((
-  source (
+(tilde_f (
+  (provides ((tilde_f v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4295,8 +4546,9 @@
           sha256=c082e4fee84124305ebe361daa1b5c66441fd4754bb6d467cc681d7c85282065)))))
     (subpath ())))))
 
-(time_ago ((
-  source (
+(time_ago (
+  (provides ((time_ago v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4305,8 +4557,9 @@
           sha256=b303a0b5891948165de1eb73773825803f76aee13c06b50023a91fba2d3cd6e5)))))
     (subpath ())))))
 
-(time_now ((
-  source (
+(time_now (
+  (provides ((time_now v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4315,8 +4568,9 @@
           sha256=6aac87d3e862af096e4b37509e9c1f5017f0436b6fcc212693842eb940305dfa)))))
     (subpath ())))))
 
-(timezone ((
-  source (
+(timezone (
+  (provides ((timezone v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4326,6 +4580,7 @@
     (subpath ())))))
 
 (topkg (
+  (provides ((topkg 1.0.8+ox)))
   (source (
     (base (
       Http (
@@ -4341,8 +4596,9 @@
         sha256=a3c3a44d4ec429039a1463ef2c0ce3153a5c8c98af8e7c2c09905150e17d0e5a))))))
   (patches (topkg_string.patch))))
 
-(toplayer ((
-  source (
+(toplayer (
+  (provides ((toplayer v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4351,8 +4607,9 @@
           sha256=fe1bf3160becc98af4607a127064c759bafad3f66a4970527062bf5c2d4619f7)))))
     (subpath ())))))
 
-(toplevel_backend ((
-  source (
+(toplevel_backend (
+  (provides ((toplevel_backend v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4361,8 +4618,9 @@
           sha256=1606e3ccc6d9e05d36ee474f00909711b4040ce7b65a39e64de47d169107fdf7)))))
     (subpath ())))))
 
-(toplevel_expect_test ((
-  source (
+(toplevel_expect_test (
+  (provides ((toplevel_expect_test v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4371,8 +4629,9 @@
           sha256=f01166cf599084d2615dce7067c2afcb33dc19575a34540157363f0985929ba0)))))
     (subpath ())))))
 
-(topological_sort ((
-  source (
+(topological_sort (
+  (provides ((topological_sort v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4381,18 +4640,9 @@
           sha256=b16bcfff1aff91afa8b32f977603360087a517d00d8afd28eeea05368bc06d98)))))
     (subpath ())))))
 
-(torch ((
-  source (
-    (base (
-      Http (
-        (urls (
-          https://github.com/janestreet/torch/archive/779d254c7a94ec5c279c0da35cbfc3c91eb1624f.tar.gz))
-        (hashes (
-          sha256=a1eed60b3349054ef33ffce10fbbf98c9a90393123911506acda108fa54e4dea)))))
-    (subpath ())))))
-
-(tracing ((
-  source (
+(tracing (
+  (provides ((tracing v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4401,8 +4651,9 @@
           sha256=9a08083813bddbdcbd1f15b25a51df1b3bda3dd875e3b8b4cd4329626dd7c77b)))))
     (subpath ())))))
 
-(typerep ((
-  source (
+(typerep (
+  (provides ((typerep v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4411,19 +4662,21 @@
           sha256=6835bdbebe30298bb4517b8b443807a77329432523f5da22104c9c61a0dbfecc)))))
     (subpath ())))))
 
-(tyxml ((
-  source (
+(tyxml (
+  (provides ((tyxml 4.6.0)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/ocsigen/tyxml/releases/download/4.4.0/tyxml-4.4.0.tbz))
+          https://github.com/ocsigen/tyxml/releases/download/4.6.0/tyxml-4.6.0.tbz))
         (hashes (
-          sha256=516394dd4a5c31726997c51d66aa31cacb91e3c46d4e16c7699130e204042530
-          sha512=d5f2187f8410524cec7a14b28e8950837070eb0b6571b015dd06076c2841eb7ccaffa86d5d2307eaf1950ee62f9fb926477dac01c870d9c1a2f525853cb44d0c)))))
+          sha256=bfeb673c6b4e120a4eca4c48448add47dc3f8d02c2b40f63ffdccc4e91c902dd
+          sha512=69750eeaf467014282087bf9628f3278f3e5f00f4c7400358750d208664cfc3f79a5cba16767d2935e53477d1a6862fe08c5b801b69052ec12e09d1a93a5e9b4)))))
     (subpath ())))))
 
-(uchar ((
-  source (
+(uchar (
+  (provides ((uchar 0.0.2+dune2)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4433,8 +4686,9 @@
           sha512=a568b7a040f3c7ebb5c15d0a9e5f84ce9c80307c132159e3f139f96db16e89e0cb4bbaadefea55557b6b9f26b79238e45223806570c6f2b95d5045ff71413d23)))))
     (subpath ())))))
 
-(unboxed ((
-  source (
+(unboxed (
+  (provides ((unboxed v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4443,8 +4697,9 @@
           sha256=77e0ece3c342d9b409412ff37414dc485667cce0ffc8b0a9e214f87d82e7e28f)))))
     (subpath ())))))
 
-(unique ((
-  source (
+(unique (
+  (provides ((unique v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4453,8 +4708,9 @@
           sha256=2a7707ca48f516dc6cb96e21118af8410b5f35b27dc5f886db0942a987f74085)))))
     (subpath ())))))
 
-(univ_map ((
-  source (
+(univ_map (
+  (provides ((univ_map v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4463,8 +4719,9 @@
           sha256=d967c13a6e2261f95ca12847db58d75cafafced1c6cdb4a01a0f472d0cffbe8e)))))
     (subpath ())))))
 
-(uopt ((
-  source (
+(uopt (
+  (provides ((uopt v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4473,8 +4730,9 @@
           sha256=04b24f0376a3a5d12a7fef1c008309487df48d9a05a0c1dbc0b07e9439a9a9f4)))))
     (subpath ())))))
 
-(uri_parsing ((
-  source (
+(uri_parsing (
+  (provides ((uri_parsing v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4483,8 +4741,9 @@
           sha256=ad1e6c5d9a67c06f2bf137b0a0f35840e07c6d4689abde1839cc08cef7d91ce4)))))
     (subpath ())))))
 
-(username_kernel ((
-  source (
+(username_kernel (
+  (provides ((username_kernel v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4493,17 +4752,20 @@
           sha256=b2b2dd95eccb66dd1a9247413f176228c924db17bc7ce67aa48c223b72c527d3)))))
     (subpath ())))))
 
-(uucp ((
-  source (
+(uucp (
+  (provides ((uucp 17.0.0+dune)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/dune-universe/uucp/archive/v13.0.0+dune.tar.gz))
+          https://github.com/dune-universe/uucp/releases/download/v17.0.0%2Bdune/uucp-17.0.0.dune.tbz))
         (hashes (
-          sha256=ea56f5d6d97dde8442c8678c6adda7b2a8353c22ac0486e8f9f434eb8923591f)))))
+          sha256=7e67f7167b73beb48f2e78c4544b07ed50f0b1cf5697d581f2bbdfe00762ab2a
+          sha512=4e9eabf92bec65b9e04d74f224953086a935bf25be7f94848dcdd5d1c08c4abdd7f68ff7f141ef8c97b291762ad405194d7c6505e6852a84aa069afc502334f9)))))
     (subpath ())))))
 
 (uutf (
+  (provides ((uutf 1.0.3+ox)))
   (source (
     (base (
       Http (
@@ -4524,8 +4786,9 @@
         sha256=06130fcb93a61add6f7f0ca80d6a220c5e9f24568da5bd6f60f975f67417e5c9))))))
   (patches (uutf-locals.patch uutf-portable.patch))))
 
-(variantslib ((
-  source (
+(variantslib (
+  (provides ((variantslib v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4534,8 +4797,9 @@
           sha256=6a74762f55f5601b9847e9de78f27cb2d89d64a33ec68e08a1491850cd9a14e7)))))
     (subpath ())))))
 
-(vcaml ((
-  source (
+(vcaml (
+  (provides ((vcaml v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4544,8 +4808,9 @@
           sha256=c1ab7a42dfa35d1f2597951dfdc8e38a1b9261fbbfccf8b45860aaf5d946e739)))))
     (subpath ())))))
 
-(vec ((
-  source (
+(vec (
+  (provides ((vec v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4554,8 +4819,9 @@
           sha256=03815f2986e84d794b88f33ee04b64f17cf1cb26b814492c874a6831b5396580)))))
     (subpath ())))))
 
-(versioned_polling_state_rpc ((
-  source (
+(versioned_polling_state_rpc (
+  (provides ((versioned_polling_state_rpc v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4564,8 +4830,9 @@
           sha256=1bd508ff4a80690b0e96cc78d9b39e9eced201b2aa796be8052bb402f3bae511)))))
     (subpath ())))))
 
-(virtual_dom ((
-  source (
+(virtual_dom (
+  (provides ((virtual_dom v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4574,8 +4841,9 @@
           sha256=5369b5deb663076605c78f03406613ccda9b8bcc194cc8839999a396d5ca9bda)))))
     (subpath ())))))
 
-(xmlm ((
-  source (
+(xmlm (
+  (provides ((xmlm 1.4.0+dune)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4585,8 +4853,9 @@
           sha512=52611353dbb2ed347db69623c3cbbad544459c6e963a7c0ff1b3b86bfe4cdfc61ff5a22c8b5ac00c4a55bd63546598b65460a7f70145f68cb2d6a7c925ba6bdd)))))
     (subpath ())))))
 
-(xpath ((
-  source (
+(xpath (
+  (provides ((xpath v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4595,18 +4864,20 @@
           sha256=3ad19f3b1f8769cae77772e4957fe58550117487586b288ea482914bc16b2d82)))))
     (subpath ())))))
 
-(yojson ((
-  source (
+(yojson (
+  (provides ((yojson 2.2.2)))
+  (source (
     (base (
       Http (
         (urls (
-          https://github.com/ocaml-community/yojson/releases/download/2.1.0/yojson-2.1.0.tbz))
+          https://github.com/ocaml-community/yojson/releases/download/2.2.2/yojson-2.2.2.tbz))
         (hashes (
-          sha256=9fcb1ff2db58ab259f9228796b0ada4794eae97177b1833371380c4e4f90b15d
-          sha512=31ab8580e0e4e8a05459fbec2fb9424a3df4cf5aef6df21fc577dbe3d32e81103a632c6a511c4dcf1f51819e88b38d2ce7d6888545bc3f359e69e070f8d2e69c)))))
+          sha256=9abfad8c9a79d4723ad2f6448e669c1e68dbfc87cc54a1b7c064b0c90912c595
+          sha512=ac52eae3ca1d3129a7885ca638e6ae5bcfc387598a82cc30d3e4988fd154f1756719c399f96e950d898c79a6dbd4ccc44b6f468bcafbd620e6945a0415b41e0c)))))
     (subpath ())))))
 
 (zarith (
+  (provides ((zarith 1.12+ox)))
   (source (
     (base (
       Http (
@@ -4642,8 +4913,9 @@
     zarith-local.patch
     zarith-portability.patch))))
 
-(zarith_stubs_js ((
-  source (
+(zarith_stubs_js (
+  (provides ((zarith_stubs_js v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (
@@ -4652,8 +4924,9 @@
           sha256=7f8e62e623a5e9ac2c9f0a2405b3a3eef9bd01884c6ebcb1237ca3631014b7f4)))))
     (subpath ())))))
 
-(zstandard ((
-  source (
+(zstandard (
+  (provides ((zstandard v0.18~preview.130.55+197)))
+  (source (
     (base (
       Http (
         (urls (

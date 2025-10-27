@@ -126,7 +126,7 @@ module Includable_package = struct
 
   let should_exclude (package : Disk_package.t) ~(config : Config.Solver_config.t) =
     let is_excluded =
-      Set.mem config.vendoring.exclude (OpamPackage.name package.package)
+      Set.mem config.vendoring.exclude_pkgs (OpamPackage.name package.package)
     in
     let no_build = List.is_empty (OpamFile.OPAM.build package.opam_file) in
     let skip_flags =
@@ -203,6 +203,7 @@ module Build_info = struct
     { source : Lock_file.Main_source.t
     ; extra : Lock_file.Http_source.t String.Map.t [@sexp.map]
     ; patches : string list [@sexp.list]
+    ; provides : Opam.Package.Set.t
     }
   [@@deriving sexp]
 
@@ -228,7 +229,7 @@ module Build_info = struct
     let%map.Option extra =
       map_merge_opt t.extra t'.extra ~f:Lock_file.Http_source.merge_opt
     in
-    { source; extra; patches }
+    { source; extra; patches; provides = Set.union t.provides t'.provides }
   ;;
 end
 
@@ -262,6 +263,7 @@ let construct_lock_file
              raise_s
                [%message
                  "Unsure what vendored dir name to use" (pkg.package : Opam.Package.t)]
+           | Some "dune" -> "dune_"
            | Some s -> String.lowercase s)
       in
       let dir = Lock_file.Vendor_dir.of_string dirname in
@@ -276,9 +278,16 @@ let construct_lock_file
                   (filter : Opam.Filter.t)]);
           patch)
       in
-      let build_info = { Build_info.source = pkg.source; extra = pkg.extra; patches } in
+      let build_info =
+        { Build_info.source = pkg.source
+        ; extra = pkg.extra
+        ; patches
+        ; provides = Opam.Package.Set.singleton pkg.package
+        }
+      in
       dir, build_info)
     |> Lock_file.Vendor_dir.Map.of_alist_multi
+    |> Map.filter_keys ~f:(fun dir -> not (Set.mem config.vendoring.exclude_dirs dir))
     |> Map.map ~f:(merge_as_much_as_possible ~f:Build_info.merge_opt)
     |> Map.map ~f:(function
       | [ build_info ] -> build_info
@@ -288,11 +297,33 @@ let construct_lock_file
             "Conflicting build info for the same dir name, maybe rename one of them"
               (options : Build_info.t list)])
   in
-  Map.mapi build_info_by_name ~f:(fun ~key:dir ~data:{ source; extra; patches } ->
-    let prepare_commands =
-      Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
-    in
-    { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands })
+  Map.mapi
+    build_info_by_name
+    ~f:(fun ~key:dir ~data:{ source; extra; patches; provides } ->
+      let prepare_commands =
+        Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
+      in
+      { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands; provides })
+;;
+
+let saved_desired_vendored ~(lock_file : Lock_file.t) ~project =
+  let%bind desired_versions = Configs.load (module Config.Desired_packages) project in
+  let desired = Map.key_set desired_versions in
+  let vendored =
+    Map.data lock_file
+    |> List.map ~f:(fun lock_file ->
+      lock_file.provides |> Opam.Package.Name.Set.map ~f:OpamPackage.name)
+    |> Opam.Package.Name.Set.union_list
+  in
+  let tested = Set.inter desired vendored in
+  let deps =
+    Set.to_list tested
+    |> List.map ~f:(fun name -> [%sexp [ "package"; (name : Opam.Package.Name.t) ]])
+  in
+  let path = Project.path project (Config.main_dir ^/ "dune-snippet") in
+  Writer.save_sexp
+    path
+    [%sexp [ "alias"; [ "name"; "vendored" ]; "deps" :: (deps : Sexp.t list) ]]
 ;;
 
 let execute config ~project =
@@ -302,7 +333,10 @@ let execute config ~project =
   in
   let%bind () = write_nonstandard_build_packages ~includable_packages ~project in
   let lock_file = construct_lock_file ~includable_packages ~config in
-  Configs.save (module Lock_file) lock_file ~in_:project
+  Deferred.all_unit
+    [ Configs.save (module Lock_file) lock_file ~in_:project
+    ; saved_desired_vendored ~lock_file ~project
+    ]
 ;;
 
 let command =
