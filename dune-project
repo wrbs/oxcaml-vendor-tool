@@ -2,9 +2,10 @@
 
 (name oxcaml-vendor-tool)
 
+(generate_opam_files)
+
 (package
  (name oxcaml-vendor-tool)
- (allow_empty)
  (depends
   (ocaml
    (>= 5.3.0))

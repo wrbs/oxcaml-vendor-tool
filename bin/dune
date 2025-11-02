@@ -1,5 +1,6 @@
 (executable
  (name main)
+ (public_name oxcaml-vendor-tool)
  (libraries oxcaml_vendor_tool)
  (preprocess
   (pps ppx_jane)))
