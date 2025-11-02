@@ -336,12 +336,3 @@ let execute config ~project =
   Deferred.all_unit
     [ Lock_file.save lock_file ~in_:project; saved_desired_vendored ~lock_file ~project ]
 ;;
-
-let command =
-  Command.async ~summary:"plan how to vendor things based on opam files"
-  @@
-  let%map_open.Command project = Project.param in
-  fun () ->
-    let%bind config = Config.Solver_config.load project in
-    execute config ~project
-;;

@@ -8,5 +8,3 @@ val solve_and_sync
   -> desired_packages:Config.Desired_packages.t
   -> project:Project.t
   -> unit Deferred.t
-
-val command : Command.t

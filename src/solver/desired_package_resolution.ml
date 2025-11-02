@@ -49,15 +49,3 @@ let execute (config : Config.Solver_config.t) ~project =
   let%map () = Config.Desired_packages.save selected ~in_:project in
   selected
 ;;
-
-let command =
-  Command.async
-    ~summary:
-      "decide and lock selected packages from solver-config.sexp and the cached repos"
-  @@
-  let%map_open.Command project = Project.param in
-  fun () ->
-    let%bind config = Config.Solver_config.load project in
-    let%map _ = execute config ~project in
-    ()
-;;

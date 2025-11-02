@@ -54,7 +54,7 @@ let lock (config : Config.Solver_config.t) ~project =
   repos
 ;;
 
-let fetch (repos : Config.Repos.t) ~project =
+let sync (repos : Config.Repos.t) ~project =
   let cache_dir = Project.opam_download_cache project in
   Opam.Par.run_exn
     ~jobs:8
@@ -71,30 +71,14 @@ let fetch (repos : Config.Repos.t) ~project =
      |> Opam.Par.all_unit)
 ;;
 
-let sync_all config ~project ~update_lock =
-  let%bind repos =
-    if update_lock then lock config ~project else Config.Repos.load project
-  in
-  fetch repos ~project;
+let lock_and_sync config ~project =
+  let%bind repos = lock config ~project in
+  sync repos ~project;
   return repos
 ;;
 
-let lock_and_sync_command =
-  Command.async ~summary:"update the cached repos from the solver-config.sexp"
-  @@
-  let%map_open.Command project = Project.param in
-  fun () ->
-    let%bind config = Config.Solver_config.load project in
-    let%map _repos = sync_all config ~project ~update_lock:true in
-    ()
-;;
-
-let sync_only_command =
-  Command.async ~summary:"update the cached repos from the lock file"
-  @@
-  let%map_open.Command project = Project.param in
-  fun () ->
-    let%bind repos = Config.Repos.load project in
-    fetch repos ~project;
-    return ()
+let sync_only ~project =
+  let%bind repos = Config.Repos.load project in
+  sync repos ~project;
+  return repos
 ;;

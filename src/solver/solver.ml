@@ -83,17 +83,3 @@ let solve_and_sync ~(config : Config.Solver_config.t) ~repos ~desired_packages ~
         Process.run_expect_no_output_exn ~prog:"cp" ~args:[ src; dst ] ())
     ]
 ;;
-
-let command =
-  Command.async
-    ~summary:
-      "run package solving based on locked repos/package selection and env in \
-       solver-config.sexp"
-  @@
-  let%map_open.Command project = Project.param in
-  fun () ->
-    let%bind config = Config.Solver_config.load project in
-    let%bind repos = Config.Repos.load project in
-    let%bind desired_packages = Config.Desired_packages.load project in
-    solve_and_sync ~config ~repos ~desired_packages ~project
-;;
