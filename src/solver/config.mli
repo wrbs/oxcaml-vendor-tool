@@ -1,4 +1,5 @@
 open! Core
+open! Async
 open Oxcaml_vendor_tool_lib
 
 val main_dir : string
@@ -13,8 +14,6 @@ module Repo_source : sig
 end
 
 module Solver_config : sig
-  val path : string
-
   module Package_selection : sig
     type t =
       | Include_all_matching_version of
@@ -54,6 +53,9 @@ module Solver_config : sig
     ; vendoring : Vendoring.t
     }
   [@@deriving sexp]
+
+  val load : Project.t -> t Deferred.t
+  val save : t -> in_:Project.t -> unit Deferred.t
 end
 
 module Repo_paths : sig
@@ -65,20 +67,20 @@ module Repo_paths : sig
 end
 
 module Repos : sig
-  val path : string
-
   type t = (Repo.t * Repo_paths.t) list [@@deriving sexp]
+
+  val load : Project.t -> t Deferred.t
+  val save : t -> in_:Project.t -> unit Deferred.t
 end
 
 module Desired_packages : sig
-  val path : string
-
   type t = Opam.Version_constraint.t option Opam.Package.Name.Map.t [@@deriving sexp]
+
+  val load : Project.t -> t Deferred.t
+  val save : t -> in_:Project.t -> unit Deferred.t
 end
 
 module Fetched_packages : sig
-  val path : string
-
   module Package_and_dir : sig
     type t =
       { package : OpamPackage.t
@@ -99,4 +101,7 @@ module Fetched_packages : sig
   end
 
   type t = (Repo.t * Repo_info.t) list [@@deriving sexp]
+
+  val load : Project.t -> t Deferred.t
+  val save : t -> in_:Project.t -> unit Deferred.t
 end

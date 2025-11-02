@@ -10,7 +10,7 @@ let lock_command =
     flag "no-update-repos" no_arg ~doc:"keep repos at previous commit revision"
   in
   fun () ->
-    let%bind config = Configs.load (module Config.Solver_config) project in
+    let%bind config = Config.Solver_config.load project in
     let%bind repos =
       Repo_fetch.sync_all config ~project ~update_lock:(not no_update_repos)
     in

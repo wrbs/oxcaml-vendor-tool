@@ -50,7 +50,7 @@ let lock (config : Config.Solver_config.t) ~project =
         let%map url = resolve_source source in
         name, url)
   in
-  let%map () = Configs.save (module Config.Repos) repos ~in_:project in
+  let%map () = Config.Repos.save repos ~in_:project in
   repos
 ;;
 
@@ -73,9 +73,7 @@ let fetch (repos : Config.Repos.t) ~project =
 
 let sync_all config ~project ~update_lock =
   let%bind repos =
-    if update_lock
-    then lock config ~project
-    else Configs.load (module Config.Repos) project
+    if update_lock then lock config ~project else Config.Repos.load project
   in
   fetch repos ~project;
   return repos
@@ -86,7 +84,7 @@ let lock_and_sync_command =
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind config = Configs.load (module Config.Solver_config) project in
+    let%bind config = Config.Solver_config.load project in
     let%map _repos = sync_all config ~project ~update_lock:true in
     ()
 ;;
@@ -96,7 +94,7 @@ let sync_only_command =
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind repos = Configs.load (module Config.Repos) project in
+    let%bind repos = Config.Repos.load project in
     fetch repos ~project;
     return ()
 ;;

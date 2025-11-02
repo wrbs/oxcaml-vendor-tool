@@ -14,8 +14,8 @@ let update_patch_command =
       ~doc:"(string) override modified dir (default: vendored output dir using config)"
   in
   fun () ->
-    let%bind config = Configs.load (module Config) project
-    and lock_file = Configs.load (module Lock_file) project in
+    let%bind config = Config.load project
+    and lock_file = Lock_file.load project in
     let patch_dir = Option.value_exn config.patches_dir in
     let dir_config = Map.find_exn lock_file vendor_dir in
     let cache_dir = Project.opam_download_cache project in

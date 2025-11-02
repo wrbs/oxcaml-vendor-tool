@@ -1,4 +1,5 @@
 open! Core
+open! Async
 open Oxcaml_vendor_tool_lib
 
 let main_dir = "_monorepo-solver.lock"
@@ -34,8 +35,6 @@ module Repo_source = struct
 end
 
 module Solver_config = struct
-  let path = "monorepo.solver.sexp"
-
   module Package_selection = struct
     type t =
       | Include_all_matching_version of
@@ -75,6 +74,12 @@ module Solver_config = struct
     ; vendoring : Vendoring.t
     }
   [@@deriving sexp]
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = "monorepo.solver.sexp"
+    end)
 end
 
 module Repo_paths = struct
@@ -86,14 +91,16 @@ module Repo_paths = struct
 end
 
 module Repos = struct
-  let path = main_dir ^/ "repos.sexp"
-
   type t = (Repo.t * Repo_paths.t) list [@@deriving sexp]
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = main_dir ^/ "repos.sexp"
+    end)
 end
 
 module Desired_packages = struct
-  let path = main_dir ^/ "desired-packages.sexp"
-
   type t = Opam.Version_constraint.t option Opam.Package.Name.Map.t
 
   module Repr = struct
@@ -121,11 +128,15 @@ module Desired_packages = struct
 
         let of_sexpable { Repr.packages } = Opam.Package.Name.Map.of_alist_exn packages
       end)
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = main_dir ^/ "desired-packages.sexp"
+    end)
 end
 
 module Fetched_packages = struct
-  let path = main_dir ^/ "packages.sexp"
-
   module Package_and_dir = struct
     type t =
       { package : Opam.Package.t
@@ -178,4 +189,10 @@ module Fetched_packages = struct
   end
 
   type t = (Repo.t * Repo_info.t) list [@@deriving sexp]
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = main_dir ^/ "packages.sexp"
+    end)
 end

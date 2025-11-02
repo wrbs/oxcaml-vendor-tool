@@ -78,7 +78,7 @@ let solve_and_sync ~(config : Config.Solver_config.t) ~repos ~desired_packages ~
         opam_file, dest))
   in
   Deferred.all_unit
-    [ Configs.save (module Config.Fetched_packages) repo_summary ~in_:project
+    [ Config.Fetched_packages.save repo_summary ~in_:project
     ; Deferred.List.iter to_copy ~how:`Parallel ~f:(fun (src, dst) ->
         Process.run_expect_no_output_exn ~prog:"cp" ~args:[ src; dst ] ())
     ]
@@ -92,8 +92,8 @@ let command =
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind config = Configs.load (module Config.Solver_config) project in
-    let%bind repos = Configs.load (module Config.Repos) project in
-    let%bind desired_packages = Configs.load (module Config.Desired_packages) project in
+    let%bind config = Config.Solver_config.load project in
+    let%bind repos = Config.Repos.load project in
+    let%bind desired_packages = Config.Desired_packages.load project in
     solve_and_sync ~config ~repos ~desired_packages ~project
 ;;

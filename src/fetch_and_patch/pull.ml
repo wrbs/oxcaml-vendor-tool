@@ -143,8 +143,8 @@ let pull_command =
       ~doc:"(string) override dest dir (default: from config)"
   in
   fun () ->
-    let%bind dirs = Configs.load (module Lock_file) project
-    and config = Configs.load (module Config) project in
+    let%bind dirs = Lock_file.load project
+    and config = Config.load project in
     let dest_dir =
       Option.value_or_thunk dest_dir ~default:(fun () ->
         Project.path project config.dest_dir)
@@ -177,8 +177,8 @@ let pull_single_command =
       ~doc:"(string) override dest dir (default: from config)"
   and vendor_dir = anon ("VENDOR_DIR" %: Lock_file.Vendor_dir.arg_type) in
   fun () ->
-    let%bind dirs = Configs.load (module Lock_file) project
-    and config = Configs.load (module Config) project in
+    let%bind dirs = Lock_file.load project
+    and config = Config.load project in
     let dir_config = Map.find_exn dirs vendor_dir in
     let dest_dir =
       Option.value_or_thunk dest_dir ~default:(fun () ->

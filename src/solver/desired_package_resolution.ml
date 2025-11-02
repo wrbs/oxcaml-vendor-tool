@@ -46,7 +46,7 @@ let execute (config : Config.Solver_config.t) ~project =
           List.fold l ~init:selected ~f:(fun selected package ->
             Map.remove selected package))
   in
-  let%map () = Configs.save (module Config.Desired_packages) selected ~in_:project in
+  let%map () = Config.Desired_packages.save selected ~in_:project in
   selected
 ;;
 
@@ -57,7 +57,7 @@ let command =
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind config = Configs.load (module Config.Solver_config) project in
+    let%bind config = Config.Solver_config.load project in
     let%map _ = execute config ~project in
     ()
 ;;

@@ -16,7 +16,7 @@ module Disk_package = struct
 
   let load_all ~project =
     let opams_dir = Project.path project Config.opams_dir in
-    let%bind repos = Configs.load (module Config.Fetched_packages) project in
+    let%bind repos = Config.Fetched_packages.load project in
     List.concat_map repos ~f:(fun (_repo, repo_info) ->
       List.map repo_info.packages ~f:(fun package_and_dir ->
         let package = package_and_dir.package in
@@ -307,7 +307,7 @@ let construct_lock_file
 ;;
 
 let saved_desired_vendored ~(lock_file : Lock_file.t) ~project =
-  let%bind desired_versions = Configs.load (module Config.Desired_packages) project in
+  let%bind desired_versions = Config.Desired_packages.load project in
   let desired = Map.key_set desired_versions in
   let vendored =
     Map.data lock_file
@@ -334,9 +334,7 @@ let execute config ~project =
   let%bind () = write_nonstandard_build_packages ~includable_packages ~project in
   let lock_file = construct_lock_file ~includable_packages ~config in
   Deferred.all_unit
-    [ Configs.save (module Lock_file) lock_file ~in_:project
-    ; saved_desired_vendored ~lock_file ~project
-    ]
+    [ Lock_file.save lock_file ~in_:project; saved_desired_vendored ~lock_file ~project ]
 ;;
 
 let command =
@@ -344,6 +342,6 @@ let command =
   @@
   let%map_open.Command project = Project.param in
   fun () ->
-    let%bind config = Configs.load (module Config.Solver_config) project in
+    let%bind config = Config.Solver_config.load project in
     execute config ~project
 ;;

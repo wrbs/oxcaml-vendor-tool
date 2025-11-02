@@ -1,4 +1,5 @@
 open! Core
+open! Async
 
 module Vendor_dir = struct
   include
@@ -204,6 +205,10 @@ module Vendor_dir_config = struct
   [@@deriving sexp]
 end
 
-let path = "monorepo.lock.sexp"
-
 type t = Vendor_dir_config.t Vendor_dir.Map.t [@@deriving sexp]
+
+include Configs.Make (struct
+    type nonrec t = t [@@deriving sexp]
+
+    let path = "monorepo.lock.sexp"
+  end)

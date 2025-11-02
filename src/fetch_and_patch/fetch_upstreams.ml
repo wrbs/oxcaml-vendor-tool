@@ -131,7 +131,7 @@ let command =
   and jobs = Opam.jobs_flag
   and no_patch = flag "no-patch" no_arg ~doc:"don't patch" in
   fun () ->
-    let%bind dirs = Configs.load (module Lock_file) project in
+    let%bind dirs = Lock_file.load project in
     match%bind execute ~dest:dest_dir ~dirs ~project ~jobs ~no_patch with
     | Ok () -> return ()
     | Error () -> exit 1

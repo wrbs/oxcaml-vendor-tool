@@ -1,4 +1,5 @@
 open! Core
+open! Async
 
 module Vendor_dir : sig
   type t
@@ -78,6 +79,7 @@ module Vendor_dir_config : sig
   [@@deriving sexp]
 end
 
-val path : string
-
 type t = Vendor_dir_config.t Vendor_dir.Map.t [@@deriving sexp]
+
+val load : Project.t -> t Deferred.t
+val save : t -> in_:Project.t -> unit Deferred.t
