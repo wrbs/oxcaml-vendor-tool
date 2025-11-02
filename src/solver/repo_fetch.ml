@@ -2,6 +2,32 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+module Config = struct
+  module Source = struct
+    type t = Github of string * string [@@deriving sexp]
+  end
+
+  type t = (Repo.t * Source.t) list [@@deriving sexp]
+end
+
+module Resolved_repos = struct
+  module Paths = struct
+    type t =
+      { full_repo : Opam.Url.t
+      ; single_file_http : string
+      }
+    [@@deriving sexp]
+  end
+
+  type t = (Repo.t * Paths.t) list [@@deriving sexp]
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = Project.solver_lock_dir ^/ "repos.sexp"
+    end)
+end
+
 let get_json url =
   let%bind response, body = Cohttp_async.Client.get (Uri.of_string url) in
   let%map body = Cohttp_async.Body.to_string body in
@@ -24,7 +50,7 @@ let resolve_github_ref ~user ~repo ~ref =
     ~of_json:Of_json.("sha" @. string)
 ;;
 
-let resolve_source : Config.Repo_source.t -> _ = function
+let resolve_source : Config.Source.t -> _ = function
   | Github (user_repo, ref) ->
     let user, repo = String.lsplit2_exn user_repo ~on:'/' in
     let%map sha = resolve_github_ref ~user ~repo ~ref in
@@ -38,23 +64,20 @@ let resolve_source : Config.Repo_source.t -> _ = function
     let single_file_http =
       [%string "https://raw.githubusercontent.com/%{user}/%{repo}/%{sha}/"]
     in
-    { Config.Repo_paths.full_repo; single_file_http }
+    { Resolved_repos.Paths.full_repo; single_file_http }
 ;;
 
-let lock (config : Config.Solver_config.t) ~project =
+let lock (config : Config.t) ~project =
   let%bind repos =
-    Deferred.List.map
-      config.repos
-      ~how:(`Max_concurrent_jobs 32)
-      ~f:(fun (name, source) ->
-        let%map url = resolve_source source in
-        name, url)
+    Deferred.List.map config ~how:(`Max_concurrent_jobs 32) ~f:(fun (name, source) ->
+      let%map url = resolve_source source in
+      name, url)
   in
-  let%map () = Config.Repos.save repos ~in_:project in
+  let%map () = Resolved_repos.save repos ~in_:project in
   repos
 ;;
 
-let sync (repos : Config.Repos.t) ~project =
+let sync (repos : Resolved_repos.t) ~project =
   let cache_dir = Project.opam_download_cache project in
   Opam.Par.run_exn
     ~jobs:8
@@ -78,7 +101,7 @@ let lock_and_sync config ~project =
 ;;
 
 let sync_only ~project =
-  let%bind repos = Config.Repos.load project in
+  let%bind repos = Resolved_repos.load project in
   sync repos ~project;
   return repos
 ;;

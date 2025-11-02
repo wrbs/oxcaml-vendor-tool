@@ -2,6 +2,7 @@ open! Core
 open! Async
 
 let cache_dir = "_cache/monorepo"
+let solver_lock_dir = "_monorepo-solver.lock"
 
 type t = { root_dir : string }
 

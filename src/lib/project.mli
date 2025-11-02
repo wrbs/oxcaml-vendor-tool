@@ -2,6 +2,7 @@ open! Core
 open! Async
 
 val cache_dir : string
+val solver_lock_dir : string
 
 type t
 

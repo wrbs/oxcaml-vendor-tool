@@ -2,6 +2,22 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+module Config = struct
+  type t =
+    { repos : Repo_fetch.Config.t
+    ; package_selection : Desired_package_resolution.Config.t
+    ; env : Solver.Env.t
+    ; vendoring : Vendor_planner.Config.t
+    }
+  [@@deriving sexp]
+
+  include Configs.Make (struct
+      type nonrec t = t [@@deriving sexp]
+
+      let path = "monorepo.solver.sexp"
+    end)
+end
+
 let lock_command =
   Command.async ~summary:"refresh and lock the packages to fetch"
   @@
@@ -10,15 +26,19 @@ let lock_command =
     flag "no-update-repos" no_arg ~doc:"keep repos at previous commit revision"
   in
   fun () ->
-    let%bind config = Config.Solver_config.load project in
+    let%bind config = Config.load project in
     let%bind repos =
       match no_update_repos with
       | true -> Repo_fetch.sync_only ~project
-      | false -> Repo_fetch.lock_and_sync config ~project
+      | false -> Repo_fetch.lock_and_sync config.repos ~project
     in
-    let%bind desired_packages = Desired_package_resolution.execute config ~project in
-    let%bind () = Solver.solve_and_sync ~config ~repos ~desired_packages ~project in
-    let%bind () = Vendor_planner.execute config ~project in
+    let%bind desired_packages =
+      Desired_package_resolution.execute config.package_selection ~project
+    in
+    let%bind fetched_packages =
+      Solver.solve_and_sync ~env:config.env ~repos ~desired_packages ~project
+    in
+    let%bind () = Vendor_planner.execute config.vendoring ~fetched_packages ~project in
     return ()
 ;;
 
@@ -28,8 +48,8 @@ module Phases = struct
     @@
     let%map_open.Command project = Project.param in
     fun () ->
-      let%bind config = Config.Solver_config.load project in
-      let%map _repos = Repo_fetch.lock_and_sync config ~project in
+      let%bind config = Config.load project in
+      let%map _repos = Repo_fetch.lock_and_sync config.repos ~project in
       ()
   ;;
 
@@ -49,8 +69,8 @@ module Phases = struct
     @@
     let%map_open.Command project = Project.param in
     fun () ->
-      let%bind config = Config.Solver_config.load project in
-      let%map _ = Desired_package_resolution.execute config ~project in
+      let%bind config = Config.load project in
+      let%map _ = Desired_package_resolution.execute config.package_selection ~project in
       ()
   ;;
 
@@ -62,10 +82,13 @@ module Phases = struct
     @@
     let%map_open.Command project = Project.param in
     fun () ->
-      let%bind config = Config.Solver_config.load project in
-      let%bind repos = Config.Repos.load project in
-      let%bind desired_packages = Config.Desired_packages.load project in
-      Solver.solve_and_sync ~config ~repos ~desired_packages ~project
+      let%bind config = Config.load project in
+      let%bind repos = Repo_fetch.Resolved_repos.load project in
+      let%bind desired_packages =
+        Desired_package_resolution.Desired_packages.load project
+      in
+      Solver.solve_and_sync ~env:config.env ~repos ~desired_packages ~project
+      |> Deferred.ignore_m
   ;;
 
   let vendor_planner =
@@ -73,8 +96,9 @@ module Phases = struct
     @@
     let%map_open.Command project = Project.param in
     fun () ->
-      let%bind config = Config.Solver_config.load project in
-      Vendor_planner.execute config ~project
+      let%bind config = Config.load project
+      and fetched_packages = Solver.Fetched_packages.load project in
+      Vendor_planner.execute config.vendoring ~fetched_packages ~project
   ;;
 
   let command =

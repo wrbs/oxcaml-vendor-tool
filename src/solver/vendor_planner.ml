@@ -2,10 +2,15 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
-(* Work out which packages need vendoring
-
-   Work out what to name the dirs
-*)
+module Config = struct
+  type t =
+    { exclude_pkgs : Opam.Package.Name.Set.t
+    ; rename_dirs : string Opam.Package.Name.Map.t
+    ; exclude_dirs : Lock_file.Vendor_dir.Set.t
+    ; prepare_commands : string list list Lock_file.Vendor_dir.Map.t
+    }
+  [@@deriving sexp]
+end
 
 module Disk_package = struct
   type t =
@@ -14,14 +19,13 @@ module Disk_package = struct
     ; opam_file : OpamFile.OPAM.t
     }
 
-  let load_all ~project =
-    let opams_dir = Project.path project Config.opams_dir in
-    let%bind repos = Config.Fetched_packages.load project in
-    List.concat_map repos ~f:(fun (_repo, repo_info) ->
+  let load_all ~(fetched_packages : Solver.Fetched_packages.t) ~project =
+    let opams_dir = Project.path project Solver.opams_dir in
+    List.concat_map fetched_packages ~f:(fun (_repo, repo_info) ->
       List.map repo_info.packages ~f:(fun package_and_dir ->
         let package = package_and_dir.package in
         let version_dir =
-          Config.Fetched_packages.Package_and_dir.version_dir package_and_dir
+          Solver.Fetched_packages.Package_and_dir.version_dir package_and_dir
         in
         let repo_url =
           repo_info.url_prefix
@@ -124,10 +128,8 @@ module Includable_package = struct
     | _ -> Some result
   ;;
 
-  let should_exclude (package : Disk_package.t) ~(config : Config.Solver_config.t) =
-    let is_excluded =
-      Set.mem config.vendoring.exclude_pkgs (OpamPackage.name package.package)
-    in
+  let should_exclude (package : Disk_package.t) ~(config : Config.t) =
+    let is_excluded = Set.mem config.exclude_pkgs (OpamPackage.name package.package) in
     let no_build = List.is_empty (OpamFile.OPAM.build package.opam_file) in
     let skip_flags =
       OpamFile.OPAM.flags package.opam_file
@@ -193,7 +195,7 @@ let write_nonstandard_build_packages
   in
   let contents = Configs.format_sexps sexps in
   let path =
-    Project.path project (Config.main_dir ^/ "nonstandard-build-packages.sexp")
+    Project.path project (Project.solver_lock_dir ^/ "nonstandard-build-packages.sexp")
   in
   Writer.save path ~contents
 ;;
@@ -250,12 +252,12 @@ let merge_as_much_as_possible l ~f =
 
 let construct_lock_file
       ~(includable_packages : Includable_package.t list)
-      ~(config : Config.Solver_config.t)
+      ~(config : Config.t)
   =
   let build_info_by_name =
     List.map includable_packages ~f:(fun pkg ->
       let dirname =
-        match Map.find config.vendoring.rename_dirs (OpamPackage.name pkg.package) with
+        match Map.find config.rename_dirs (OpamPackage.name pkg.package) with
         | Some dir -> dir
         | None ->
           (match pkg.repo_basename with
@@ -287,7 +289,7 @@ let construct_lock_file
       in
       dir, build_info)
     |> Lock_file.Vendor_dir.Map.of_alist_multi
-    |> Map.filter_keys ~f:(fun dir -> not (Set.mem config.vendoring.exclude_dirs dir))
+    |> Map.filter_keys ~f:(fun dir -> not (Set.mem config.exclude_dirs dir))
     |> Map.map ~f:(merge_as_much_as_possible ~f:Build_info.merge_opt)
     |> Map.map ~f:(function
       | [ build_info ] -> build_info
@@ -301,13 +303,13 @@ let construct_lock_file
     build_info_by_name
     ~f:(fun ~key:dir ~data:{ source; extra; patches; provides } ->
       let prepare_commands =
-        Map.find config.vendoring.prepare_commands dir |> Option.value ~default:[]
+        Map.find config.prepare_commands dir |> Option.value ~default:[]
       in
       { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands; provides })
 ;;
 
 let saved_desired_vendored ~(lock_file : Lock_file.t) ~project =
-  let%bind desired_versions = Config.Desired_packages.load project in
+  let%bind desired_versions = Desired_package_resolution.Desired_packages.load project in
   let desired = Map.key_set desired_versions in
   let vendored =
     Map.data lock_file
@@ -320,14 +322,14 @@ let saved_desired_vendored ~(lock_file : Lock_file.t) ~project =
     Set.to_list tested
     |> List.map ~f:(fun name -> [%sexp [ "package"; (name : Opam.Package.Name.t) ]])
   in
-  let path = Project.path project (Config.main_dir ^/ "dune-snippet") in
+  let path = Project.path project (Project.solver_lock_dir ^/ "dune-snippet") in
   Writer.save_sexp
     path
     [%sexp [ "alias"; [ "name"; "vendored" ]; "deps" :: (deps : Sexp.t list) ]]
 ;;
 
-let execute config ~project =
-  let%bind disk_packages = Disk_package.load_all ~project in
+let execute config ~fetched_packages ~project =
+  let%bind disk_packages = Disk_package.load_all ~fetched_packages ~project in
   let includable_packages =
     List.filter_map disk_packages ~f:(Includable_package.of_disk_package_opt ~config)
   in
