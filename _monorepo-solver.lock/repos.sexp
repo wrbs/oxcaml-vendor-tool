@@ -28,7 +28,10 @@
   (full_repo
    git+https://github.com/dune-universe/opam-overlays.git#e439455c8cff141dfa65b29be6eb385fb756b37e)
   (single_file_http
-   https://raw.githubusercontent.com/dune-universe/opam-overlays/e439455c8cff141dfa65b29be6eb385fb756b37e/)))
+   https://raw.githubusercontent.com/dune-universe/opam-overlays/e439455c8cff141dfa65b29be6eb385fb756b37e/)
+  (filter (
+    Include (
+      astring findlib fmt fpath jsonm logs num ocamlfind uchar uucp xmlm)))))
 
 (opam (
   (full_repo

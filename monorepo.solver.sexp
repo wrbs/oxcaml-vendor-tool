@@ -17,7 +17,15 @@
         wasm_of_ocaml-compiler
         js_of_ocaml-ppx
         js_of_ocaml-toplevel)))))
-  (dune-overlays ((source (github dune-universe/opam-overlays master))))
+  (dune-overlays (
+    (source (github dune-universe/opam-overlays master))
+    ;; only include things explicitly that need the duniverse patch
+    ;; (the repo has some old versions of things that switched to dune, but
+    ;; because of how repo prioritization works this will cause us to pick up
+    ;; old versions)
+    (filter (
+      include (
+        astring ocamlfind findlib fmt fpath jsonm logs num uchar uucp xmlm)))))
   (opam ((source (github ocaml/opam-repository master))))))
 
 (env (

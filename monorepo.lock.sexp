@@ -522,15 +522,14 @@
           sha256=b909d2f006aff8cc53fb2acde6f75682d6ff9c4f4a5e45f10462919aafc774b1)))))))))
 
 (cmdliner (
-  (provides ((cmdliner 1.3.0+dune)))
+  (provides ((cmdliner 1.3.0)))
   (source ((
     base (
       Http (
         (urls (
-          https://github.com/dune-universe/cmdliner/releases/download/v1.3.0%2Bdune/cmdliner-1.3.0.dune.tbz))
+          https://erratique.ch/software/cmdliner/releases/cmdliner-1.3.0.tbz))
         (hashes (
-          sha256=0a27faaefde77c3954b4f0254105831df79cb9b2c930406aacae402b44796e53
-          sha512=e11d7341dc708318e04f3e9c69c680c24309a550170392c2105f9eefee2b448014145ace29bb0dc2df6fc31473a679e51fc86fe4f834f7db3e53da665233bfa5)))))))))
+          sha512=4c46bc334444ff772637deae2f5ba03645d7a1b7db523470a1246acfce79b971c764d964cbb02388639b3161b279700d9ade95da550446fb32aa4849c8a8f283)))))))))
 
 (codicons (
   (provides ((codicons v0.18~preview.130.55+197)))
@@ -1915,16 +1914,18 @@
 
 (menhir (
   (provides (
-    (menhir    20200624+dune)
-    (menhirLib 20200624+dune)
-    (menhirSdk 20200624+dune)))
+    (menhir    20250912)
+    (menhirCST 20250912)
+    (menhirLib 20250912)
+    (menhirSdk 20250912)))
   (source ((
     base (
       Http (
         (urls (
-          https://github.com/dune-universe/menhir/archive/v20200624+dune.tar.gz))
+          https://gitlab.inria.fr/fpottier/menhir/-/archive/20250912/archive.tar.gz))
         (hashes (
-          sha256=a85fcee494adb8f17a4de44ed4079c501adec6b5a33ce791c92f8e5d2481e40a)))))))))
+          md5=b8f83df02226419f99e49f1b637dcb11
+          sha512=72c85ec63104d6a7c7b6305b4642b86909fcad2e46561427ad596e37e686b3c94cd382da440f058d32800a15b157b80a8242df8043440a209ba73d209657ea84)))))))))
 
 (mlt_parser (
   (provides ((mlt_parser v0.18~preview.130.55+197)))
@@ -3933,16 +3934,6 @@
           https://github.com/janestreet/semantic_version/archive/4c02229ca75a6d58f299596670874cf53b0ae5ea.tar.gz))
         (hashes (
           sha256=b1abfdb550daddb0a3f7d72c4cc54187441d3c78470dffd2a06670303b1a3593)))))))))
-
-(seq (
-  (provides ((seq base+dune)))
-  (source ((
-    base (
-      Http (
-        (urls (https://github.com/c-cube/seq/archive/0.2.2.tar.gz))
-        (hashes (
-          md5=9033e02283aa3bde9f97f24e632902e3
-          sha512=cab0eb4cb6d9788b7cbd7acbefefc15689d706c97ff7f75dd97faf3c21e466af4d0ff110541a24729db587e7172b1a30a3c2967e17ec2e49cbd923360052c07c)))))))))
 
 (sequencer_table (
   (provides ((sequencer_table v0.18~preview.130.55+197)))

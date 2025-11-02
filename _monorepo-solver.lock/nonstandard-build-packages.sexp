@@ -86,3 +86,5 @@
    :if
    "os = \"macos\" & os-distribution = \"homebrew\" & arch = \"arm64\"")
   ((make))))
+
+((cmdliner 1.3.0) (((make) all PREFIX=%{prefix}%)))
