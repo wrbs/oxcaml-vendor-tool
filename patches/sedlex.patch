@@ -1,0 +1,24 @@
+diff --git a/src/syntax/dune b/src/syntax/dune
+index 1a6c44a..e7b3b4b 100644
+--- a/src/syntax/dune
++++ b/src/syntax/dune
+@@ -9,11 +9,11 @@
+  (flags
+   (:standard -w -9)))
+ 
+-(rule
+- (targets unicode.ml)
+- (mode promote)
+- (deps
+-  (:gen ../generator/gen_unicode.exe)
+-  (glob_files ../generator/data/*.txt))
+- (action
+-  (run %{gen} %{targets})))
++; (rule
++;  (targets unicode.ml)
++;  (mode promote)
++;  (deps
++;   (:gen ../generator/gen_unicode.exe)
++;   (glob_files ../generator/data/*.txt))
++;  (action
++;   (run %{gen} %{targets})))

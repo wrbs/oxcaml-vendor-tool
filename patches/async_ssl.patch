@@ -17,3 +17,18 @@ index 9f4d2e7..a3d3a72 100644
   (name async_ssl)
   (public_name async_ssl)
   (modules import version opt verify_mode ffi_generated_types ffi_generated
+diff --git a/stubgen/dune b/stubgen/dune
+index 61f8ecf..8fcff35 100644
+--- a/stubgen/dune
++++ b/stubgen/dune
+@@ -17,7 +17,8 @@
+  (deps
+   (:first_dep ./ffi_ml_types_stubgen.c)
+   ../bindings/openssl-ccopt
+-  ../bindings/openssl-cclib)
++  ../bindings/openssl-cclib
++  (package ctypes))
+  (action
+   (bash
+-    "%{cc} %{first_dep} $(< ../bindings/openssl-ccopt) $(< ../bindings/openssl-cclib) -I `dirname %{lib:ctypes:ctypes_cstubs_internals.h}` -I %{ocaml_where} -o %{targets}")))
++   "%{cc} %{first_dep} $(< ../bindings/openssl-ccopt) $(< ../bindings/openssl-cclib) -I `dirname %{lib:ctypes:ctypes_cstubs_internals.h}` -I %{ocaml_where} -o %{targets}")))

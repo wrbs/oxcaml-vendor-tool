@@ -29,6 +29,9 @@ let fetch_sources
           ~full_fetch:false
         |> handle_download_result
       in
+      (match dir_config.source.base with
+       | Git _ -> OpamSystem.remove_dir (dest_dir ^/ ".git")
+       | Http _ -> ());
       `Main_source dest_dir)
   in
   let fetch_extra =
