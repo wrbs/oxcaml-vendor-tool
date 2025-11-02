@@ -2,20 +2,30 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+module Filter : sig
+  type t =
+    | Include of Opam.Package.Name.Set.t
+    | Exclude of Opam.Package.Name.Set.t
+  [@@deriving sexp]
+end
+
 module Config : sig
   type t [@@deriving sexp]
 end
 
-module Resolved_repos : sig
-  module Paths : sig
-    type t =
-      { full_repo : OpamUrl.t
-      ; single_file_http : string
-      }
-    [@@deriving sexp]
-  end
+module Resolved_repo : sig
+  type t =
+    { full_repo : OpamUrl.t
+    ; single_file_http : string
+    ; filter : Filter.t option
+    }
+  [@@deriving sexp]
 
-  type t = (Repo.t * Paths.t) list [@@deriving sexp]
+  val should_include : t -> Opam.Package.t -> bool
+end
+
+module Resolved_repos : sig
+  type t = (Repo.t * Resolved_repo.t) list [@@deriving sexp]
 
   val load : Project.t -> t Deferred.t
   val save : t -> in_:Project.t -> unit Deferred.t

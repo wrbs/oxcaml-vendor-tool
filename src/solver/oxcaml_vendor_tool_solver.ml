@@ -33,7 +33,7 @@ let lock_command =
       | false -> Repo_fetch.lock_and_sync config.repos ~project
     in
     let%bind desired_packages =
-      Desired_package_resolution.execute config.package_selection ~project
+      Desired_package_resolution.execute config.package_selection ~project ~repos
     in
     let%bind fetched_packages =
       Solver.solve_and_sync ~env:config.env ~repos ~desired_packages ~project
@@ -69,8 +69,11 @@ module Phases = struct
     @@
     let%map_open.Command project = Project.param in
     fun () ->
-      let%bind config = Config.load project in
-      let%map _ = Desired_package_resolution.execute config.package_selection ~project in
+      let%bind config = Config.load project
+      and repos = Repo_fetch.Resolved_repos.load project in
+      let%map _ =
+        Desired_package_resolution.execute config.package_selection ~repos ~project
+      in
       ()
   ;;
 

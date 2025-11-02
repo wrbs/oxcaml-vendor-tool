@@ -2,24 +2,47 @@ open! Core
 open! Async
 open Oxcaml_vendor_tool_lib
 
+module Filter = struct
+  type t =
+    | Include of Opam.Package.Name.Set.t
+    | Exclude of Opam.Package.Name.Set.t
+  [@@deriving sexp]
+end
+
 module Config = struct
   module Source = struct
     type t = Github of string * string [@@deriving sexp]
   end
 
-  type t = (Repo.t * Source.t) list [@@deriving sexp]
-end
-
-module Resolved_repos = struct
-  module Paths = struct
+  module Repo_config = struct
     type t =
-      { full_repo : Opam.Url.t
-      ; single_file_http : string
+      { source : Source.t
+      ; filter : Filter.t option [@sexp.option]
       }
     [@@deriving sexp]
   end
 
-  type t = (Repo.t * Paths.t) list [@@deriving sexp]
+  type t = (Repo.t * Repo_config.t) list [@@deriving sexp]
+end
+
+module Resolved_repo = struct
+  type t =
+    { full_repo : Opam.Url.t
+    ; single_file_http : string
+    ; filter : Filter.t option [@sexp.option]
+    }
+  [@@deriving sexp]
+
+  let should_include t package =
+    match t.filter with
+    | None -> true
+    | Some (Include packages) -> Set.mem packages (OpamPackage.name package)
+    | Some (Exclude packages) -> not (Set.mem packages (OpamPackage.name package))
+  ;;
+end
+
+module Resolved_repos = struct
+  type t = (Repo.t * Resolved_repo.t) list [@@deriving sexp]
 
   include Configs.Make (struct
       type nonrec t = t [@@deriving sexp]
@@ -50,7 +73,7 @@ let resolve_github_ref ~user ~repo ~ref =
     ~of_json:Of_json.("sha" @. string)
 ;;
 
-let resolve_source : Config.Source.t -> _ = function
+let resolve_urls : Config.Source.t -> _ = function
   | Github (user_repo, ref) ->
     let user, repo = String.lsplit2_exn user_repo ~on:'/' in
     let%map sha = resolve_github_ref ~user ~repo ~ref in
@@ -64,14 +87,17 @@ let resolve_source : Config.Source.t -> _ = function
     let single_file_http =
       [%string "https://raw.githubusercontent.com/%{user}/%{repo}/%{sha}/"]
     in
-    { Resolved_repos.Paths.full_repo; single_file_http }
+    full_repo, single_file_http
 ;;
 
 let lock (config : Config.t) ~project =
   let%bind repos =
-    Deferred.List.map config ~how:(`Max_concurrent_jobs 32) ~f:(fun (name, source) ->
-      let%map url = resolve_source source in
-      name, url)
+    Deferred.List.map
+      config
+      ~how:(`Max_concurrent_jobs 32)
+      ~f:(fun (name, { source; filter }) ->
+        let%map full_repo, single_file_http = resolve_urls source in
+        name, { Resolved_repo.full_repo; single_file_http; filter })
   in
   let%map () = Resolved_repos.save repos ~in_:project in
   repos

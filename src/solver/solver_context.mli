@@ -26,7 +26,7 @@ val std_env
 val create
   :  ?test:OpamPackage.Name.Set.t
   -> ?pins:(OpamTypes.version * OpamFile.OPAM.t) OpamTypes.name_map
-  -> Repo.t list
+  -> Repo_fetch.Resolved_repos.t
   -> project:Project.t
   -> constraints:OpamFormula.version_constraint OpamTypes.name_map
   -> env:

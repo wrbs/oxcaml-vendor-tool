@@ -48,7 +48,7 @@ end
 type t =
   { env : string -> OpamVariable.variable_contents option
   ; project : Project.t
-  ; repos : Repo.t list
+  ; repos : Repo_fetch.Resolved_repos.t
   ; pins : (OpamPackage.Version.t * OpamFile.OPAM.t) OpamPackage.Name.Map.t
   ; constraints : OpamFormula.version_constraint OpamPackage.Name.Map.t
   ; test : OpamPackage.Name.Set.t
@@ -56,12 +56,15 @@ type t =
   }
 
 let load_packages t name =
-  List.concat_map t.repos ~f:(fun repo ->
+  List.concat_map t.repos ~f:(fun (repo, repo_config) ->
     let versions_dir =
       Repo.dir repo ~project:t.project ^/ "packages" ^/ OpamPackage.Name.to_string name
     in
     List.filter_map (list_dir versions_dir) ~f:(fun version_dir ->
       let%bind.Option package = OpamPackage.of_string_opt version_dir in
+      let%bind.Option () =
+        Option.some_if (Repo_fetch.Resolved_repo.should_include repo_config package) ()
+      in
       let package_dir = versions_dir ^/ version_dir in
       let opam_file_path = package_dir ^/ "opam" in
       match Sys_unix.file_exists_exn opam_file_path with

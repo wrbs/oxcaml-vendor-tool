@@ -1,9 +1,24 @@
 (repos (
-  ;; js-of-ocaml in oxcaml repo is broken, this branch has fixes
-  (ox (github patricoferris/oxcaml-opam-repository jsoo))
-  ;; (ox (github oxcaml/opam-repository main))
-  (dune-overlays (github dune-universe/opam-overlays master))
-  (opam (github ocaml/opam-repository master))))
+  (ox (
+    (source (github oxcaml/opam-repository main))
+    (filter (
+      exclude (
+        js_of_ocaml
+        js_of_ocaml-compiler
+        wasm_of_ocaml-compiler
+        js_of_ocaml-ppx
+        js_of_ocaml-toplevel)))))
+  (ox-jsoo-fix (
+    (source (github patricoferris/oxcaml-opam-repository jsoo))
+    (filter (
+      include (
+        js_of_ocaml
+        js_of_ocaml-compiler
+        wasm_of_ocaml-compiler
+        js_of_ocaml-ppx
+        js_of_ocaml-toplevel)))))
+  (dune-overlays ((source (github dune-universe/opam-overlays master))))
+  (opam ((source (github ocaml/opam-repository master))))))
 
 (env (
   (arch            x86_64)

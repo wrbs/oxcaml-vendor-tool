@@ -13,4 +13,8 @@ module Desired_packages : sig
   val save : t -> in_:Project.t -> unit Deferred.t
 end
 
-val execute : Config.t -> project:Project.t -> Desired_packages.t Deferred.t
+val execute
+  :  Config.t
+  -> repos:Repo_fetch.Resolved_repos.t
+  -> project:Project.t
+  -> Desired_packages.t Deferred.t

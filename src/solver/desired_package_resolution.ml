@@ -78,14 +78,23 @@ module Desired_packages = struct
     end)
 end
 
-let find_packages_matching_version ~in_repo ~of_ ~project =
+let find_packages_matching_version
+      ~in_repo
+      ~(repos : Repo_fetch.Resolved_repos.t)
+      ~of_
+      ~project
+  =
   return
   @@
+  let repo_config = List.Assoc.find_exn repos in_repo ~equal:[%equal: Repo.t] in
   let repo_dir = Repo.opam_dir in_repo ~project in
   let packages = OpamRepository.packages repo_dir in
   let package_versions =
     OpamPackage.Set.to_list packages
-    |> List.map ~f:(fun package -> package.name, package.version)
+    |> List.filter_map ~f:(fun package ->
+      match Repo_fetch.Resolved_repo.should_include repo_config package with
+      | false -> None
+      | true -> Some (package.name, package.version))
     |> Opam.Package.Name.Map.of_alist_multi
   in
   let target_version =
@@ -100,7 +109,7 @@ let find_packages_matching_version ~in_repo ~of_ ~project =
     else None)
 ;;
 
-let execute (config : Config.t) ~project =
+let execute (config : Config.t) ~repos ~project =
   let%bind selected =
     Deferred.List.fold config ~init:Opam.Package.Name.Map.empty ~f:(fun selected spec ->
       let%map op =
@@ -108,7 +117,7 @@ let execute (config : Config.t) ~project =
         | Include package_and_constraints -> return (`Add package_and_constraints)
         | Exclude packages -> return (`Remove packages)
         | Include_all_matching_version { in_repo; of_ } ->
-          let%map to_add = find_packages_matching_version ~in_repo ~of_ ~project in
+          let%map to_add = find_packages_matching_version ~in_repo ~repos ~of_ ~project in
           `Add to_add
       in
       match op with

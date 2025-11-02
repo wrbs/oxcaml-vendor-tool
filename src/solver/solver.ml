@@ -90,9 +90,7 @@ let solve_packages ~env ~(repos : Repo_fetch.Resolved_repos.t) ~desired_packages
       name, formula)
     |> OpamPackage.Name.Map.of_list
   in
-  let solver_context =
-    Solver_context.create (List.map repos ~f:Tuple2.get1) ~project ~constraints ~env
-  in
+  let solver_context = Solver_context.create repos ~project ~constraints ~env in
   let desired_packages = Map.keys desired_packages in
   let%map selections =
     match Solver.solve solver_context desired_packages with
