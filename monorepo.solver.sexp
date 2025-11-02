@@ -41,7 +41,7 @@
   ;; packages with different patches
   (rename_dirs ((ppxlib_ast ppxlib_ast)))
   ;; exclude source dirs, no matter what packages provided them
-  (exclude_dirs (ocaml))
+  (exclude_dirs (ocaml bytes))
   ;; custom commands in the opam file that need to run before the build
   (prepare_commands (
     (ppxlib ((rm -rf ast astlib stdppx traverse_builtins)))

@@ -308,26 +308,6 @@ let construct_lock_file
       { Lock_file.Vendor_dir_config.source; extra; patches; prepare_commands; provides })
 ;;
 
-let saved_desired_vendored ~(lock_file : Lock_file.t) ~project =
-  let%bind desired_versions = Desired_package_resolution.Desired_packages.load project in
-  let desired = Map.key_set desired_versions in
-  let vendored =
-    Map.data lock_file
-    |> List.map ~f:(fun lock_file ->
-      lock_file.provides |> Opam.Package.Name.Set.map ~f:OpamPackage.name)
-    |> Opam.Package.Name.Set.union_list
-  in
-  let tested = Set.inter desired vendored in
-  let deps =
-    Set.to_list tested
-    |> List.map ~f:(fun name -> [%sexp [ "package"; (name : Opam.Package.Name.t) ]])
-  in
-  let path = Project.path project (Project.solver_lock_dir ^/ "dune-snippet") in
-  Writer.save_sexp
-    path
-    [%sexp [ "alias"; [ "name"; "vendored" ]; "deps" :: (deps : Sexp.t list) ]]
-;;
-
 let execute config ~fetched_packages ~project =
   let%bind disk_packages = Disk_package.load_all ~fetched_packages ~project in
   let includable_packages =
@@ -335,6 +315,5 @@ let execute config ~fetched_packages ~project =
   in
   let%bind () = write_nonstandard_build_packages ~includable_packages ~project in
   let lock_file = construct_lock_file ~includable_packages ~config in
-  Deferred.all_unit
-    [ Lock_file.save lock_file ~in_:project; saved_desired_vendored ~lock_file ~project ]
+  Lock_file.save lock_file ~in_:project
 ;;

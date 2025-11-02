@@ -58,13 +58,13 @@ Set up a switch and install the dev tools
     opam install -y ocamlformat merlin ocaml-lsp-server utop sexp dune
     cd _example && opam switch link oxcaml-monorepo
 
-It definitely has some packages in it that won't build without other deps, the
-only packages that are likely to work are those defined in the `@vendor` alias
-in `_example/dune` and their dependencies.
+The vendored dirs has the source for some packages/tests in it that won't build
+without other deps; the only packages that are likely to work are those defined
+in the `@vendored-pkgs` alias.
 
 You can test those build with:
 
-    dune build @vendor
+    dune build @vendored-pkgs
 
 ### Tweaking for now
 
@@ -160,4 +160,13 @@ packages that may need either
 
 This is where the lock file + any local patches (in `patches` get applied).
 
-See instructions above -- the code's not as polished yet and details might change.
+Fetched files are cached to `_cache/monorepo/opam-dl`
+
+Local patches are relative to the 'upstream source' which may have its own
+upstream patches applied.
+
+Additionally, a `dune` file is created in the output directory
+
+- marking subdirectories as vendored
+- defining an alias `@vendored-pkgs` that can be used to build every vendored
+package

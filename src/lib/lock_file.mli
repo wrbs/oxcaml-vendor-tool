@@ -72,9 +72,8 @@ module Vendor_dir_config : sig
     { provides : Opam.Package.Set.t
     ; source : Main_source.t
     ; extra : Http_source.t String.Map.t
-          [@default String.Map.empty] [@sexp_drop_if Map.is_empty]
-    ; patches : string list [@sexp.list]
-    ; prepare_commands : string list list [@sexp.list]
+    ; patches : string list
+    ; prepare_commands : string list list
     }
   [@@deriving sexp]
 end

@@ -159,7 +159,7 @@ module Main_source = struct
 
   type t =
     { base : Base.t
-    ; subpath : string option
+    ; subpath : string option [@sexp.option]
     }
   [@@deriving sexp]
 
