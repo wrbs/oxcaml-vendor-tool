@@ -1,22 +1,5 @@
 (repos (
-  (ox (
-    (source (github oxcaml/opam-repository main))
-    (filter (
-      exclude (
-        js_of_ocaml
-        js_of_ocaml-compiler
-        wasm_of_ocaml-compiler
-        js_of_ocaml-ppx
-        js_of_ocaml-toplevel)))))
-  (ox-jsoo-fix (
-    (source (github patricoferris/oxcaml-opam-repository jsoo))
-    (filter (
-      include (
-        js_of_ocaml
-        js_of_ocaml-compiler
-        wasm_of_ocaml-compiler
-        js_of_ocaml-ppx
-        js_of_ocaml-toplevel)))))
+  (ox ((source (github oxcaml/opam-repository main))))
   (dune-overlays (
     (source (github dune-universe/opam-overlays master))
     ;; only include things explicitly that need the duniverse patch

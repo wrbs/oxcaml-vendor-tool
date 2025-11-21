@@ -80,13 +80,8 @@ patches: [
   "js_of_ocaml-atomic-cmpxchg.patch"
   "js_of_ocaml-small-int-literals.patch"
   "dune.patch"
-  "js_of_ocaml-toplevel.patch"
 ]
 extra-files: [
-  [
-    "js_of_ocaml-toplevel.patch"
-	"sha256=fc9e1c363cd14d77edb3d6017ec2a8d2211dc755ff902e2a075a372b1e665f9e"
-  ]
   [
     "js_of_ocaml-magic_number.ml.patch"
     "sha256=05e204eac0338a76ca02db89ebb9505d80a7e268b93b746408356be913e219e6"

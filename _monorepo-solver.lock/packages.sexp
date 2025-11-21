@@ -119,6 +119,9 @@
     (janestreet_csv             v0.18~preview.130.55+197)
     (janestreet_lru_cache       v0.18~preview.130.55+197)
     (janestreet_shims           v0.18~preview.130.55+197)
+    (js_of_ocaml                6.0.1+ox)
+    (js_of_ocaml-compiler       6.0.1+ox)
+    (js_of_ocaml-ppx            6.0.1+ox)
     (js_of_ocaml_patches        v0.18~preview.130.55+197)
     (jsonaf                     v0.18~preview.130.55+197)
     (jsonrpc                    1.19.0+ox)
@@ -298,24 +301,16 @@
     (zarith_stubs_js v0.18~preview.130.55+197)
     (zstandard       v0.18~preview.130.55+197)))))
 
-(ox-jsoo-fix (
-  (url_prefix
-   https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/)
-  (packages (
-    (js_of_ocaml          6.0.1+ox)
-    (js_of_ocaml-compiler 6.0.1+ox)
-    (js_of_ocaml-ppx      6.0.1+ox)))))
-
 (dune-overlays (
   (url_prefix
-   https://raw.githubusercontent.com/dune-universe/opam-overlays/e439455c8cff141dfa65b29be6eb385fb756b37e/)
+   https://raw.githubusercontent.com/dune-universe/opam-overlays/d5c12f6d5c7909e6119a82bc4aba682ac3110b2d/)
   (packages (
     (astring   0.8.5+dune)
     (findlib   1.9.5+dune)
     (fmt       0.11.0+dune)
     (fpath     0.7.3+dune)
     (jsonm     1.0.1+dune)
-    (logs      0.9.0+dune2)
+    (logs      0.10.0+dune)
     (num       1.4+dune2)
     (ocamlfind 1.9.5+dune)
     (uchar     0.0.2+dune2)
@@ -324,7 +319,7 @@
 
 (opam (
   (url_prefix
-   https://raw.githubusercontent.com/ocaml/opam-repository/8a528d6bb48e4be260fb670a1754df39a1192147/)
+   https://raw.githubusercontent.com/ocaml/opam-repository/ee3428377a13c3c9716b6f791c33441cfb542498/)
   (packages (
     (angstrom              0.16.1)
     (angstrom-async        0.16.1)

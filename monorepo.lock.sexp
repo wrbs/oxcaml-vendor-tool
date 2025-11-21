@@ -1407,324 +1407,317 @@
   (extra (
     (dune.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/dune.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/dune.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/dune.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/dune.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/dune.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/dune.patch))
       (hashes (
         sha256=f76da998ab76de56309bd0da3e4db1fb496d6d235d7a0ac2f78e3bafe098714e))))
     (js_of_ocaml-5.2.0-compiler-changes.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.2.0-compiler-changes.patch))
       (hashes (
         sha256=12626322e63a8eaf68d4c8a1a1d3f428832869fae7020588e0fe40bbd8fd8cf8))))
     (js_of_ocaml-5.3-tests-runtime.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-5.3-tests-runtime.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-add-unboxed-and-float-block.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-add-unboxed-and-float-block.patch))
       (hashes (
         sha256=db409edb2be9be828015b6722fb51d7bccdd1e4a7edf982b5c8d89808713af7b))))
     (js_of_ocaml-atomic-cmpxchg.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomic-cmpxchg.patch))
       (hashes (
         sha256=89612eb8c1e64898205c0b59c6b73987d2ff993a8c366fb61dac6db90e2806bc))))
     (js_of_ocaml-atomics.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-atomics.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-atomics.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomics.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-atomics.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-atomics.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-atomics.patch))
       (hashes (
         sha256=cfe956bb047c252faa2397ff2badca80972d74e1dca0cb633202313dfb8f5da4))))
     (js_of_ocaml-caml_array_append.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_array_append.patch))
       (hashes (
         sha256=430f2a026ce0738ae65b8b67ba614bae89bc57fffdf58293bae249e2fa8cedbd))))
     (js_of_ocaml-caml_bigstring_strncmp.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_bigstring_strncmp.patch))
       (hashes (
         sha256=6fb900f0ff96d99e2a146a24e799f0bfcf234aa06e8447169ede86452e36fe3f))))
     (js_of_ocaml-caml_hash_exn.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_hash_exn.patch))
       (hashes (
         sha256=eaf87543603ab7f9c5c8e410413f913e572c1815c93a30ac89b245effd435e39))))
     (js_of_ocaml-caml_provides_sub_local.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-caml_provides_sub_local.patch))
       (hashes (
         sha256=11b749d7c1b84b1145cbcf63801c2924ab89846ceff3a6fa8a2305bb3bc90f77))))
     (js_of_ocaml-compilation_unit-name.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-compilation_unit-name.patch))
       (hashes (
         sha256=1e00a73f66cbaa87eefb45702eaaf431978f8eb9ed95684c781b0ebb035d1a7f))))
     (js_of_ocaml-fix-build_fs.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-fix-build_fs.patch))
       (hashes (
         sha256=abaa404bf23a77cf1badfe30ab9fcc13c6fb0446a81fa10b0962ed1ba9005d6a))))
     (js_of_ocaml-flipped-conditions-in-test.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-flipped-conditions-in-test.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-float32.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-float32.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-float32.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-float32.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-float32.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-float32.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-float32.patch))
       (hashes (
         sha256=8d6ebad1481711f57c5ed6dd36187b96ce8fcc51cdf3b0e9d5c277687601c625))))
     (js_of_ocaml-floatarray_create_local.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-floatarray_create_local.patch))
       (hashes (
         sha256=f17e392acc941dde475cb7be0654037df9b8d550aeae0d96b65394e4c4a1d4ca))))
     (js_of_ocaml-gh2034.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-gh2034.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-gh2034.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-gh2034.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-gh2034.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-gh2034.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-gh2034.patch))
       (hashes (
         sha256=ec01ea15a9d21c22790ad3c93e9d68154e364462de6a2ce1dbbb62e8af25fc2d))))
     (js_of_ocaml-global_deadcode-fix.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-global_deadcode-fix.patch))
       (hashes (
         sha256=5b49d6ee62ae87c77d88ea8022b022830f906367dc9b9ea2e582f037a739292f))))
     (js_of_ocaml-iarray-primitives.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-iarray-primitives.patch))
       (hashes (
         sha256=8c320fb413daad0393347bf6a22ca31fe6f1d3dd34f58e313aa44cd060fc56f8))))
     (js_of_ocaml-ident-is_global.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-ident-is_global.patch))
       (hashes (
         sha256=9cc507a14142220868af1c6f1e35b06648718f21924b0fb192d6bcf4d28395f6))))
     (js_of_ocaml-important-config-changes.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-important-config-changes.patch))
       (hashes (
         sha256=eeb46aea8e0f0d2232b47f32a8a1d60237626637304431847e60316424daadd3))))
     (js_of_ocaml-int_u-array-primitives.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-int_u-array-primitives.patch))
       (hashes (
         sha256=99eba4301613d03e0305017a687c768bd24a22cef0db25ab62cbc3d304f647ba))))
     (js_of_ocaml-internal-obj-changes.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-obj-changes.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-internal-ocaml-5-compatibility.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-internal-ocaml-5-compatibility.patch))
       (hashes (
         sha256=6b7e17df7f0142158eca19a953422eb6eaf97a3f7f3f2443648bfd069fbcb90f))))
     (js_of_ocaml-jane-street-5.2-compatibility.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-5.2-compatibility.patch))
       (hashes (
         sha256=45391a7a7da6c5bfbe97ec1272cb369d533c2d95cf7a7a56d754db94871eb043))))
     (js_of_ocaml-jane-street-const_null-support.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-jane-street-const_null-support.patch))
       (hashes (
         sha256=e708cdc01c0cef3fce1cb9f31b33324977dcca1c166601905fcac1ef10262c3a))))
     (js_of_ocaml-local-bytes.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-local-bytes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-local-bytes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-local-bytes.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-local-bytes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-local-bytes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-local-bytes.patch))
       (hashes (
         sha256=1c6170fec57089f515ec71bd9873d48bd5ae9c4a85f14b80f33039cce9f232ae))))
     (js_of_ocaml-magic_number.ml.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-magic_number.ml.patch))
       (hashes (
         sha256=05e204eac0338a76ca02db89ebb9505d80a7e268b93b746408356be913e219e6))))
     (js_of_ocaml-migrate-labeled-tuples-shims.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-migrate-labeled-tuples-shims.patch))
       (hashes (
         sha256=981df4f7397fd84e3e06b54644f5e37f464764045703bc117b9f4b49a630f88a))))
     (js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op-regression-test.patch))
       (hashes (
         sha256=046c0cde7de52fe9b31ba4aeb1185aefbb3c9d3b3abb50b111e699d2b69c89a0))))
     (js_of_ocaml-mixed-block-bytecode-op.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-mixed-block-bytecode-op.patch))
       (hashes (
         sha256=ed6cfee285491515d497e8871c8534236e9a77939c3838dfd5b3fdb20626e347))))
     (js_of_ocaml-n-ary-functions.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-n-ary-functions.patch))
       (hashes (
         sha256=b9b078c1f227624cc5fc9dd574c19785354267c19299dcf2f9b9642d0114eddf))))
     (js_of_ocaml-no-compression-module-5.2.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-no-compression-module-5.2.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-obj_stubs.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-obj_stubs.patch))
       (hashes (
         sha256=9e9064f255c065a3152f665bd5b464040f3cfbbd2580aa4bb6e17be9c2b7fcc8))))
     (js_of_ocaml-optcomp_lite_fixes.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-optcomp_lite_fixes.patch))
       (hashes (
         sha256=b98305f8885c0377714677b2ca6d0d561c18bee6a8fc0d2f9d0abf52694968e0))))
     (js_of_ocaml-remove-float-externals.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-remove-float-externals.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
     (js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-revert_9c15703872_behavior_changing_rewrite_of_float_to_bits.patch))
       (hashes (
         sha256=899ec90b4c1f5f1251d2c77fdb842f11b5a07d01430da4e5c75610d4bf541faa))))
     (js_of_ocaml-small-int-literals.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-small-int-literals.patch))
       (hashes (
         sha256=4c3fd2d3a50d220af2bdd377016e3f3354b98b770457ff200494be70bc9bb5b2))))
     (js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-stop_evaluating_caml_int64_bits_of_float_to_avoid_breaking_float_u.patch))
       (hashes (
         sha256=483e848b0dfe54b75c31cd990191730c0070ad8a21912b1beca97111e01a718e))))
     (js_of_ocaml-symtable-5.2-api.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-symtable-5.2-api.patch))
       (hashes (
         sha256=9a999950e8984cc582e3830f447111e1082dc720609334de66a011347d26da9b))))
     (js_of_ocaml-test-diffs-caused-by-build-differences.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-test-diffs-caused-by-build-differences.patch))
       (hashes (
         sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855))))
-    (js_of_ocaml-toplevel.patch (
-      (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-toplevel.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-toplevel.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-toplevel.patch))
-      (hashes (
-        sha256=fc9e1c363cd14d77edb3d6017ec2a8d2211dc755ff902e2a075a372b1e665f9e))))
     (js_of_ocaml-unboxed-indexing.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-unboxed-indexing.patch))
       (hashes (
         sha256=2c8b76947795fa34683e7c2bf1022a95058bde146c7832e1bd6e8a33b8d6cfc7))))
     (js_of_ocaml-wasm-temp-differences.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-wasm-temp-differences.patch))
       (hashes (
         sha256=d644765237b939ab611c10f71672504ced91bf4ba0e8fe87a6cebc521bf2f34a))))
     (js_of_ocaml-with_async_exns.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/js_of_ocaml-with_async_exns.patch))
       (hashes (
         sha256=0df2643d0b528b121e939506b6240cc35225bc5bffbcc80e6322e9cc8a269419))))
     (wasm_of_ocaml-bring-back-eval.patch (
       (urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-bring-back-eval.patch))
       (hashes (
         sha256=c413d9617e1122a9fdad8f1f63859bdf9f17a8440f78bdfbaecc432bae580fac))))
     (wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
      ((urls (
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
-        https://raw.githubusercontent.com/patricoferris/oxcaml-opam-repository/78bb9a342435a78a5737f2d96d8feabc7a19a8fb/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch))
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml/js_of_ocaml.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-compiler/js_of_ocaml-compiler.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch
+        https://raw.githubusercontent.com/oxcaml/opam-repository/a1ea0d33dd5662b89183f751c3fec566d7860b75/packages/js_of_ocaml-ppx/js_of_ocaml-ppx.6.0.1+ox/files/wasm_of_ocaml-stub-caml_ml_set_channel_refill.patch))
       (hashes (
         sha256=005bce63009b9539b65036b22a7b7cc531755c7caa3cf1ed8d8697698090e136))))))
   (patches (
@@ -1772,8 +1765,7 @@
     js_of_ocaml-flipped-conditions-in-test.patch
     js_of_ocaml-atomic-cmpxchg.patch
     js_of_ocaml-small-int-literals.patch
-    dune.patch
-    js_of_ocaml-toplevel.patch))))
+    dune.patch))))
 
 (js_of_ocaml_patches (
   (provides ((js_of_ocaml_patches v0.18~preview.130.55+197)))
@@ -1845,15 +1837,15 @@
           sha256=b5a28d5c2034ba067b89324be4ca496750e6db92cb2b58d6027205ac6cc68bd0)))))))))
 
 (logs (
-  (provides ((logs 0.9.0+dune2)))
+  (provides ((logs 0.10.0+dune)))
   (source ((
     base (
       Http (
         (urls (
-          https://github.com/dune-universe/logs/releases/download/v0.9.0%2Bdune2/logs-0.9.0.dune2.tbz))
+          https://github.com/dune-universe/logs/releases/download/v0.10.0%2Bdune/logs-0.10.0.dune.tbz))
         (hashes (
-          sha256=7afc1c0c9c1214dbc58b4c463bbe1e3b1a6f4d2e72b1aa8a990b0566eaf5a8fa
-          sha512=d34a38671ed975d078551e2c3d926ceb7e84caaca3ff9781f6ef5faf60da45343f1376c80062cd3496880b57b2a5c5a700f58ab99a08accf58411077ad9d80ff)))))))))
+          sha256=4b96a00c0f1f58972634d3f63e83c15de70cf5b6fbd2345b26059b20f093d97e
+          sha512=62d6c40317b0c33e566b0135b22c5ab2be3be0efd0163b1686a316795428e1c07378b46ef6d9f01c80d173f68d4b74a5a83766ff93f285cf2a95ddd644d7067d)))))))))
 
 (lsp_rpc (
   (provides ((lsp_rpc v0.18~preview.130.55+197)))
